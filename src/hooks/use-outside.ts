@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 
-export const useOutsideClick = (
-    ref: React.RefObject<HTMLDivElement>,
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
-    callback: Function
-) => {
-    useEffect(() => {
+type EventCallback = (event: MouseEvent | TouchEvent) => void;
 
-        const listener = (event: any) => {
-            if (!ref.current || ref.current.contains(event.target)) {
+export const useOutsideClick = (
+    ref: React.RefObject<HTMLElement>,
+    callback: EventCallback
+): void => {
+    useEffect(() => {
+        const listener = (event: MouseEvent | TouchEvent) => {
+            if (!ref.current || ref.current.contains(event.target as Node)) {
                 return;
             }
             callback(event);
