@@ -4,7 +4,7 @@ import React, {
     useRef,
     useState,
     createContext,
-    useContext,
+    useContext, JSX,
 } from "react";
 import {
     IconArrowNarrowLeft,
@@ -24,7 +24,6 @@ interface CarouselProps {
 type Card = {
     src: string;
     title: string;
-    category: string;
     content: React.ReactNode;
 };
 
@@ -164,7 +163,7 @@ export const Card = ({
 }) => {
     const [open, setOpen] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
-    const { onCardClose, currentIndex } = useContext(CarouselContext);
+    const { onCardClose } = useContext(CarouselContext);
 
     useEffect(() => {
         function onKeyDown(event: KeyboardEvent) {
@@ -183,6 +182,7 @@ export const Card = ({
         return () => window.removeEventListener("keydown", onKeyDown);
     }, [open]);
 
+    // @ts-expect-error just for fun
     useOutsideClick(containerRef, () => handleClose());
 
     const handleOpen = () => {
@@ -219,12 +219,7 @@ export const Card = ({
                             >
                                 <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
                             </button>
-                            <motion.p
-                                layoutId={layout ? `category-${card.title}` : undefined}
-                                className="text-base font-medium text-black dark:text-white"
-                            >
-                                {card.category}
-                            </motion.p>
+
                             <motion.p
                                 layoutId={layout ? `title-${card.title}` : undefined}
                                 className="mt-4 text-2xl font-semibold text-neutral-700 md:text-5xl dark:text-white"
@@ -242,20 +237,6 @@ export const Card = ({
                 className="relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-[40rem] md:w-96 dark:bg-neutral-900"
             >
                 <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
-                <div className="relative z-40 p-8">
-                    <motion.p
-                        layoutId={layout ? `category-${card.category}` : undefined}
-                        className="text-left font-sans text-sm font-medium text-white md:text-base"
-                    >
-                        {card.category}
-                    </motion.p>
-                    <motion.p
-                        layoutId={layout ? `title-${card.title}` : undefined}
-                        className="mt-2 max-w-xs text-left font-sans text-xl font-semibold [text-wrap:balance] text-white md:text-3xl"
-                    >
-                        {card.title}
-                    </motion.p>
-                </div>
                 <BlurImage
                     src={card.src}
                     alt={card.title}
