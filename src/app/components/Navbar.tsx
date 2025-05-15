@@ -1,0 +1,238 @@
+import {
+    ChevronDownIcon,
+    ChevronUpIcon,
+    PuzzlePieceIcon,
+    ChartBarIcon,
+    HomeIcon,
+    ServerStackIcon,
+    CalendarIcon,
+    ChartPieIcon,
+    CalendarDaysIcon,
+    Bars3Icon,
+    XMarkIcon,
+} from '@heroicons/react/24/solid';
+import { useState } from 'react';
+
+export default function Navbar() {
+    const [navOpen, setNavOpen] = useState<string | null>(null);
+    const [langOpen, setLangOpen] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const navItems = [
+        {
+            label: 'Products',
+            icon: PuzzlePieceIcon,
+            links: [
+                { title: 'Grow Revenue', desc: 'Expand your revenue pipeline', icon: CalendarIcon },
+                { title: 'Flexible Payments', desc: 'Multiple flexible options', icon: ChartPieIcon },
+                { title: 'Secure Transactions', desc: 'AI-based fraud detection', icon: CalendarDaysIcon },
+            ],
+        },
+        {
+            label: 'Solutions',
+            icon: ChartBarIcon,
+            links: [
+                { title: 'Tailored Workflows', desc: 'Custom fit your process', icon: CalendarIcon },
+                { title: 'Smart Ops', desc: 'Modernize operations', icon: ChartPieIcon },
+                { title: 'Seamless Experience', desc: 'Unify user flow', icon: CalendarDaysIcon },
+            ],
+        },
+        {
+            label: 'Pricing',
+            icon: HomeIcon,
+            links: [
+                { title: 'Startup', desc: 'For early-stage teams', icon: CalendarIcon },
+                { title: 'Business', desc: 'Scaling and ops', icon: ChartPieIcon },
+                { title: 'Enterprise', desc: 'Full support & control', icon: CalendarDaysIcon },
+            ],
+        },
+        {
+            label: 'Integrations',
+            icon: ServerStackIcon,
+            links: [
+                { title: 'Shopify', desc: 'Ecom integration', icon: CalendarIcon },
+                { title: 'WooCommerce', desc: 'Plug & play store', icon: ChartPieIcon },
+                { title: 'APIs', desc: 'Flexible developer stack', icon: CalendarDaysIcon },
+            ],
+        },
+        {
+            label: 'About QuarkfinAI',
+            icon: HomeIcon,
+            links: [
+                { title: 'Our Mission', desc: 'Driving intelligent commerce', icon: CalendarIcon },
+                { title: 'Team', desc: 'Meet the minds', icon: ChartPieIcon },
+                { title: 'Careers', desc: 'Join us', icon: CalendarDaysIcon },
+            ],
+        },
+    ];
+
+    const languages = [
+        { code: 'EN', label: 'English', flag: '🇺🇸' },
+        { code: 'DE', label: 'Deutsch', flag: '🇩🇪' },
+        { code: 'MX', label: 'Español', flag: '🇲🇽' },
+        { code: 'JP', label: '日本語', flag: '🇯🇵' },
+    ];
+
+    const [selectedLang, setSelectedLang] = useState(languages[0]);
+
+
+    return (
+        <nav className="px-6 py-4 shadow-md bg-white sticky top-0 z-50">
+            <div className="max-w-7xl mx-auto flex items-center justify-between">
+                {/* Logo + Nav */}
+                <div className="flex items-center space-x-8">
+                    <div className="text-2xl font-bold text-[#2C2F8F]">QuarkfinAI</div>
+
+                    {/* Desktop Nav */}
+                    <div className="hidden lg:flex items-center space-x-6">
+                        {navItems.map((item) => (
+                            <div
+                                key={item.label}
+                                className="relative group"
+                                onMouseEnter={() => setNavOpen(item.label)}
+                                onMouseLeave={() => setNavOpen(null)}
+                            >
+                                <button
+                                    className="flex items-center text-sm font-medium text-gray-800 hover:text-[#2C2F8F] transition">
+                                    {item.label}
+                                    {navOpen === item.label ? (
+                                        <ChevronUpIcon className="w-4 h-4 ml-1 transition-transform duration-300"/>
+                                    ) : (
+                                        <ChevronDownIcon className="w-4 h-4 ml-1 transition-transform duration-300"/>
+                                    )}
+                                </button>
+
+                                <div
+                                    className={`absolute top-full mt-4 bg-white border border-gray-100 shadow-xl rounded-xl w-80 p-4 z-50 transition-all duration-300 ease-in-out origin-top transform ${
+                                        navOpen === item.label ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
+                                    }`}
+                                >
+                                    <ul className="space-y-4">
+                                        {item.links.map((link) => (
+                                            <li
+                                                key={link.title}
+                                                className="flex items-start space-x-3 group cursor-pointer p-3 rounded-md transition-all duration-200 hover:bg-gray-100"
+                                            >
+                                                <link.icon
+                                                    className="w-5 h-5 mt-1 text-gray-400 group-hover:text-[#2C2F8F] transition-colors duration-200"/>
+                                                <div>
+                                                    <p className="text-sm font-semibold text-gray-500 group-hover:text-[#2C2F8F] transition-colors">
+                                                        {link.title}
+                                                    </p>
+                                                    <p className="text-sm text-gray-400"> {link.desc} </p>
+                                                </div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Right side */}
+                <div className="hidden lg:flex items-center space-x-4">
+                    {/* Language dropdown */}
+                    <div
+                        onMouseEnter={() => setLangOpen(true)}
+                        onMouseLeave={() => setLangOpen(false)}
+                        className="relative"
+                    >
+                        <button
+                            className="flex items-center text-sm font-medium text-gray-800 hover:text-[#2C2F8F] transition">
+                            EN
+                            {langOpen ? (
+                                <ChevronUpIcon className="w-4 h-4 ml-1 transition-transform duration-300"/>
+                            ) : (
+                                <ChevronDownIcon className="w-4 h-4 ml-1 transition-transform duration-300"/>
+                            )}
+                        </button>
+
+                        <div
+                            className={`absolute top-full mt-4 bg-white border border-gray-100 shadow-xl rounded-xl w-60 p-4 z-50 transition-all duration-300 ease-in-out origin-top transform ${
+                                langOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
+                            }`}
+                        >
+                            <ul className="space-y-4">
+                                {languages.map((lang) => (
+                                    <li
+                                        key={lang.code}
+                                        className="flex items-start space-x-3 group cursor-pointer p-3 rounded-md transition-all duration-200 hover:bg-gray-100"
+                                    >
+                                        <span className="text-lg">{lang.flag}</span>
+                                        <div>
+                                            <p className="text-sm font-semibold text-gray-500 group-hover:text-[#2C2F8F] transition-colors">
+                                                {lang.label}
+                                            </p>
+                                            <p className="text-sm text-gray-400">{lang.code}</p>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <button className="bg-[#2C2F8F] text-white px-4 py-2 rounded hover:bg-[#3A50D9] transition">
+                        Login
+                    </button>
+                </div>
+
+                {/* Mobile Toggle */}
+                <div className="lg:hidden">
+                    <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+                        {mobileMenuOpen ? (
+                            <XMarkIcon className="w-6 h-6 text-[#2C2F8F]"/>
+                        ) : (
+                            <Bars3Icon className="w-6 h-6 text-[#2C2F8F]"/>
+                        )}
+                    </button>
+                </div>
+            </div>
+
+            {/* Mobile Dropdown */}
+            {mobileMenuOpen && (
+                <div className="lg:hidden mt-4 space-y-4">
+                    {navItems.map((item) => (
+                        <details key={item.label} className="group">
+                            <summary
+                                className="cursor-pointer px-4 py-2 flex justify-between items-center text-sm text-gray-800 hover:text-[#2C2F8F]">
+                                {item.label}
+                                <ChevronDownIcon className="w-4 h-4 ml-1 group-open:rotate-180 transition-transform"/>
+                            </summary>
+                            <ul className="pl-6 pr-4 pt-2 space-y-3">
+                                {item.links.map((link) => (
+                                    <li key={link.title} className="text-sm text-gray-600">
+                                        {link.title}
+                                    </li>
+                                ))}
+                            </ul>
+                        </details>
+                    ))}
+                    <div className="px-4 pt-4">
+                        <h4 className="block text-sm font-medium mb-2 text-[#2C2F8F]">Language</h4>
+                        <ul className="space-y-3">
+                            {languages.map((lang) => (
+                                <li
+                                    key={lang.code}
+                                    className={`flex items-center space-x-3 p-2 rounded-md cursor-pointer transition-all hover:bg-gray-100 ${
+                                        selectedLang.code === lang.code ? 'bg-gray-100' : ''
+                                    }`}
+                                    onClick={() => setSelectedLang(lang)}
+                                >
+                                    <span className="text-lg">{lang.flag}</span>
+                                    <span className="text-sm text-gray-800 font-medium">{lang.label}</span>
+                                    <span className="text-xs text-gray-400 ml-auto">{lang.code}</span>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <button
+                            className="w-full mt-6 bg-[#2C2F8F] text-white py-2 rounded hover:bg-[#3A50D9] transition">
+                            Login
+                        </button>
+                    </div>
+                </div>
+            )}
+        </nav>
+    );
+}
