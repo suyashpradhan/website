@@ -12,6 +12,10 @@ import {
     XMarkIcon,
 } from '@heroicons/react/24/solid';
 import { useState } from 'react';
+import Image from "next/image";
+import logo from '@/images/logos/logo.jpg'
+
+
 
 export default function Navbar() {
     const [navOpen, setNavOpen] = useState<string | null>(null);
@@ -81,7 +85,16 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto flex items-center justify-between">
                 {/* Logo + Nav */}
                 <div className="flex items-center space-x-8">
-                    <div className="text-2xl font-bold text-[#2C2F8F]">QuarkfinAI</div>
+                    <div className="text-2xl font-bold text-[#2C2F8F]">
+                        <Image
+                            src={logo}
+                            alt="QuarkfinAI logo"
+                            width={120}
+                            height={32}
+                            priority
+                            className="h-8 w-auto"
+                        />
+                    </div>
 
                     {/* Desktop Nav */}
                     <div className="hidden lg:flex items-center space-x-6">

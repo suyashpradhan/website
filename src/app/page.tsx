@@ -12,6 +12,10 @@ import Navbar from "@/app/components/Navbar";
 import {Integrations} from "@/components/Integrations";
 import {Customers} from "@/components/Customers";
 import {CustomerProfile} from "@/components/CustomerProfile";
+import {PrimaryFeatures} from "@/components/MadeForBusiness";
+import {Hero} from "@/components/Hero";
+import {Features2} from "@/components/Features2";
+import Footer from "@/components/Footer";
 
 export default function Home() {
 
@@ -47,45 +51,42 @@ export default function Home() {
 
               {/* Hero Section */}
               <section data-aos="fade-in" className="px-6 py-20">
-                  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                  {/*<div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">*/}
 
-                      {/* Left Content */}
-                      <div>
-                          <h1 className="text-4xl md:text-6xl font-bold text-[#2C2F8F] leading-tight">
-                              Protect Commerce<br/>Enable Growth
-                          </h1>
-                          <p className="mt-6 text-gray-600">
-                              QuarkfinAI maximizes business growth and revenue by providing actionable decisions using
-                              AI-powered fraud and risk platform.
-                          </p>
-                          <div className="mt-8 space-x-4">
-                              {/*<button*/}
-                              {/*    className="bg-[#2C2F8F] text-white px-6 py-3 rounded hover:bg-[#3A50D9] hover:scale-105 transition shadow">*/}
-                              {/*    Get Started*/}
-                              {/*</button>*/}
+                  {/*    /!* Left Content *!/*/}
+                  {/*    <div>*/}
+                  {/*        <h1 className="text-4xl md:text-6xl font-bold text-[#2C2F8F] leading-tight">*/}
+                  {/*            Protect Commerce<br/>Enable Growth*/}
+                  {/*        </h1>*/}
+                  {/*        <p className="mt-6 text-gray-600">*/}
+                  {/*            QuarkfinAI maximizes business growth and revenue by providing actionable decisions using*/}
+                  {/*            AI-powered fraud and risk platform.*/}
+                  {/*        </p>*/}
+                  {/*        <div className="mt-8 space-x-4">*/}
 
-                              <button className="p-[3px] relative">
-                                  <div
-                                      className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-sm"/>
-                                  <div
-                                      className="px-8 py-3  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-                                      Get Started
-                                  </div>
-                              </button>
-                              <button
-                                  className="border border-[#2C2F8F] text-[#2C2F8F] px-6 py-3 rounded hover:bg-[#2C2F8F] hover:text-white hover:scale-105 transition shadow">
-                                  Watch Demo
-                              </button>
-                          </div>
-                      </div>
+                  {/*            <button className="p-[3px] relative">*/}
+                  {/*                <div*/}
+                  {/*                    className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-sm"/>*/}
+                  {/*                <div*/}
+                  {/*                    className="px-8 py-3  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">*/}
+                  {/*                    Get Started*/}
+                  {/*                </div>*/}
+                  {/*            </button>*/}
+                  {/*            <button*/}
+                  {/*                className="border border-[#2C2F8F] text-[#2C2F8F] px-6 py-3 rounded hover:bg-[#2C2F8F] hover:text-white hover:scale-105 transition shadow">*/}
+                  {/*                Watch Demo*/}
+                  {/*            </button>*/}
+                  {/*        </div>*/}
+                  {/*    </div>*/}
 
-                      {/* Right Image Placeholder */}
-                      <div
-                          className="w-full h-64 md:h-80 bg-gray-200 rounded-lg shadow-lg flex items-center justify-center">
-                          <span className="text-gray-500">[ Image Placeholder ]</span>
-                      </div>
+                  {/*    /!* Right Image Placeholder *!/*/}
+                  {/*    <div*/}
+                  {/*        className="w-full h-64 md:h-80 bg-gray-200 rounded-lg shadow-lg flex items-center justify-center">*/}
+                  {/*        <span className="text-gray-500">[ Image Placeholder ]</span>*/}
+                  {/*    </div>*/}
 
-                  </div>
+                  {/*</div>*/}
+                  <Hero/>
               </section>
 
               {/* Features Section */}
@@ -94,31 +95,34 @@ export default function Home() {
                       <h2 className="text-3xl md:text-4xl font-bold text-left text-[#2C2F8F] mb-1 text-left font-bold">Built for Confident Growth</h2>
                   <p className="text-left text-lg text-gray-600 mb-10">Meet your business goals with QuarkfinAI, harness AI-driven risk insights and flexible decisioning to scale securely.</p>
                   </div>
-                  <div className="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto">
-                      {cardContent.map((card) => (
-                          <div key={card.title}
-                               className="bg-white p-6 rounded shadow hover:shadow-lg hover:scale-[1.02] transition cursor-pointer">
-                              <card.icon className="w-10 h-10 text-[#2C2F8F] text-left mb-6"/>
-                              <h3 className="font-semibold text-lg mb-2">{card.title}</h3>
-                              <p className="text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing
-                                  elit.</p>
-                              <a
-                                  href="#"
-                                  className="text-[#3A50D9] text-sm mt-8 font-medium inline-flex items-center group"
-                              >
-                                  Learn More
-                                  <svg
-                                      className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      strokeWidth="2"
-                                      viewBox="0 0 24 24"
-                                  >
-                                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>
-                                  </svg>
-                              </a>
-                          </div>
-                      ))}
+                  {/*<div className="grid md:grid-cols-3 gap-6 max-w-7xl mx-auto">*/}
+                  {/*    {cardContent.map((card) => (*/}
+                  {/*        <div key={card.title}*/}
+                  {/*             className="bg-white p-6 rounded shadow hover:shadow-lg hover:scale-[1.02] transition cursor-pointer">*/}
+                  {/*            <card.icon className="w-10 h-10 text-[#2C2F8F] text-left mb-6"/>*/}
+                  {/*            <h3 className="font-semibold text-lg mb-2">{card.title}</h3>*/}
+                  {/*            <p className="text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipiscing*/}
+                  {/*                elit.</p>*/}
+                  {/*            <a*/}
+                  {/*                href="#"*/}
+                  {/*                className="text-[#3A50D9] text-sm mt-8 font-medium inline-flex items-center group"*/}
+                  {/*            >*/}
+                  {/*                Learn More*/}
+                  {/*                <svg*/}
+                  {/*                    className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform duration-300"*/}
+                  {/*                    fill="none"*/}
+                  {/*                    stroke="currentColor"*/}
+                  {/*                    strokeWidth="2"*/}
+                  {/*                    viewBox="0 0 24 24"*/}
+                  {/*                >*/}
+                  {/*                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/>*/}
+                  {/*                </svg>*/}
+                  {/*            </a>*/}
+                  {/*        </div>*/}
+                  {/*    ))}*/}
+                  {/*</div>*/}
+                  <div className="max-w-7xl mx-auto">
+                  <Features2/>
                   </div>
               </section>
 
@@ -144,21 +148,8 @@ export default function Home() {
 
 
               {/* Made for every business */}
-              <section data-aos="fade-up" className="px-6 py-16">
-                  <h2 className="text-3xl md:text-4xl font-bold text-center text-[#2C2F8F] mb-10">
-                      Made for every business
-                  </h2>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-                      {['Iconic Features', 'Tailored Solutions', 'Smarter Workflows', 'Scalable Strategies'].map((title, index) => (
-                          <div key={index}
-                               className="bg-[#f7f7fb] p-6 rounded-lg text-center hover:shadow-md transition">
-                              <div className="w-12 h-12 bg-[#E0E7FF] rounded mb-4 mx-auto"/>
-                              <h3 className="font-semibold text-[#2C2F8F] mb-1">{title}</h3>
-                              <p className="text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing
-                                  elit.</p>
-                          </div>
-                      ))}
-                  </div>
+              <section data-aos="fade-up" className="py-16">
+                  <PrimaryFeatures/>
               </section>
 
               {/* Made for Any Customer Profile */}
@@ -184,36 +175,7 @@ export default function Home() {
               </section>
 
               {/* Footer */}
-              <footer className="bg-white border-t px-6 py-10 text-sm text-gray-600">
-                  <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-6">
-                      <div>
-                          <p className="font-bold text-[#2C2F8F] mb-2">We are dedicated to delivering</p>
-                          <p>Innovative solutions that empower businesses to thrive in an ever-changing world.</p>
-                      </div>
-                      <div>
-                          <h4 className="font-semibold text-[#2C2F8F] mb-2">PRODUCTS</h4>
-                          <ul>
-                              <li>Home</li>
-                              <li>Features</li>
-                          </ul>
-                      </div>
-                      <div>
-                          <h4 className="font-semibold text-[#2C2F8F] mb-2">SOLUTIONS</h4>
-                          <ul>
-                              <li>Case Study</li>
-                              <li>Pricing</li>
-                          </ul>
-                      </div>
-                      <div>
-                          <h4 className="font-semibold text-[#2C2F8F] mb-2">INTEGRATIONS</h4>
-                          <ul>
-                              <li>Help Center</li>
-                              <li>Give Us Feedback</li>
-                          </ul>
-                      </div>
-                  </div>
-                  <div className="mt-10 text-center text-xs">© 2025 QuarkfinAI. All rights reserved.</div>
-              </footer>
+              <Footer/>
           </div>
       </>
   );
