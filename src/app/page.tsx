@@ -27,12 +27,6 @@ export default function Home() {
     );
   }, []);
 
-  const cardContent = [
-    { icon: PuzzlePieceIcon, title: 'Grow Revenue' },
-    { icon: ChartBarIcon, title: 'Modernize Operations' },
-    { icon: ServerStackIcon, title: 'Good Customer Base' },
-  ];
-
 
   return (
       <>
