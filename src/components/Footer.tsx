@@ -4,28 +4,27 @@ import Image from "next/image";
 
 const navigation = {
     products: [
-        { name: 'Marketing', href: '#' },
-        { name: 'Analytics', href: '#' },
-        { name: 'Commerce', href: '#' },
-        { name: 'Insights', href: '#' },
+        { name: 'Risk Prevention Platform', href: '#' },
+        { name: 'Business Underwriting & KYB (Know Your Business)', href: '#' },
+        { name: 'Merchant Monitoring', href: '#' },
+        { name: 'Card Fraud Prevention Suite', href: '#' },
+        { name: 'Lending and Credit Underwriting', href: '#' },
     ],
     solutions: [
-        { name: 'Pricing', href: '#' },
-        { name: 'Documentation', href: '#' },
-        { name: 'Guides', href: '#' },
-        { name: 'API Status', href: '#' },
+        { name: 'D2C & eCommerce Solutions', href: '#' },
+        { name: 'Payment Gateways & Merchant Aggregators', href: '#' },
+        { name: 'Digital Lending (B2B & B2C)', href: '#' },
+        { name: 'Travel & Quick Commerce Solutions', href: '#' },
     ],
     company: [
-        { name: 'About', href: '#' },
-        { name: 'Blog', href: '#' },
-        { name: 'Jobs', href: '#' },
-        { name: 'Press', href: '#' },
-        { name: 'Partners', href: '#' },
+        { name: 'Mission', href: '#' },
+        { name: 'Team', href: '#' },
+        { name: 'Careers', href: '#' },
     ],
-    legal: [
-        { name: 'Claim', href: '#' },
-        { name: 'Privacy', href: '#' },
-        { name: 'Terms', href: '#' },
+    pricing: [
+        { name: 'Startup', href: '#' },
+        { name: 'Business', href: '#' },
+        { name: 'Enterprise', href: '#' },
     ],
     social: [
         {
@@ -113,7 +112,7 @@ export default function Footer() {
                             <div>
                                 <h3 className="text-sm font-semibold leading-6 text-white">Products</h3>
                                 <ul role="list" className="mt-6 space-y-4">
-                                    {navigation.solutions.map((item) => (
+                                    {navigation.products.map((item) => (
                                         <li key={item.name}>
                                             <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
                                                 {item.name}
@@ -125,7 +124,7 @@ export default function Footer() {
                             <div className="mt-10 md:mt-0">
                                 <h3 className="text-sm font-semibold leading-6 text-white">Solutions</h3>
                                 <ul role="list" className="mt-6 space-y-4">
-                                    {navigation.products.map((item) => (
+                                    {navigation.solutions.map((item) => (
                                         <li key={item.name}>
                                             <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
                                                 {item.name}
@@ -136,24 +135,27 @@ export default function Footer() {
                             </div>
                         </div>
                         <div className="md:grid md:grid-cols-2 md:gap-8">
-                            <div>
-                                <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
+
+                            <div className="mt-10 md:mt-0">
+                                <h3 className="text-sm font-semibold leading-6 text-white">Pricing</h3>
                                 <ul role="list" className="mt-6 space-y-4">
-                                    {navigation.company.map((item) => (
+                                    {navigation.pricing.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
+                                            <a href={item.href}
+                                               className="text-sm leading-6 text-gray-300 hover:text-white">
                                                 {item.name}
                                             </a>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
-                            <div className="mt-10 md:mt-0">
-                                <h3 className="text-sm font-semibold leading-6 text-white">Legal</h3>
+                            <div>
+                                <h3 className="text-sm font-semibold leading-6 text-white">About QuarkfinAI</h3>
                                 <ul role="list" className="mt-6 space-y-4">
-                                    {navigation.legal.map((item) => (
+                                    {navigation.company.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
+                                            <a href={item.href}
+                                               className="text-sm leading-6 text-gray-300 hover:text-white">
                                                 {item.name}
                                             </a>
                                         </li>

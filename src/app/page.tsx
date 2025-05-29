@@ -60,7 +60,7 @@ export default function Home() {
               <section data-aos="fade-up" className="px-6 py-16">
                   <div className=" max-w-7xl mx-auto">
                       <h2 className="text-3xl md:text-4xl font-bold text-left text-[#2C2F8F] mb-10">
-                          Made to delight your customers
+                          How It Works
                       </h2>
                       <Customers/>
 
@@ -69,7 +69,7 @@ export default function Home() {
                               className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-sm"/>
                           <div
                               className="px-8 py-3  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
-                             Get a demo
+                             Try free for 14 Days
                           </div>
                       </button>
                   </div>
@@ -82,16 +82,16 @@ export default function Home() {
               </section>
 
               {/* Made for Any Customer Profile */}
-              <section data-aos="fade-up" className="px-6 py-16 bg-gray-50">
-                  <div className="max-w-7xl mx-auto">
-                      <h2 className="text-3xl md:text-4xl font-bold text-left text-[#2C2F8F] mb-2">
-                          Made for Any Customer Profile
-                      </h2>
-                      <p className="text-left text-lg text-gray-600 mb-10">Meet your business goals with QuarkfinAI,
-                          harness AI-driven risk insights and flexible decisioning to scale securely.</p>
-                  </div>
-                  <CustomerProfile/>
-              </section>
+              {/*<section data-aos="fade-up" className="px-6 py-16 bg-gray-50">*/}
+              {/*    <div className="max-w-7xl mx-auto">*/}
+              {/*        <h2 className="text-3xl md:text-4xl font-bold text-left text-[#2C2F8F] mb-2">*/}
+              {/*            Made for Any Customer Profile*/}
+              {/*        </h2>*/}
+              {/*        <p className="text-left text-lg text-gray-600 mb-10">Meet your business goals with QuarkfinAI,*/}
+              {/*            harness AI-driven risk insights and flexible decisioning to scale securely.</p>*/}
+              {/*    </div>*/}
+              {/*    <CustomerProfile/>*/}
+              {/*</section>*/}
 
 
               {/* Integrations */}
@@ -104,7 +104,7 @@ export default function Home() {
               </section>
 
               {/* CTA Section */}
-              <section data-aos="fade-up" className="px-6 py-16 bg-gray-50">
+              <section data-aos="fade-up" className="px-6 py-32 bg-gray-50">
                   <div className="max-w-7xl mx-auto">
                       <div
                           className="flex flex-col items-center justify-center space-y-6 text-center"

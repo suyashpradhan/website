@@ -9,31 +9,26 @@ import {
 export function Customers() {
     const features = [
         {
-            title: "Frictionless Onboarding ",
+            title: "Sign Up & Connect",
             description:
-                "Signups/Login without friction without hassle of OTP for genuine customer leading to lesser drop offs",
+                "Add our API or SDK to your stack. No DevOps required.",
             icon: <IconTerminal2 />,
         },
         {
-            title: "Smarter Workflows",
+            title: "Set Your Rules",
             description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ",
+                "Drag-and-drop risk thresholds. Start with our defaults or customize.",
             icon: <IconEaseInOut />,
         },
         {
-            title: "Scalable Strategies",
+            title: "Watch Fraud Drop",
             description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse =",
+                "See real-time approvals, blocks, and revenue saved",
             icon: <IconCurrencyDollar />,
-        },
-        {
-            title: "100% Uptime guarantee",
-            description: "We just cannot be taken down by anyone.",
-            icon: <IconCloud />,
         },
     ];
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 py-10 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10 py-10 max-w-7xl mx-auto">
             {features.map((feature, index) => (
                 <Feature key={feature.title} {...feature} index={index} />
             ))}

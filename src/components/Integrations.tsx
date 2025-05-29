@@ -10,35 +10,35 @@ export function Integrations() {
                 area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
                 icon={<ShoppingCart className="h-4 w-4 text-black dark:text-neutral-400" />}
                 title="Shopify"
-                description="Running out of copy so I'll write anything."
+                description="Plug-and-play app that scores every Shopify order for risk before you fulfill."
             />
 
             <GridItem
                 area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
                 icon={<ShoppingBag className="h-4 w-4 text-black dark:text-neutral-400" />}
                 title="Woocommerce"
-                description="Yes, it's true. I'm not even kidding. Ask my mom if you don't believe me."
+                description="Seamlessly screen WooCommerce checkouts with real-time fraud and KYC checks."
             />
 
             <GridItem
                 area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
                 icon={<Code className="h-4 w-4 text-black dark:text-neutral-400" />}
                 title="Direct API"
-                description="It's the best money you'll ever spend"
+                description="Hit our REST endpoint from any stack to get instant trust and credit decisions."
             />
 
             <GridItem
                 area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
                 icon={<Code className="h-4 w-4 text-black dark:text-neutral-400" />}
                 title="SDK"
-                description="I'm not even kidding. Ask my mom if you don't believe me."
+                description="Drop-in mobile SDK that adds identity, device, and payment risk signals in minutes."
             />
 
             <GridItem
                 area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
                 icon={<Code className="h-4 w-4 text-black dark:text-neutral-400" />}
                 title="Web SDK"
-                description="I'm writing the code as I record this, no shit."
+                description="Lightweight JavaScript snippet that enriches browser sessions with fraud telemetry."
             />
             
         </ul>

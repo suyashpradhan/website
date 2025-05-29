@@ -2,26 +2,18 @@ import { useId } from 'react'
 import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
 
-import screenshotContacts from '@/images/screenshots/contacts.png'
-import screenshotInventory from '@/images/screenshots/inventory.png'
-import screenshotProfitLoss from '@/images/screenshots/profit-loss.png'
-import Image from "next/image";
+import One from '@/images/screenshots/1.jpeg'
+import Two from '@/images/screenshots/2.jpeg'
+import Three from '@/images/screenshots/3.jpeg'
 
-export function Container({ className, ...props }) {
-    return (
-        <div
-            className={clsx('mx-auto max-w-7xl px-4 sm:px-6 lg:px-8', className)}
-            {...props}
-        />
-    )
-}
+import Image from "next/image";
 
 const features = [
     {
         summary: 'Intelligent Checkout',
         description:
             'Reduce RTO and boost conversions with AI-powered intent scoring. Approve more good users, block the bad ones',
-        image: screenshotProfitLoss,
+        image: Two,
         icon: function ReportingIcon() {
             const id:string = useId()
             return (
@@ -55,7 +47,7 @@ const features = [
             'Chargeback Guarantee',
         description:
             'Dispute fraud automatically.',
-        image: screenshotInventory,
+        image: One,
         icon: function InventoryIcon() {
             return (
                 <>
@@ -82,7 +74,7 @@ const features = [
             'Lending Confidence',
         description:
             'Say ‘yes’ to more borrowers safely. AI underwriting for NTC and thin-file customers.',
-        image: screenshotContacts,
+        image: Three,
         icon: function ContactsIcon() {
             return (
                 <>
@@ -179,7 +171,7 @@ function FeaturesDesktop() {
                             />
                         ))}
                     </Tab.List>
-                    <Tab.Panels className="relative mt-20 overflow-hidden rounded-4xl bg-slate-200 px-14 py-16 xl:px-16">
+                    <Tab.Panels className="relative mt-20 overflow-hidden px-14 py-16 xl:px-16">
                         <div className="-mx-5 flex">
                             {features.map((feature, featureIndex) => (
                                 <Tab.Panel
@@ -192,7 +184,7 @@ function FeaturesDesktop() {
                                     style={{ transform: `translateX(-${selectedIndex * 100}%)` }}
                                     aria-hidden={featureIndex !== selectedIndex}
                                 >
-                                    <div className="w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
+                                    <div className="w-[52.75rem] overflow-hidden">
                                         <Image
                                             className="w-full"
                                             src={feature.image}
