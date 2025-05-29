@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Lock, Search, Settings, Sparkles } from "lucide-react";
+import {  Code, ShoppingCart, ShoppingBag } from "lucide-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export function Integrations() {
@@ -8,35 +8,35 @@ export function Integrations() {
         <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
             <GridItem
                 area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
-                icon={<Box className="h-4 w-4 text-black dark:text-neutral-400" />}
+                icon={<ShoppingCart className="h-4 w-4 text-black dark:text-neutral-400" />}
                 title="Shopify"
                 description="Running out of copy so I'll write anything."
             />
 
             <GridItem
                 area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
-                icon={<Settings className="h-4 w-4 text-black dark:text-neutral-400" />}
+                icon={<ShoppingBag className="h-4 w-4 text-black dark:text-neutral-400" />}
                 title="Woocommerce"
                 description="Yes, it's true. I'm not even kidding. Ask my mom if you don't believe me."
             />
 
             <GridItem
                 area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
-                icon={<Lock className="h-4 w-4 text-black dark:text-neutral-400" />}
+                icon={<Code className="h-4 w-4 text-black dark:text-neutral-400" />}
                 title="Direct API"
                 description="It's the best money you'll ever spend"
             />
 
             <GridItem
                 area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
-                icon={<Sparkles className="h-4 w-4 text-black dark:text-neutral-400" />}
+                icon={<Code className="h-4 w-4 text-black dark:text-neutral-400" />}
                 title="SDK"
                 description="I'm not even kidding. Ask my mom if you don't believe me."
             />
 
             <GridItem
                 area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
-                icon={<Search className="h-4 w-4 text-black dark:text-neutral-400" />}
+                icon={<Code className="h-4 w-4 text-black dark:text-neutral-400" />}
                 title="Web SDK"
                 description="I'm writing the code as I record this, no shit."
             />

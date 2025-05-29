@@ -14,7 +14,7 @@ import {
 import { useState } from 'react';
 import Image from "next/image";
 import logo from '@/images/logos/logo.jpg'
-
+import Link from 'next/link'
 
 
 export default function Navbar() {
@@ -27,18 +27,19 @@ export default function Navbar() {
             label: 'Products',
             icon: PuzzlePieceIcon,
             links: [
-                { title: 'Grow Revenue', desc: 'Expand your revenue pipeline', icon: CalendarIcon },
-                { title: 'Flexible Payments', desc: 'Multiple flexible options', icon: ChartPieIcon },
-                { title: 'Secure Transactions', desc: 'AI-based fraud detection', icon: CalendarDaysIcon },
+                { title: 'Risk Prevention', desc: 'Expand your revenue pipeline', icon: CalendarIcon },
+                { title: 'Business Underwriting and KYB', desc: 'Multiple flexible options', icon: ChartPieIcon },
+                { title: 'Lending & Credit Underwriting ', desc: 'AI-based fraud detection', icon: CalendarDaysIcon },
             ],
         },
         {
             label: 'Solutions',
             icon: ChartBarIcon,
             links: [
-                { title: 'Tailored Workflows', desc: 'Custom fit your process', icon: CalendarIcon },
-                { title: 'Smart Ops', desc: 'Modernize operations', icon: ChartPieIcon },
-                { title: 'Seamless Experience', desc: 'Unify user flow', icon: CalendarDaysIcon },
+                { title: 'D2C & eCommerce', desc: 'Custom fit your process', icon: CalendarIcon },
+                { title: 'Payment Gateways & Aggregators', desc: 'Modernize operations', icon: ChartPieIcon },
+                { title: 'Digital Lending', desc: 'Unify user flow', icon: CalendarDaysIcon },
+                { title: 'Travel & Quick Commerce', desc: 'Unify user flow', icon: CalendarDaysIcon },
             ],
         },
         {
@@ -56,7 +57,9 @@ export default function Navbar() {
             links: [
                 { title: 'Shopify', desc: 'Ecom integration', icon: CalendarIcon },
                 { title: 'WooCommerce', desc: 'Plug & play store', icon: ChartPieIcon },
-                { title: 'APIs', desc: 'Flexible developer stack', icon: CalendarDaysIcon },
+                { title: 'Direct APIs', desc: 'Flexible developer stack', icon: CalendarDaysIcon },
+                { title: 'SDK', desc: 'Flexible mobile developer stack', icon: CalendarDaysIcon },
+                { title: 'Web SDK', desc: 'Flexible web developer stack', icon: CalendarDaysIcon },
             ],
         },
         {
@@ -122,19 +125,20 @@ export default function Navbar() {
                                 >
                                     <ul className="space-y-4">
                                         {item.links.map((link) => (
-                                            <li
+                                            <Link
                                                 key={link.title}
-                                                className="flex items-start space-x-3 group cursor-pointer p-3 rounded-md transition-all duration-200 hover:bg-gray-100"
+                                                href="/coming-soon"
+                                                className="flex items-start space-x-3 group cursor-pointer p-3 rounded-md
+                 transition-all duration-200 hover:bg-gray-100"
                                             >
-                                                <link.icon
-                                                    className="w-5 h-5 mt-1 text-gray-400 group-hover:text-[#2C2F8F] transition-colors duration-200"/>
+                                                <link.icon className="w-5 h-5 mt-1 text-gray-400 group-hover:text-[#2C2F8F]" />
                                                 <div>
-                                                    <p className="text-sm font-semibold text-gray-500 group-hover:text-[#2C2F8F] transition-colors">
+                                                    <p className="text-sm font-semibold text-gray-500 group-hover:text-[#2C2F8F]">
                                                         {link.title}
                                                     </p>
-                                                    <p className="text-sm text-gray-400"> {link.desc} </p>
+                                                    <p className="text-sm text-gray-400">{link.desc}</p>
                                                 </div>
-                                            </li>
+                                            </Link>
                                         ))}
                                     </ul>
                                 </div>

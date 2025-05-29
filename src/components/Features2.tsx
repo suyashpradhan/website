@@ -18,10 +18,9 @@ export function Container({ className, ...props }) {
 
 const features = [
     {
-        name: 'Reporting',
-        summary: 'Stay on top of things with always up-to-date reporting features.',
+        summary: 'Intelligent Checkout',
         description:
-            'We talked about reporting in the section above but we needed three items here, so mentioning it one more time for posterity.',
+            'Reduce RTO and boost conversions with AI-powered intent scoring. Approve more good users, block the bad ones',
         image: screenshotProfitLoss,
         icon: function ReportingIcon() {
             const id:string = useId()
@@ -52,11 +51,10 @@ const features = [
         },
     },
     {
-        name: 'Inventory',
         summary:
-            'Never lose track of what’s in stock with accurate inventory tracking.',
+            'Chargeback Guarantee',
         description:
-            'We don’t offer this as part of our software but that statement is inarguably true. Accurate inventory tracking would help you for sure.',
+            'Dispute fraud automatically.',
         image: screenshotInventory,
         icon: function InventoryIcon() {
             return (
@@ -80,11 +78,10 @@ const features = [
         },
     },
     {
-        name: 'Contacts',
         summary:
-            'Organize all of your contacts, service providers, and invoices in one place.',
+            'Lending Confidence',
         description:
-            'This also isn’t actually a feature, it’s just some friendly advice. We definitely recommend that you do this, you’ll feel really organized and professional.',
+            'Say ‘yes’ to more borrowers safely. AI underwriting for NTC and thin-file customers.',
         image: screenshotContacts,
         icon: function ContactsIcon() {
             return (
@@ -140,7 +137,7 @@ function FeaturesMobile() {
     return (
         <div className="-mx-4 mt-20 flex flex-col gap-y-10 overflow-hidden px-4 sm:-mx-6 sm:px-6 lg:hidden">
             {features.map((feature) => (
-                <div key={feature.name}>
+                <div key={feature.summary}>
                     <Feature feature={feature} className="mx-auto max-w-2xl" isActive />
                     <div className="relative mt-10 pb-10">
                         <div className="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6" />
@@ -167,13 +164,13 @@ function FeaturesDesktop() {
                     <Tab.List className="grid grid-cols-3 gap-x-8">
                         {features.map((feature, featureIndex) => (
                             <Feature
-                                key={feature.name}
+                                key={feature.summary}
                                 feature={{
                                     ...feature,
                                     name: (
                                         <Tab className="[&:not(:focus-visible)]:focus:outline-none">
                                             <span className="absolute inset-0" />
-                                            {feature.name}
+                                            {feature.summary}
                                         </Tab>
                                     ),
                                 }}
@@ -187,7 +184,7 @@ function FeaturesDesktop() {
                             {features.map((feature, featureIndex) => (
                                 <Tab.Panel
                                     static
-                                    key={feature.name}
+                                    key={feature.summary}
                                     className={clsx(
                                         'px-5 transition duration-500 ease-in-out [&:not(:focus-visible)]:focus:outline-none',
                                         featureIndex !== selectedIndex && 'opacity-60'

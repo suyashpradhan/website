@@ -12,27 +12,27 @@ import Image from "next/image";
 
 const features = [
     {
-        title: 'Payroll',
+        title: 'D2C/eCommerce',
         description:
-            "Keep track of everyone's salaries and whether or not they've been paid. Direct deposit not supported.",
+            "Stop promo abuse, fake accounts, and RTO chaos—before they hurt margins.",
         image: screenshotPayroll,
     },
     {
-        title: 'Claim expenses',
+        title: 'Payment Gateways',
         description:
-            "All of your receipts organized into one place, as long as you don't mind typing in the data by hand.",
+            "Automate KYB and merchant monitoring. Onboard faster, safer.",
         image: screenshotExpenses,
     },
     {
-        title: 'VAT handling',
+        title: 'Digital Lending',
         description:
-            "We only sell our software to companies who don't deal with VAT at all, so technically we do all the VAT stuff they need.",
+            "AI-driven underwriting for NTC customers. Higher approval rates, lower defaults.",
         image: screenshotVatReturns,
     },
     {
-        title: 'Reporting',
+        title: 'Travel/Q-Commerce',
         description:
-            'Easily export your data into an Excel spreadsheet where you can do whatever the hell you want with it.',
+            'Block card testing and account takeovers in high-velocity transactions.',
         image: screenshotReporting,
     },
 ]
@@ -72,12 +72,9 @@ export function PrimaryFeatures() {
             <div className="mx-auto max-w-7xl relative">
                 <div className="max-w-2xl md:mx-auto xl:max-w-none">
                     <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-                        Made for every business
+                        Built for your industry’s toughest fraud problems
                     </h2>
-                    <p className="mt-6 text-lg tracking-tight text-blue-100">
-                        Well everything you need if you aren’t that picky about minor
-                        details like tax compliance.
-                    </p>
+
                 </div>
                 <Tab.Group
                     as="div"
