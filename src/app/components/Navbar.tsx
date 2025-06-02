@@ -30,8 +30,6 @@ export default function Navbar() {
                 { title: 'Risk Prevention', desc: 'Expand your revenue pipeline', icon: CalendarIcon },
                 { title: 'Business Underwriting and KYB', desc: 'Multiple flexible options', icon: ChartPieIcon },
                 { title: 'Lending & Credit Underwriting ', desc: 'AI-based fraud detection', icon: CalendarDaysIcon },
-                { title: 'Merchant Monitoring ', desc: 'AI-based fraud detection', icon: CalendarDaysIcon },
-                { title: 'Card Fraud Prevention Suite ', desc: 'AI-based fraud detection', icon: CalendarDaysIcon },
             ],
         },
         {

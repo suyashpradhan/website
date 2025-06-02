@@ -6,7 +6,6 @@ import 'aos/dist/aos.css';
 import Navbar from "@/app/components/Navbar";
 import {Integrations} from "@/components/Integrations";
 import {Customers} from "@/components/Customers";
-import {CustomerProfile} from "@/components/CustomerProfile";
 import {PrimaryFeatures} from "@/components/MadeForBusiness";
 import {Hero} from "@/components/Hero";
 import {Features2} from "@/components/Features2";
@@ -45,7 +44,7 @@ export default function Home() {
               </section>
 
               {/* Features Section */}
-              <section data-aos="fade-up" className="px-6 py-16 bg-gray-50">
+              <section data-aos="fade-up" className="px-6 py-16 bg-gray-100">
                   <div className="max-w-7xl mx-auto">
                       <h2 className="text-3xl md:text-4xl font-bold text-left text-[#2C2F8F] mb-1 text-left font-bold">Commerce protection that works while you sleep</h2>
                   {/*<p className="text-left text-lg text-gray-600 mb-10">Meet your business goals with QuarkfinAI, harness AI-driven risk insights and flexible decisioning to scale securely.</p>*/}
@@ -56,7 +55,7 @@ export default function Home() {
               </section>
 
 
-              {/* Made to delight your customers */}
+              {/* how it works */}
               <section data-aos="fade-up" className="px-6 py-16">
                   <div className=" max-w-7xl mx-auto">
                       <h2 className="text-3xl md:text-4xl font-bold text-left text-[#2C2F8F] mb-10">
@@ -77,8 +76,13 @@ export default function Home() {
 
 
               {/* Made for every business */}
-              <section data-aos="fade-up" className="py-16">
-                  <PrimaryFeatures/>
+              <section data-aos="fade-up" className="px-6 py-16 bg-gray-100">
+                  <div className=" max-w-7xl mx-auto">
+                      <h2 className="text-3xl md:text-4xl font-bold text-left text-[#2C2F8F] mb-10">
+                          Built for your industry's toughest fraud problems
+                      </h2>
+                      <PrimaryFeatures/>
+                  </div>
               </section>
 
               {/* Made for Any Customer Profile */}
@@ -104,7 +108,7 @@ export default function Home() {
               </section>
 
               {/* CTA Section */}
-              <section data-aos="fade-up" className="px-6 py-32 bg-gray-50">
+              <section data-aos="fade-up" className="px-6 py-32 bg-gray-100">
                   <div className="max-w-7xl mx-auto">
                       <div
                           className="flex flex-col items-center justify-center space-y-6 text-center"

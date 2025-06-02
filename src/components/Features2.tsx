@@ -1,160 +1,116 @@
-import { useId } from 'react'
 import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
-
-import One from '@/images/screenshots/1.jpeg'
-import Two from '@/images/screenshots/2.jpeg'
-import Three from '@/images/screenshots/3.jpeg'
-
-import Image from "next/image";
+import { motion, AnimatePresence } from 'framer-motion'
+import {ArrowRightIcon, CheckCircleIcon} from "lucide-react";
+import Link from "next/link";
 
 const features = [
     {
-        summary: 'Intelligent Checkout',
+        summary: 'Risk Prevention',
         description:
-            'Reduce RTO and boost conversions with AI-powered intent scoring. Approve more good users, block the bad ones',
-        image: Two,
-        icon: function ReportingIcon() {
-            const id:string = useId()
-            return (
-                <>
-                    <defs>
-                        <linearGradient
-                            id={id}
-                            x1="11.5"
-                            y1={18}
-                            x2={36}
-                            y2="15.5"
-                            gradientUnits="userSpaceOnUse"
-                        >
-                            <stop offset=".194" stopColor="#fff" />
-                            <stop offset={1} stopColor="#6692F1" />
-                        </linearGradient>
-                    </defs>
-                    <path
-                        d="m30 15-4 5-4-11-4 18-4-11-4 7-4-5"
-                        stroke={`url(#${id})`}
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                    />
-                </>
-            )
-        },
+            'Stop fraudsters, not the growth',
+        points:[{
+            one: 'Reduce RTO with AI-powered intent scoring',
+            two:'Chargeback Guarantee: Auto-dispute fraud.',
+            three:'Card Fraud Suite: Block stolen cards, friendly fraud, and card testing.'
+        }],
+        link:'Secure your checkout'
     },
     {
         summary:
-            'Chargeback Guarantee',
+            'Business Underwriting',
         description:
-            'Dispute fraud automatically.',
-        image: One,
-        icon: function InventoryIcon() {
-            return (
-                <>
-                    <path
-                        opacity=".5"
-                        d="M8 17a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-                        fill="#fff"
-                    />
-                    <path
-                        opacity=".3"
-                        d="M8 24a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-                        fill="#fff"
-                    />
-                    <path
-                        d="M8 10a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2Z"
-                        fill="#fff"
-                    />
-                </>
-            )
-        },
+            'Onboard businesses, not the risk',
+        points:[{
+            one: 'KYB Automation: Verify legitimacy in minutes',
+            two:'Merchant Monitoring: Detect shady behavior post-onboarding',
+            three:'AML Compliance: Screen against global watchlists (OFAC, PEPs)'
+        }],
+        link:'Make onboarding airtight'
     },
     {
         summary:
-            'Lending Confidence',
+            'Lending & Credit',
         description:
-            'Say ‘yes’ to more borrowers safely. AI underwriting for NTC and thin-file customers.',
-        image: Three,
-        icon: function ContactsIcon() {
-            return (
-                <>
-                    <path
-                        opacity=".5"
-                        d="M25.778 25.778c.39.39 1.027.393 1.384-.028A11.952 11.952 0 0 0 30 18c0-6.627-5.373-12-12-12S6 11.373 6 18c0 2.954 1.067 5.659 2.838 7.75.357.421.993.419 1.384.028.39-.39.386-1.02.036-1.448A9.959 9.959 0 0 1 8 18c0-5.523 4.477-10 10-10s10 4.477 10 10a9.959 9.959 0 0 1-2.258 6.33c-.35.427-.354 1.058.036 1.448Z"
-                        fill="#fff"
-                    />
-                    <path
-                        d="M12 28.395V28a6 6 0 0 1 12 0v.395A11.945 11.945 0 0 1 18 30c-2.186 0-4.235-.584-6-1.605ZM21 16.5c0-1.933-.5-3.5-3-3.5s-3 1.567-3 3.5 1.343 3.5 3 3.5 3-1.567 3-3.5Z"
-                        fill="#fff"
-                    />
-                </>
-            )
-        },
+            'Lend confidently, even to NTC',
+        points:[{
+            one: 'Credit Risk Scoring: AI-driven approvals for thin-file borrowers',
+            two:'Self-Serve LMS/LOS: Configure rules without engineering help',
+            three:'Lending-as-a-Service: White-label credit infrastructure'
+        }],
+        link:'Power your lending'
     },
 ]
 
-function Feature({ feature, isActive, className, ...props }) {
+function Feature({ feature, className }) {
+    const bullets = feature.points?.[0]
+        ? Object.values(feature.points[0])
+        : feature.points ?? []
+
+
     return (
-        <div
-            className={clsx(className, !isActive && 'opacity-75 hover:opacity-100')}
-            {...props}
+        <motion.article
+            whileHover={{ rotateX: -4, rotateY: 4 }}
+            transition={{ type: 'spring', stiffness: 250, damping: 20 }}
+            className={clsx(
+                'group relative overflow-hidden rounded-2xl bg-white',
+                'ring-1 ring-slate-200 shadow transition-transform duration-200',
+                'hover:-translate-y-1.5 hover:shadow-lg'
+            )}
         >
-            <div
-                className={clsx(
-                    'w-9 rounded-lg',
-                    isActive ? 'bg-blue-600' : 'bg-slate-500'
-                )}
-            >
-                <svg aria-hidden="true" className="h-9 w-9" fill="none">
-                    <feature.icon />
-                </svg>
+            <span
+                className="pointer-events-none absolute inset-0 z-0 rounded-2xl
+                   transition-opacity duration-200 group-hover:opacity-100"
+            />
+            <div className="relative z-10 flex flex-col  p-8">
+                {/*<div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#EEF1FF]">*/}
+                {/*    <svg className="h-6 w-6" fill="none"></svg>*/}
+                {/*</div>*/}
+
+                <h3 className="text-xl font-semibold text-slate-900">{feature.summary}</h3>
+                <p className=" text-sm text-slate-600">{feature.description}</p>
+
+                {/* ▾ Bullet list ▾ */}
+                <ul className="mt-6 w-full space-y-3 h-36">
+                    <AnimatePresence initial={false}>
+                        {bullets.map((pt, i) => (
+                            <motion.li
+                                key={pt}
+                                initial={{ x: -12, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1 }}
+                                exit={{ x: -12, opacity: 0 }}
+                                transition={{ duration: 0.18, delay: i * 0.05 }}
+                                className="flex items-start gap-2 text-left"
+                            >
+                                <CheckCircleIcon className="h-5 w-5 shrink-0 text-emerald-500" />
+                                <span className="text-sm text-slate-700">{pt}</span>
+                            </motion.li>
+                        ))}
+                    </AnimatePresence>
+                </ul>
+
+                {/* ▾ CTA link ▾ */}
+                <Link
+                    href="#"
+                    className="mt-6 text-left inline-flex gap-1 text-sm font-semibold
+                     text-blue-600 transition-colors hover:text-blue-800"
+                >
+                    {feature.link}
+                    <ArrowRightIcon className="h-4 w-4" />
+                </Link>
             </div>
-            <h3
-                className={clsx(
-                    'mt-6 text-sm font-medium',
-                    isActive ? 'text-blue-600' : 'text-slate-600'
-                )}
-            >
-                {feature.name}
-            </h3>
-            <p className="mt-2 font-display text-xl text-slate-900">
-                {feature.summary}
-            </p>
-            <p className="mt-4 text-sm text-slate-600">{feature.description}</p>
-        </div>
+        </motion.article>
     )
 }
 
-function FeaturesMobile() {
-    return (
-        <div className="-mx-4 mt-20 flex flex-col gap-y-10 overflow-hidden px-4 sm:-mx-6 sm:px-6 lg:hidden">
-            {features.map((feature) => (
-                <div key={feature.summary}>
-                    <Feature feature={feature} className="mx-auto max-w-2xl" isActive />
-                    <div className="relative mt-10 pb-10">
-                        <div className="absolute -inset-x-4 bottom-0 top-8 bg-slate-200 sm:-inset-x-6" />
-                        <div className="relative mx-auto w-[52.75rem] overflow-hidden rounded-xl bg-white shadow-lg shadow-slate-900/5 ring-1 ring-slate-500/10">
-                            <Image
-                                className="w-full"
-                                src={feature.image}
-                                alt=""
-                                sizes="52.75rem"
-                            />
-                        </div>
-                    </div>
-                </div>
-            ))}
-        </div>
-    )
-}
 
 function FeaturesDesktop() {
     return (
-        <Tab.Group as="div" className="hidden lg:mt-20 lg:block">
-            {({ selectedIndex }) => (
+        <Tab.Group as="div" className="lg:mt-20 lg:block ">
+            {({}) => (
                 <>
-                    <Tab.List className="grid grid-cols-3 gap-x-8">
-                        {features.map((feature, featureIndex) => (
+                    <div className="grid grid-cols-3 gap-x-8">
+                        {features.map((feature) => (
                             <Feature
                                 key={feature.summary}
                                 feature={{
@@ -166,37 +122,10 @@ function FeaturesDesktop() {
                                         </Tab>
                                     ),
                                 }}
-                                isActive={featureIndex === selectedIndex}
                                 className="relative"
                             />
                         ))}
-                    </Tab.List>
-                    <Tab.Panels className="relative mt-20 overflow-hidden px-14 py-16 xl:px-16">
-                        <div className="-mx-5 flex">
-                            {features.map((feature, featureIndex) => (
-                                <Tab.Panel
-                                    static
-                                    key={feature.summary}
-                                    className={clsx(
-                                        'px-5 transition duration-500 ease-in-out [&:not(:focus-visible)]:focus:outline-none',
-                                        featureIndex !== selectedIndex && 'opacity-60'
-                                    )}
-                                    style={{ transform: `translateX(-${selectedIndex * 100}%)` }}
-                                    aria-hidden={featureIndex !== selectedIndex}
-                                >
-                                    <div className="w-[52.75rem] overflow-hidden">
-                                        <Image
-                                            className="w-full"
-                                            src={feature.image}
-                                            alt=""
-                                            sizes="52.75rem"
-                                        />
-                                    </div>
-                                </Tab.Panel>
-                            ))}
-                        </div>
-                        <div className="pointer-events-none absolute inset-0 rounded-4xl ring-1 ring-inset ring-slate-900/10" />
-                    </Tab.Panels>
+                    </div>
                 </>
             )}
         </Tab.Group>
@@ -209,7 +138,6 @@ export function Features2() {
             id="secondary-features"
             aria-label="Features for simplifying everyday business tasks"
         >
-                <FeaturesMobile />
                 <FeaturesDesktop />
         </section>
     )

@@ -1,4 +1,3 @@
-// app/components/Hero.tsx (or wherever you keep it)
 export function Hero() {
     return (
         <section className="max-w-7xl mx-auto pt-2 px-4">
@@ -34,7 +33,7 @@ export function Hero() {
                 {/* Right: video */}
                 <div className="w-full">
                     <video
-                        src="/video.mp4"
+                        src="/video1.mp4"
                         className="w-full"
                         autoPlay
                         muted

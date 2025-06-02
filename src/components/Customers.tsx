@@ -1,32 +1,23 @@
-import { cn } from "@/lib/utils";
-import {
-    IconCloud,
-    IconCurrencyDollar,
-    IconEaseInOut,
-    IconTerminal2,
-} from "@tabler/icons-react";
+import {motion} from "motion/react";
 
 export function Customers() {
     const features = [
-        {
-            title: "Sign Up & Connect",
-            description:
-                "Add our API or SDK to your stack. No DevOps required.",
-            icon: <IconTerminal2 />,
-        },
-        {
+            {
+                step: "01",
+                title: "Sign Up & Connect",
+                description: "Add our API or SDK to your stack. No DevOps required.",
+            },
+    {
+        step: "02",
             title: "Set Your Rules",
-            description:
-                "Drag-and-drop risk thresholds. Start with our defaults or customize.",
-            icon: <IconEaseInOut />,
-        },
-        {
+        description: "Drag-and-drop risk thresholds. Start with our defaults or customize.",
+    },
+    {
+        step: "03",
             title: "Watch Fraud Drop",
-            description:
-                "See real-time approvals, blocks, and revenue saved",
-            icon: <IconCurrencyDollar />,
-        },
-    ];
+        description: "See real-time approvals, blocks, and revenue saved",
+    },
+]
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10 py-10 max-w-7xl mx-auto">
             {features.map((feature, index) => (
@@ -37,42 +28,37 @@ export function Customers() {
 }
 
 const Feature = ({
+                     step,
                      title,
                      description,
-                     icon,
                      index,
                  }: {
+    step: string;
     title: string;
     description: string;
-    icon: React.ReactNode;
     index: number;
 }) => {
     return (
-        <div
-            className={cn(
-                "flex flex-col lg:border-r  py-10 relative group/feature dark:border-neutral-800",
-                (index === 0 || index === 4) && "lg:border-l dark:border-neutral-800",
-                index < 4 && "dark:border-neutral-800"
-            )}
-        >
-            {index < 4 && (
-                <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
-            )}
-            {index >= 4 && (
-                <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
-            )}
-            <div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400">
-                {icon}
+        <section className="w-full relative overflow-hidden">
+            <div className="container relative">
+                <div className="gap-8 md:gap-12 relative">
+                    <motion.div
+                        key={index}
+                        initial={{opacity: 0, y: 20}}
+                        whileInView={{opacity: 1, y: 0}}
+                        viewport={{once: true}}
+                        transition={{duration: 0.5, delay: index * 0.1}}
+                        className="relative space-y-4 pr-8"
+                    >
+                        <div
+                            className="flex h-16 w-16 items-center justify-center rounded-full bg-[#2C2F8F] text-primary-foreground text-xl font-bold shadow-lg">
+                            {step}
+                        </div>
+                        <h3 className="text-xl font-bold">{title}</h3>
+                        <p className="font-medium text-muted-foreground">{description}</p>
+                    </motion.div>
+                </div>
             </div>
-            <div className="text-lg font-bold mb-2 relative z-10 px-10">
-                <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-blue-500 transition-all duration-200 origin-center" />
-                <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100">
-          {title}
-        </span>
-            </div>
-            <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10">
-                {description}
-            </p>
-        </div>
+        </section>
     );
 };
