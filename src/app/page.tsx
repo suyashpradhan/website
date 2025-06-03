@@ -44,9 +44,9 @@ export default function Home() {
               </section>
 
               {/* Features Section */}
-              <section data-aos="fade-up" className="px-6 py-16 bg-gray-100">
+              <section data-aos="fade-up" className="px-6 py-32 bg-gray-100">
                   <div className="max-w-7xl mx-auto">
-                      <h2 className="text-3xl md:text-4xl font-bold text-left text-[#2C2F8F] mb-1 text-left font-bold">Commerce protection that works while you sleep</h2>
+                      <h2 className="text-3xl md:text-4xl font-bold text-left text-[#2C2F8F] text-left font-bold">Commerce Protection That Works While You Sleep</h2>
                   {/*<p className="text-left text-lg text-gray-600 mb-10">Meet your business goals with QuarkfinAI, harness AI-driven risk insights and flexible decisioning to scale securely.</p>*/}
                   </div>
                   <div className="max-w-7xl mx-auto">
@@ -56,10 +56,10 @@ export default function Home() {
 
 
               {/* how it works */}
-              <section data-aos="fade-up" className="px-6 py-16">
+              <section data-aos="fade-up" className="px-6 py-32">
                   <div className=" max-w-7xl mx-auto">
                       <h2 className="text-3xl md:text-4xl font-bold text-left text-[#2C2F8F] mb-10">
-                          How It Works
+                          Integrate In Minutes, Protect Forever
                       </h2>
                       <Customers/>
 

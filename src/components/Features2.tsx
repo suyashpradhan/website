@@ -6,11 +6,11 @@ import Link from "next/link";
 
 const features = [
     {
-        summary: 'Risk Prevention',
+        summary: 'Consumer Risk Prevention',
         description:
             'Stop fraudsters, not the growth',
         points:[{
-            one: 'Reduce RTO with AI-powered intent scoring',
+            one: 'Reduce fraud orders with AI-powered intent scoring',
             two:'Chargeback Guarantee: Auto-dispute fraud.',
             three:'Card Fraud Suite: Block stolen cards, friendly fraud, and card testing.'
         }],
@@ -18,7 +18,7 @@ const features = [
     },
     {
         summary:
-            'Business Underwriting',
+            'Business Risk Prevention',
         description:
             'Onboard businesses, not the risk',
         points:[{
@@ -30,7 +30,7 @@ const features = [
     },
     {
         summary:
-            'Lending & Credit',
+            'Lending Risk Prevention',
         description:
             'Lend confidently, even to NTC',
         points:[{
@@ -62,7 +62,7 @@ function Feature({ feature, className }) {
                 className="pointer-events-none absolute inset-0 z-0 rounded-2xl
                    transition-opacity duration-200 group-hover:opacity-100"
             />
-            <div className="relative z-10 flex flex-col  p-8">
+            <div className="relative z-10 flex flex-col p-8">
                 {/*<div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#EEF1FF]">*/}
                 {/*    <svg className="h-6 w-6" fill="none"></svg>*/}
                 {/*</div>*/}
@@ -106,7 +106,7 @@ function Feature({ feature, className }) {
 
 function FeaturesDesktop() {
     return (
-        <Tab.Group as="div" className="lg:mt-20 lg:block ">
+        <Tab.Group as="div" className="lg:mt-12 lg:block ">
             {({}) => (
                 <>
                     <div className="grid grid-cols-3 gap-x-8">

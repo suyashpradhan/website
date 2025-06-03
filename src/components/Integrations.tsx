@@ -1,60 +1,120 @@
 "use client";
 
-import {  Code, ShoppingCart, ShoppingBag } from "lucide-react";
+import Image from "next/image";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 export function Integrations() {
     return (
-        <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
+        <ul className="grid grid-cols-1 gap-4 md:grid-cols-12 xl:grid-cols-12">
             <GridItem
-                area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
-                icon={<ShoppingCart className="h-4 w-4 text-black dark:text-neutral-400" />}
+                className="md:col-span-6 xl:col-span-4"
+                icon={
+                    <Image
+                        src="/shopify.png"
+                        alt="Shopify logo"
+                        width={24}
+                        height={24}
+                        className="h-4 w-4 object-contain"
+                    />
+                }
                 title="Shopify"
                 description="Plug-and-play app that scores every Shopify order for risk before you fulfill."
             />
 
+            {/* 2) Woocommerce */}
             <GridItem
-                area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
-                icon={<ShoppingBag className="h-4 w-4 text-black dark:text-neutral-400" />}
+                className="md:col-span-6 xl:col-span-4"
+                icon={
+                    <Image
+                        src="/woocommerce.png"
+                        alt="Woocommerce logo"
+                        width={24}
+                        height={24}
+                        className="h-4 w-4 object-contain"
+                    />
+                }
                 title="Woocommerce"
                 description="Seamlessly screen WooCommerce checkouts with real-time fraud and KYC checks."
             />
 
+            {/* 3) Direct API */}
             <GridItem
-                area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
-                icon={<Code className="h-4 w-4 text-black dark:text-neutral-400" />}
+                className="md:col-span-6 xl:col-span-4"
+                icon={
+                    <Image
+                        src="/api.png"
+                        alt="Direct API logo"
+                        width={24}
+                        height={24}
+                        className="h-4 w-4 object-contain"
+                    />
+                }
                 title="Direct API"
                 description="Hit our REST endpoint from any stack to get instant trust and credit decisions."
             />
 
+            {/* 4) SDK */}
             <GridItem
-                area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
-                icon={<Code className="h-4 w-4 text-black dark:text-neutral-400" />}
+                className="md:col-span-6 xl:col-span-4"
+                icon={
+                    <Image
+                        src="/sdk.png"
+                        alt="SDK logo"
+                        width={24}
+                        height={24}
+                        className="h-4 w-4 object-contain"
+                    />
+                }
                 title="SDK"
                 description="Drop-in mobile SDK that adds identity, device, and payment risk signals in minutes."
             />
 
+            {/* 5) Web SDK */}
             <GridItem
-                area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
-                icon={<Code className="h-4 w-4 text-black dark:text-neutral-400" />}
+                className="md:col-span-6 xl:col-span-4"
+                icon={
+                    <Image
+                        src="/mobile-sdk.png"
+                        alt="Web SDK logo"
+                        width={24}
+                        height={24}
+                        className="h-4 w-4 object-contain"
+                    />
+                }
                 title="Web SDK"
                 description="Lightweight JavaScript snippet that enriches browser sessions with fraud telemetry."
             />
-            
+
+            {/* 6) Magento (NEW) */}
+            <GridItem
+                className="md:col-span-6 xl:col-span-4"
+                icon={
+                    <Image
+                        src="/magento.png"
+                        alt="Magento logo"
+                        width={24}
+                        height={24}
+                        className="h-4 w-4 object-contain"
+                    />
+                }
+                title="Magento"
+                description="Lightweight JavaScript snippet that enriches browser sessions with fraud telemetry."
+            />
+            {/* ──────────────────────────────────────────────────────────────── */}
         </ul>
     );
 }
 
 interface GridItemProps {
-    area: string;
+    className?: string;
     icon: React.ReactNode;
     title: string;
     description: React.ReactNode;
 }
 
-const GridItem = ({ area, icon, title, description }: GridItemProps) => {
+const GridItem = ({ className = "", icon, title, description }: GridItemProps) => {
     return (
-        <li className={`min-h-[14rem] list-none ${area}`}>
+        <li className={`min-h-[14rem] list-none ${className}`}>
             <div className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-3">
                 <GlowingEffect
                     spread={40}

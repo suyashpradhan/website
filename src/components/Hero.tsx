@@ -1,9 +1,23 @@
+import {AnimatePresence, motion} from "motion/react";
+import {useEffect, useState} from "react";
+
+const videos = ['/video1.mp4', '/video2.mp4']   // add more here if needed
+
+
 export function Hero() {
+    const [index, setIndex] = useState(0)
+
+    // ⏱ change video every 2 000 ms
+    useEffect(() => {
+        const id = setInterval(() => setIndex(i => (i + 1) % videos.length), 3000)
+        return () => clearInterval(id)
+    }, [])
+
     return (
         <section className="max-w-7xl mx-auto pt-2 px-4">
             <div className="grid md:grid-cols-2 gap-10 items-center">
                 <div>
-                    <h1 className="font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl">
+                    <h1 className={`${index === 0 ? 'text-[#2C2F8F]' : 'text-slate-400'}  font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl`}>
                         Protect Commerce{' '}
                         <span className="relative whitespace-nowrap text-blue-600">
               <span className="relative block text-[#2C2F8F]">Enable Growth</span>
@@ -31,15 +45,22 @@ export function Hero() {
                 </div>
 
                 {/* Right: video */}
-                <div className="w-full">
-                    <video
-                        src="/video1.mp4"
-                        className="w-full"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                    />
+                <div className="relative w-full overflow-hidden rounded-lg">
+                    <AnimatePresence mode="wait">
+                        <motion.video
+                            key={videos[index]}
+                            src={videos[index]}
+                            className="w-full h-full object-cover"
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.4 }}
+                        />
+                    </AnimatePresence>
                 </div>
             </div>
         </section>

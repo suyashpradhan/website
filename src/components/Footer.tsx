@@ -4,11 +4,9 @@ import Image from "next/image";
 
 const navigation = {
     products: [
-        { name: 'Risk Prevention Platform', href: '#' },
-        { name: 'Business Underwriting & KYB (Know Your Business)', href: '#' },
-        { name: 'Merchant Monitoring', href: '#' },
-        { name: 'Card Fraud Prevention Suite', href: '#' },
-        { name: 'Lending and Credit Underwriting', href: '#' },
+        { name: 'Consumer Risk Prevention', href: '#' },
+        { name: 'Business Risk Prevention', href: '#' },
+        { name: 'Lending Risk Prevention', href: '#' },
     ],
     solutions: [
         { name: 'D2C & eCommerce Solutions', href: '#' },

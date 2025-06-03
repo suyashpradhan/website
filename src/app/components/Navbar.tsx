@@ -27,9 +27,9 @@ export default function Navbar() {
             label: 'Products',
             icon: PuzzlePieceIcon,
             links: [
-                { title: 'Risk Prevention', desc: 'Expand your revenue pipeline', icon: CalendarIcon },
-                { title: 'Business Underwriting and KYB', desc: 'Multiple flexible options', icon: ChartPieIcon },
-                { title: 'Lending & Credit Underwriting ', desc: 'AI-based fraud detection', icon: CalendarDaysIcon },
+                { title: 'Consumer Risk Prevention', desc: 'Expand your revenue pipeline', icon: CalendarIcon },
+                { title: 'Business Risk Prevention', desc: 'Multiple flexible options', icon: ChartPieIcon },
+                { title: 'Lending Risk Prevention', desc: 'AI-based fraud detection', icon: CalendarDaysIcon },
             ],
         },
         {
