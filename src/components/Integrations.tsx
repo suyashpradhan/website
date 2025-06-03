@@ -14,7 +14,7 @@ export function Integrations() {
                         alt="Shopify logo"
                         width={24}
                         height={24}
-                        className="h-4 w-4 object-contain"
+                        className="h-10 w-10 object-contain"
                     />
                 }
                 title="Shopify"
@@ -30,7 +30,7 @@ export function Integrations() {
                         alt="Woocommerce logo"
                         width={24}
                         height={24}
-                        className="h-4 w-4 object-contain"
+                        className="h-10 w-10 object-contain"
                     />
                 }
                 title="Woocommerce"
@@ -46,7 +46,7 @@ export function Integrations() {
                         alt="Direct API logo"
                         width={24}
                         height={24}
-                        className="h-4 w-4 object-contain"
+                        className="h-10 w-10 object-contain"
                     />
                 }
                 title="Direct API"
@@ -62,7 +62,7 @@ export function Integrations() {
                         alt="SDK logo"
                         width={24}
                         height={24}
-                        className="h-4 w-4 object-contain"
+                        className="h-10 w-10 object-contain"
                     />
                 }
                 title="SDK"
@@ -76,9 +76,9 @@ export function Integrations() {
                     <Image
                         src="/mobile-sdk.png"
                         alt="Web SDK logo"
-                        width={24}
-                        height={24}
-                        className="h-4 w-4 object-contain"
+                        width={32}
+                        height={32}
+                        className="h-10 w-10 object-contain"
                     />
                 }
                 title="Web SDK"
@@ -94,7 +94,7 @@ export function Integrations() {
                         alt="Magento logo"
                         width={24}
                         height={24}
-                        className="h-4 w-4 object-contain"
+                        className="h-10 w-10 object-contain"
                     />
                 }
                 title="Magento"
@@ -125,7 +125,7 @@ const GridItem = ({ className = "", icon, title, description }: GridItemProps) =
                 />
                 <div className="border-0.75 relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl p-6 md:p-6 dark:shadow-[0px_0px_27px_0px_#2D2D2D]">
                     <div className="relative flex flex-1 flex-col justify-between gap-3">
-                        <div className="w-fit rounded-lg border border-gray-600 p-2">
+                        <div className="w-fit">
                             {icon}
                         </div>
                         <div className="space-y-3">
