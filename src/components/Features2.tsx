@@ -1,12 +1,13 @@
 import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
 import { motion, AnimatePresence } from 'framer-motion'
-import {ArrowRightIcon, CheckCircleIcon} from "lucide-react";
+import {ArrowRightIcon, BriefcaseBusiness, CheckCircleIcon, Shield, HandCoins} from "lucide-react";
 import Link from "next/link";
 
 const features = [
     {
         summary: 'Consumer Risk Prevention',
+        icon: <Shield/>,
         description:
             'Stop fraudsters, not the growth',
         points:[{
@@ -19,6 +20,7 @@ const features = [
     {
         summary:
             'Business Risk Prevention',
+        icon:<BriefcaseBusiness/>,
         description:
             'Onboard businesses, not the risk',
         points:[{
@@ -31,6 +33,7 @@ const features = [
     {
         summary:
             'Lending Risk Prevention',
+        icon: <HandCoins/>,
         description:
             'Lend confidently, even to NTC',
         points:[{
@@ -63,9 +66,9 @@ function Feature({ feature, className }) {
                    transition-opacity duration-200 group-hover:opacity-100"
             />
             <div className="relative z-10 flex flex-col p-8">
-                {/*<div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#EEF1FF]">*/}
-                {/*    <svg className="h-6 w-6" fill="none"></svg>*/}
-                {/*</div>*/}
+                <div className="flex h-12 w-12 mb-4 items-center justify-center text-[2C2F8F] rounded-lg bg-[#EEF1FF]">
+                    {feature.icon}
+                </div>
 
                 <h3 className="text-xl font-semibold text-slate-900">{feature.summary}</h3>
                 <p className=" text-sm text-slate-600">{feature.description}</p>

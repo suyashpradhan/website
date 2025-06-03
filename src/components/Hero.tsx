@@ -1,26 +1,48 @@
-import {AnimatePresence, motion} from "motion/react";
-import {useEffect, useState} from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { useEffect, useState } from "react";
 
-const videos = ['/video1.mp4', '/video2.mp4']   // add more here if needed
-
+const videos = ["/video1.mp4", "/video2.mp4"]; // add more if needed
 
 export function Hero() {
-    const [index, setIndex] = useState(0)
+    const [index, setIndex] = useState(0);
 
-    // ⏱ change video every 2 000 ms
+    // ⏱ change video every 3000ms
     useEffect(() => {
-        const id = setInterval(() => setIndex(i => (i + 1) % videos.length), 3000)
-        return () => clearInterval(id)
-    }, [])
+        const id = setInterval(() => {
+            setIndex((i) => (i + 1) % videos.length);
+        }, 3000);
+        return () => clearInterval(id);
+    }, []);
+
+    // Determine if we should highlight (for example, when index is 0)
+    const isHighlighted = index === 0;
 
     return (
         <section className="max-w-7xl mx-auto pt-2 px-4">
             <div className="grid md:grid-cols-2 gap-10 items-center">
+                {/* Left: text */}
                 <div>
-                    <h1 className={`${index === 0 ? 'text-[#2C2F8F]' : 'text-slate-400'}  font-display text-5xl font-medium tracking-tight text-slate-900 sm:text-7xl`}>
-                        Protect Commerce{' '}
-                        <span className="relative whitespace-nowrap text-blue-600">
-              <span className="relative block text-[#2C2F8F]">Enable Growth</span>
+                    <h1
+                        className={`
+              font-display 
+              text-5xl font-medium tracking-tight 
+              sm:text-7xl 
+              ${isHighlighted ? "text-[#2C2F8F]" : "text-slate-900"}
+            `}
+                    >
+                        Protect Commerce{" "}
+                        <span className="relative whitespace-nowrap">
+              <span
+                  className={`relative block 
+                  ${
+                      isHighlighted
+                          ? "text-slate-900"    /* highlight span */
+                          : "text-[#2C2F8F]"     /* default span */
+                  }
+                `}
+              >
+                Enable Growth
+              </span>
             </span>
                     </h1>
 
