@@ -1,0 +1,159 @@
+"use client"
+
+import Navbar from "@/app/components/Navbar";
+import {useEffect, useState} from "react";
+import {SolutionSection} from "@/app/consumer-risk-prevention/SolutionSection";
+import IndustryPainPoints from "@/app/consumer-risk-prevention/IndustryPainPoints";
+import HowItWorks from "@/app/consumer-risk-prevention/HowItWorks";
+import Footer from "@/components/Footer";
+import {ComparisonTable} from "@/app/consumer-risk-prevention/ComparisonTable";
+
+function AnimatedDashboard() {
+    const [count, setCount] = useState(0)
+
+    useEffect(() => {
+        const target = 1429
+        const duration = 1000
+        let start = 0
+        const stepTime = Math.max(Math.floor(duration / target), 8)
+        const timer = setInterval(() => {
+            start += 1
+            setCount(start)
+            if (start >= target) clearInterval(timer)
+        }, stepTime)
+        return () => clearInterval(timer)
+    }, [])
+
+    return (
+        <div
+            className="mx-auto w-full max-w-sm rounded-xl bg-white p-6 shadow-lg animate-fade-in"
+            data-aos="fade-up"
+        >
+            <h3 className="text-sm font-medium text-gray-500 uppercase">Risky Users Blocked</h3>
+            <p className="mt-2 text-5xl font-bold text-[#2C2F8F]">{count.toLocaleString()}</p>
+            <p className="text-gray-500">this week</p>
+
+            {/* simple “bar chart” placeholder */}
+            <div className="mt-6 h-2 w-full overflow-hidden rounded-full bg-gray-200">
+                <div
+                    className="h-full bg-[#2C2F8F] transition-all duration-2000 ease-out"
+                    style={{width: "83%"}}
+                />
+            </div>
+        </div>
+    )
+}
+
+
+export default function ConsumerRiskPrevention() {
+
+    useEffect(() => {
+        import('aos').then((AOS) =>
+            AOS.init({
+                duration: 1200,
+            })
+        );
+    }, []);
+
+    return (
+        <>
+            <div className="font-sora text-[#1F1F1F] scroll-smooth antialiased">
+                <Navbar/>
+                {/* Hero Section */}
+                <section
+                    className="py-20 relative overflow-hidden bg-gradient-to-b from-[#2C2F8F]/10 to-background pt-16 md:pt-24 lg:pt-32">
+                    <div className="max-w-7xl mx-auto px-4 md:px-6">
+                        <div className="grid gap-6 items-center lg:grid-cols-2 lg:gap-12">
+                            {/* ←←← Left side: your existing copy/buttons */}
+                            <div className="flex flex-col justify-center space-y-4">
+                                <div className="space-y-2">
+                                    <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-[#2C2F8F]">
+                                        Consumer Risk Prevention Platform
+                                    </h1>
+                                    <p className="pt-4 text-sm text-muted-foreground md:text-xl">
+                                        Plug-and-play AI-powered risk prevention to stop fraud, abuse, and chargebacks,
+                                        all without adding friction. From checkout to onboarding, QuarkfinAI ensures
+                                        every user and transaction is verified, trusted, and secure.
+                                    </p>
+                                </div>
+                                <div className="mt-4 flex flex-wrap gap-4">
+                                    <button
+                                        className="relative px-8 py-3 overflow-hidden rounded-[6px] text-white transition group">
+                                        <div
+                                            className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 group-hover:scale-110 transition-transform"></div>
+                                        <span className="relative z-10 px-8 py-3 rounded-[6px]">Start Free Trial</span>
+                                    </button>
+                                    <button
+                                        className="border border-[#2C2F8F] px-6 py-3 rounded text-[#2C2F8F] hover:bg-[#2C2F8F] hover:text-white transition shadow">
+                                        See How It Works
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* →→→ Right side: Animated Dashboard */}
+                            <AnimatedDashboard/>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <section data-aos="fade-up" className="px-6 py-32 bg-gray-100">
+                <div className=" max-w-7xl mx-auto">
+                    <SolutionSection/>
+                </div>
+            </section>
+
+
+            <section data-aos="fade-up" className="px-6 py-32">
+                <div className=" max-w-7xl mx-auto">
+                    <IndustryPainPoints/>
+                </div>
+            </section>
+
+            <section data-aos="fade-up" className="px-6 py-32 bg-gray-100">
+                <div className=" max-w-7xl mx-auto">
+                    <HowItWorks/>
+                </div>
+            </section>
+
+            <section data-aos="fade-up" className="px-6 py-32">
+                <div className=" max-w-7xl mx-auto">
+                    <ComparisonTable/>
+                </div>
+            </section>
+
+            <section>
+                {/* Final CTA */}
+                <section className="w-full bg-[#2C2F8F] py-12 md:py-24 lg:py-32 text-white">
+                    <div className="max-w-7xl mx-auto ">
+                        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                            <div className="space-y-2">
+                                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                                    Stop Losing Revenue to Fraudsters
+                                </h2>
+                            </div>
+                            <div className="mt-2 flex flex-wrap gap-4">
+                                <button className="p-[3px] relative">
+                                    <div
+                                        className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-sm"/>
+                                    <span
+                                        className="relative z-10 px-8 py-3 bg-black rounded-[6px] text-white hover:bg-transparent transition">
+                Get Started for free
+              </span>
+                                </button>
+
+                                <button
+                                    className="border bg-white border-white text-black px-6 py-3 rounded hover:bg-white hover:text- hover:scale-105 transition shadow">
+                                    Talk to Fraud Expert
+                                </button>
+                            </div>
+                            <div className="text-sm text-white/70">No credit card required | Cancel anytime</div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <Footer/>
+        </>
+    )
+}

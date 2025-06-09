@@ -1,21 +1,22 @@
+"use client";
+
 import {
+    Bars3Icon,
+    CalendarDaysIcon,
+    CalendarIcon,
+    ChartBarIcon,
+    ChartPieIcon,
     ChevronDownIcon,
     ChevronUpIcon,
-    PuzzlePieceIcon,
-    ChartBarIcon,
     HomeIcon,
+    PuzzlePieceIcon,
     ServerStackIcon,
-    CalendarIcon,
-    ChartPieIcon,
-    CalendarDaysIcon,
-    Bars3Icon,
     XMarkIcon,
 } from '@heroicons/react/24/solid';
-import { useState } from 'react';
+import {useState} from 'react';
 import Image from "next/image";
 import logo from '@/images/logos/logo.jpg'
 import Link from 'next/link'
-
 
 export default function Navbar() {
     const [navOpen, setNavOpen] = useState<string | null>(null);
@@ -27,57 +28,62 @@ export default function Navbar() {
             label: 'Products',
             icon: PuzzlePieceIcon,
             links: [
-                { title: 'Consumer Risk Prevention', desc: 'Expand your revenue pipeline', icon: CalendarIcon },
-                { title: 'Business Risk Prevention', desc: 'Multiple flexible options', icon: ChartPieIcon },
-                { title: 'Lending Risk Prevention', desc: 'AI-based fraud detection', icon: CalendarDaysIcon },
+                {
+                    title: 'Consumer Risk Prevention',
+                    desc: 'Expand your revenue pipeline',
+                    icon: CalendarIcon,
+                    url: '/consumer-risk-prevention'
+                },
+                {title: 'Business Risk Prevention', desc: 'Multiple flexible options', icon: ChartPieIcon},
+                {title: 'Lending Risk Prevention', desc: 'AI-based fraud detection', icon: CalendarDaysIcon},
             ],
         },
         {
             label: 'Solutions',
             icon: ChartBarIcon,
             links: [
-                { title: 'D2C & eCommerce', desc: 'Custom fit your process', icon: CalendarIcon },
-                { title: 'Payment Gateways & Aggregators', desc: 'Modernize operations', icon: ChartPieIcon },
-                { title: 'Digital Lending', desc: 'Unify user flow', icon: CalendarDaysIcon },
-                { title: 'Travel & Quick Commerce', desc: 'Unify user flow', icon: CalendarDaysIcon },
+                {title: 'D2C & eCommerce', desc: 'Custom fit your process', icon: CalendarIcon},
+                {title: 'Payment Gateways & Aggregators', desc: 'Modernize operations', icon: ChartPieIcon},
+                {title: 'Digital Lending', desc: 'Unify user flow', icon: CalendarDaysIcon},
+                {title: 'Travel & Quick Commerce', desc: 'Unify user flow', icon: CalendarDaysIcon},
             ],
         },
         {
             label: 'Pricing',
             icon: HomeIcon,
             links: [
-                { title: 'Startup', desc: 'For early-stage teams', icon: CalendarIcon },
-                { title: 'Business', desc: 'Scaling and ops', icon: ChartPieIcon },
-                { title: 'Enterprise', desc: 'Full support & control', icon: CalendarDaysIcon },
+                {title: 'Startup', desc: 'For early-stage teams', icon: CalendarIcon},
+                {title: 'Business', desc: 'Scaling and ops', icon: ChartPieIcon},
+                {title: 'Enterprise', desc: 'Full support & control', icon: CalendarDaysIcon},
             ],
         },
         {
             label: 'Integrations',
             icon: ServerStackIcon,
             links: [
-                { title: 'Shopify', desc: 'Ecom integration', icon: CalendarIcon },
-                { title: 'WooCommerce', desc: 'Plug & play store', icon: ChartPieIcon },
-                { title: 'Direct APIs', desc: 'Flexible developer stack', icon: CalendarDaysIcon },
-                { title: 'SDK', desc: 'Flexible mobile developer stack', icon: CalendarDaysIcon },
-                { title: 'Web SDK', desc: 'Flexible web developer stack', icon: CalendarDaysIcon },
+                {title: 'Shopify', desc: 'Ecom integration', icon: CalendarIcon},
+                {title: 'WooCommerce', desc: 'Plug & play store', icon: ChartPieIcon},
+                {title: 'Direct APIs', desc: 'Flexible developer stack', icon: CalendarDaysIcon},
+                {title: 'SDK', desc: 'Flexible mobile developer stack', icon: CalendarDaysIcon},
+                {title: 'Web SDK', desc: 'Flexible web developer stack', icon: CalendarDaysIcon},
             ],
         },
         {
             label: 'About QuarkfinAI',
             icon: HomeIcon,
             links: [
-                { title: 'Our Mission', desc: 'Driving intelligent commerce', icon: CalendarIcon },
-                { title: 'Team', desc: 'Meet the minds', icon: ChartPieIcon },
-                { title: 'Careers', desc: 'Join us', icon: CalendarDaysIcon },
+                {title: 'Our Mission', desc: 'Driving intelligent commerce', icon: CalendarIcon},
+                {title: 'Team', desc: 'Meet the minds', icon: ChartPieIcon},
+                {title: 'Careers', desc: 'Join us', icon: CalendarDaysIcon},
             ],
         },
     ];
 
     const languages = [
-        { code: 'EN', label: 'English', flag: '🇺🇸' },
-        { code: 'DE', label: 'Deutsch', flag: '🇩🇪' },
-        { code: 'MX', label: 'Español', flag: '🇲🇽' },
-        { code: 'JP', label: '日本語', flag: '🇯🇵' },
+        {code: 'EN', label: 'English', flag: '🇺🇸'},
+        {code: 'DE', label: 'Deutsch', flag: '🇩🇪'},
+        {code: 'MX', label: 'Español', flag: '🇲🇽'},
+        {code: 'JP', label: '日本語', flag: '🇯🇵'},
     ];
 
     const [selectedLang, setSelectedLang] = useState(languages[0]);
@@ -127,11 +133,12 @@ export default function Navbar() {
                                         {item.links.map((link) => (
                                             <Link
                                                 key={link.title}
-                                                href="/coming-soon"
+                                                href={link.url ?? ''}
                                                 className="flex items-start space-x-3 group cursor-pointer p-3 rounded-md
                  transition-all duration-200 hover:bg-gray-100"
                                             >
-                                                <link.icon className="w-5 h-5 mt-1 text-gray-400 group-hover:text-[#2C2F8F]" />
+                                                <link.icon
+                                                    className="w-5 h-5 mt-1 text-gray-400 group-hover:text-[#2C2F8F]"/>
                                                 <div>
                                                     <p className="text-sm font-semibold text-gray-500 group-hover:text-[#2C2F8F]">
                                                         {link.title}

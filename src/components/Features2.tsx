@@ -1,8 +1,9 @@
 import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
 import { motion, AnimatePresence } from 'framer-motion'
-import {ArrowRightIcon, BriefcaseBusiness, CheckCircleIcon, Shield, HandCoins} from "lucide-react";
+import {ChevronRight, BriefcaseBusiness, CheckCircleIcon, Shield, HandCoins} from "lucide-react";
 import Link from "next/link";
+import {AiFillCaretRight} from "react-icons/ai";
 
 const features = [
     {
@@ -95,11 +96,11 @@ function Feature({ feature, className }) {
                 {/* ▾ CTA link ▾ */}
                 <Link
                     href="#"
-                    className="mt-6 text-left inline-flex gap-1 text-sm font-semibold
+                    className="mt-6 text-left inline-flex gap-1 text-md items-center font-bold
                      text-blue-600 transition-colors hover:text-blue-800"
                 >
                     {feature.link}
-                    <ArrowRightIcon className="h-4 w-4" />
+                    <ChevronRight className="h-4 w-4" />
                 </Link>
             </div>
         </motion.article>
