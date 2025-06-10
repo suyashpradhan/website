@@ -32,16 +32,16 @@ export function ComparisonTableBusiness() {
             </span>
                         <h3 className="text-lg font-semibold text-[#2C2F8F]">Quarkfin AI</h3>
                         <ul className="mt-6 space-y-6 text-sm text-gray-800">
-                            <li>5-min KYB</li>
-                            <li>
+                            <li className="font-bold ">5-min KYB</li>
+                            <li className="font-bold ">
                                 Continuous monitoring
 
                             </li>
-                            <li>
+                            <li className="font-bold ">
                                 120+ behavioral signals
 
                             </li>
-                            <li>$0.25/KYB check</li>
+                            <li className="font-bold ">$0.25/KYB check</li>
                         </ul>
                     </div>
 

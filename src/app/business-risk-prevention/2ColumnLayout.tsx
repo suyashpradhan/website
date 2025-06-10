@@ -1,6 +1,8 @@
 "use client";
 
 import {CheckCircleIcon} from "lucide-react";
+import React from "react";
+import Image from "next/image";
 
 const featureContent = [
     {
@@ -42,39 +44,60 @@ type Section = {
 export default function TwoColumnSections() {
     return (
         <div className="space-y-24">
-            <div className="text-left mb-16">
-                <h2 className=" text-[#2C2F8F] text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">From Suspicion
-                    to Certainty in Minutes</h2>
-            </div>
+            <h2 className="text-[#2C2F8F] text-left text-3xl md:text-4xl lg:text-5xl font-bold">
+                From Suspicion to Certainty in Minutes
+            </h2>
 
-            {featureContent.map((sec: Section, i) => (
-                <section
-                    key={i}
-                    className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
-                >
-                    {/* Left: text */}
+            {featureContent.map((sec: Section, idx) => {
+                const isReversed = idx % 2 === 1;
+
+                const TextBlock = (
                     <div>
                         <h2 className="text-3xl font-bold text-gray-900 mb-6">
                             {sec.title}
                         </h2>
                         <ul className="space-y-4">
-                            {sec.features.map((feat, idx) => (
-                                <li key={idx} className="flex items-start">
+                            {sec.features.map((feat, i) => (
+                                <li key={i} className="flex items-start">
                                     <CheckCircleIcon className="h-6 w-6 flex-shrink-0 text-green-500 mt-1"/>
                                     <span className="ml-3 text-gray-700">{feat}</span>
                                 </li>
                             ))}
                         </ul>
                     </div>
+                );
 
-                    {/* Right: dummy image */}
+                const ImageBlock = (
                     <div
-                        className="w-full h-64 bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
-                        {/* replace with <Image> when you have a real src */}
-                        <span className="text-gray-400">Image Placeholder</span>
+                        className="w-full overflow-hidden flex items-center justify-center">
+                        {/* Swap this for a real <Image> when you have one */}
+                        <Image
+                            height={700}
+                            width={700}
+                            src={'https://kzmisvh5wvcb96m3c5zs.lite.vusercontent.net/placeholder.svg?height=300&width=500&text=D2C/eCommerce'}
+                            alt="image"/>
                     </div>
-                </section>
-            ))}
+                );
+
+                return (
+                    <section
+                        key={idx}
+                        className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
+                    >
+                        {isReversed ? (
+                            <>
+                                {ImageBlock}
+                                {TextBlock}
+                            </>
+                        ) : (
+                            <>
+                                {TextBlock}
+                                {ImageBlock}
+                            </>
+                        )}
+                    </section>
+                );
+            })}
         </div>
     );
 }

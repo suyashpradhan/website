@@ -33,7 +33,7 @@ export default function BusinessRiskPrevention() {
                                         Business Risk Prevention
                                     </h1>
                                     <h1 className="text-6xl font-semibold tracking-tighter text-gray-800">
-                                        One Fraudulent Merchant Can Cost You Millions. We Stop Them at the Door.
+                                        No Risky Merchants. <br/>No Surprise Losses.
                                     </h1>
                                     <p className="pt-4 text-md text-muted-foreground ">
                                         Automate KYB, AML checks, and ongoing merchant monitoring with AI – so you can
