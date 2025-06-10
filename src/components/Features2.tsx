@@ -1,9 +1,8 @@
-import { Tab } from '@headlessui/react'
+import {Tab} from '@headlessui/react'
 import clsx from 'clsx'
-import { motion, AnimatePresence } from 'framer-motion'
-import {ChevronRight, BriefcaseBusiness, CheckCircleIcon, Shield, HandCoins} from "lucide-react";
+import {AnimatePresence, motion} from 'framer-motion'
+import {BriefcaseBusiness, CheckCircleIcon, ChevronRight, HandCoins, Shield} from "lucide-react";
 import Link from "next/link";
-import {AiFillCaretRight} from "react-icons/ai";
 
 const features = [
     {
@@ -11,25 +10,25 @@ const features = [
         icon: <Shield/>,
         description:
             'Stop fraudsters, not the growth',
-        points:[{
+        points: [{
             one: 'Reduce fraud orders with AI-powered intent scoring',
-            two:'Chargeback Guarantee: Auto-dispute fraud.',
-            three:'Card Fraud Suite: Block stolen cards, friendly fraud, and card testing.'
+            two: 'Chargeback Guarantee: Auto-dispute fraud.',
+            three: 'Card Fraud Suite: Block stolen cards, friendly fraud, and card testing.'
         }],
-        link:'Secure your checkout'
+        link: 'Secure your checkout'
     },
     {
         summary:
             'Business Risk Prevention',
-        icon:<BriefcaseBusiness/>,
+        icon: <BriefcaseBusiness/>,
         description:
             'Onboard businesses, not the risk',
-        points:[{
+        points: [{
             one: 'KYB Automation: Verify legitimacy in minutes',
-            two:'Merchant Monitoring: Detect shady behavior post-onboarding',
-            three:'AML Compliance: Screen against global watchlists (OFAC, PEPs)'
+            two: 'Merchant Monitoring: Detect shady behavior post-onboarding',
+            three: 'AML Compliance: Screen against global watchlists (OFAC, PEPs)'
         }],
-        link:'Make onboarding airtight'
+        link: 'Make onboarding airtight'
     },
     {
         summary:
@@ -37,16 +36,16 @@ const features = [
         icon: <HandCoins/>,
         description:
             'Lend confidently, even to NTC',
-        points:[{
+        points: [{
             one: 'Credit Risk Scoring: AI-driven approvals for thin-file borrowers',
-            two:'Self-Serve LMS/LOS: Configure rules without engineering help',
-            three:'Lending-as-a-Service: White-label credit infrastructure'
+            two: 'Self-Serve LMS/LOS: Configure rules without engineering help',
+            three: 'Lending-as-a-Service: White-label credit infrastructure'
         }],
-        link:'Power your lending'
+        link: 'Power your lending'
     },
 ]
 
-function Feature({ feature, className }) {
+function Feature({feature, className}) {
     const bullets = feature.points?.[0]
         ? Object.values(feature.points[0])
         : feature.points ?? []
@@ -54,8 +53,8 @@ function Feature({ feature, className }) {
 
     return (
         <motion.article
-            whileHover={{ rotateX: -4, rotateY: 4 }}
-            transition={{ type: 'spring', stiffness: 250, damping: 20 }}
+            whileHover={{rotateX: -4, rotateY: 4}}
+            transition={{type: 'spring', stiffness: 250, damping: 20}}
             className={clsx(
                 'group relative overflow-hidden rounded-2xl bg-white',
                 'ring-1 ring-slate-200 shadow transition-transform duration-200',
@@ -80,13 +79,13 @@ function Feature({ feature, className }) {
                         {bullets.map((pt, i) => (
                             <motion.li
                                 key={pt}
-                                initial={{ x: -12, opacity: 0 }}
-                                animate={{ x: 0, opacity: 1 }}
-                                exit={{ x: -12, opacity: 0 }}
-                                transition={{ duration: 0.18, delay: i * 0.05 }}
+                                initial={{x: -12, opacity: 0}}
+                                animate={{x: 0, opacity: 1}}
+                                exit={{x: -12, opacity: 0}}
+                                transition={{duration: 0.18, delay: i * 0.05}}
                                 className="flex items-start gap-2 text-left"
                             >
-                                <CheckCircleIcon className="h-5 w-5 shrink-0 text-emerald-500" />
+                                <CheckCircleIcon className="h-5 w-5 shrink-0 text-emerald-500"/>
                                 <span className="text-sm text-slate-700">{pt}</span>
                             </motion.li>
                         ))}
@@ -100,7 +99,7 @@ function Feature({ feature, className }) {
                      text-blue-600 transition-colors hover:text-blue-800"
                 >
                     {feature.link}
-                    <ChevronRight className="h-4 w-4" />
+                    <ChevronRight className="h-4 w-4"/>
                 </Link>
             </div>
         </motion.article>
@@ -121,7 +120,7 @@ function FeaturesDesktop() {
                                     ...feature,
                                     name: (
                                         <Tab className="[&:not(:focus-visible)]:focus:outline-none">
-                                            <span className="absolute inset-0" />
+                                            <span className="absolute inset-0"/>
                                             {feature.summary}
                                         </Tab>
                                     ),
@@ -142,7 +141,7 @@ export function Features2() {
             id="secondary-features"
             aria-label="Features for simplifying everyday business tasks"
         >
-                <FeaturesDesktop />
+            <FeaturesDesktop/>
         </section>
     )
 }

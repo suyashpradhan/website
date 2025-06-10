@@ -9,7 +9,7 @@ export default function IndustryPainPoints() {
         <section className="w-full">
             <div className="max-w-7xl mx-auto px-4 md:px-6">
                 <h2 className="text-[#2C2F8F] text-left text-3xl md:text-4xl lg:text-5xl font-bold">
-                    Custom Built for Your Battle Against Fraud To Enable Your Growth
+                    Outsmart Fraud. Accelerate Growth
                 </h2>
 
                 <div className="mt-12 grid gap-8 md:grid-cols-2">

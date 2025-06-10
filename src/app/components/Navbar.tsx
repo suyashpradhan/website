@@ -34,7 +34,12 @@ export default function Navbar() {
                     icon: CalendarIcon,
                     url: '/consumer-risk-prevention'
                 },
-                {title: 'Business Risk Prevention', desc: 'Multiple flexible options', icon: ChartPieIcon},
+                {
+                    title: 'Business Risk Prevention',
+                    desc: 'Multiple flexible options',
+                    icon: ChartPieIcon,
+                    url: '/business-risk-prevention'
+                },
                 {title: 'Lending Risk Prevention', desc: 'AI-based fraud detection', icon: CalendarDaysIcon},
             ],
         },

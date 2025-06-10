@@ -3,12 +3,12 @@
 
 import React from 'react'
 
-export function ComparisonTable() {
+export function ComparisonTableBusiness() {
     return (
         <section data-aos="fade-up">
             <div className="max-w-7xl mx-auto">
                 <h2 className="text-[#2C2F8F] text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-                    Why QuarkfinAI Wins
+                    Why Us vs. Legacy KYB
                 </h2>
 
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-3">
@@ -16,9 +16,10 @@ export function ComparisonTable() {
                     <div className="rounded-lg bg-gray-50 p-6">
                         <h3 className="text-lg font-semibold">Feature</h3>
                         <ul className="mt-6 space-y-6 text-sm text-gray-700">
-                            <li>Implementation</li>
+                            <li>Speed</li>
+                            <li>Ongoing Checks</li>
+                            <li>Fraud Detection</li>
                             <li>Pricing</li>
-                            <li>AI Adaptability</li>
                         </ul>
                     </div>
 
@@ -31,9 +32,16 @@ export function ComparisonTable() {
             </span>
                         <h3 className="text-lg font-semibold text-[#2C2F8F]">Quarkfin AI</h3>
                         <ul className="mt-6 space-y-6 text-sm text-gray-800">
-                            <li>30-minute self-serve</li>
-                            <li>Pay-per-API call (no lock-in)</li>
-                            <li>Learns with every transaction</li>
+                            <li>5-min KYB</li>
+                            <li>
+                                Continuous monitoring
+
+                            </li>
+                            <li>
+                                120+ behavioral signals
+
+                            </li>
+                            <li>$0.25/KYB check</li>
                         </ul>
                     </div>
 
@@ -41,9 +49,10 @@ export function ComparisonTable() {
                     <div className="rounded-lg bg-gray-50 p-6">
                         <h3 className="text-lg font-semibold">Legacy Providers</h3>
                         <ul className="mt-6 space-y-6 text-sm text-gray-700">
-                            <li>Months-long contracts</li>
-                            <li>$50K/year minimum</li>
-                            <li>Static rules (manual rule-building)</li>
+                            <li>3-5 day manual review</li>
+                            <li>One-time snapshot</li>
+                            <li>Basic document verification</li>
+                            <li>$75+/check + setup fees</li>
                         </ul>
                     </div>
                 </div>
