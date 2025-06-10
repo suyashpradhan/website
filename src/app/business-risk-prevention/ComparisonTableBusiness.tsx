@@ -34,14 +34,13 @@ export function ComparisonTableBusiness() {
                         <ul className="mt-6 space-y-6 text-sm text-gray-800">
                             <li className="font-bold ">5-min KYB</li>
                             <li className="font-bold ">
-                                Continuous monitoring
-
+                                Periodic monitoring
                             </li>
                             <li className="font-bold ">
                                 120+ behavioral signals
 
                             </li>
-                            <li className="font-bold ">$0.25/KYB check</li>
+                            <li className="font-bold ">Pay per check. No setup fees</li>
                         </ul>
                     </div>
 
@@ -52,7 +51,7 @@ export function ComparisonTableBusiness() {
                             <li>3-5 day manual review</li>
                             <li>One-time snapshot</li>
                             <li>Basic document verification</li>
-                            <li>$75+/check + setup fees</li>
+                            <li>Pay power check + setup fees + Maintenance fees</li>
                         </ul>
                     </div>
                 </div>

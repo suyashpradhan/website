@@ -82,7 +82,7 @@ export default function BusinessRiskPrevention() {
 
             <section>
                 {/* Final CTA */}
-                <section className="w-full bg-[#2C2F8F] py-12 md:py-24 lg:py-32 text-white">
+                <section className="w-full font-sora bg-[#2C2F8F] py-12 md:py-24 lg:py-32 text-white">
                     <div className="max-w-7xl mx-auto ">
                         <div className="flex flex-col items-center justify-center space-y-4 text-center">
                             <div className="space-y-2">
@@ -108,7 +108,6 @@ export default function BusinessRiskPrevention() {
                                     Talk to Fraud Expert
                                 </button>
                             </div>
-                            <div className="text-sm text-white/70">No credit card required | Cancel anytime</div>
                         </div>
                     </div>
                 </section>

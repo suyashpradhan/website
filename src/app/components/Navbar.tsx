@@ -30,13 +30,13 @@ export default function Navbar() {
             links: [
                 {
                     title: 'Consumer Risk Prevention',
-                    desc: 'Expand your revenue pipeline',
+                    desc: 'AI-Powered Fraud Defense',
                     icon: CalendarIcon,
                     url: '/consumer-risk-prevention'
                 },
                 {
                     title: 'Business Risk Prevention',
-                    desc: 'Multiple flexible options',
+                    desc: 'No Risky Merchants',
                     icon: ChartPieIcon,
                     url: '/business-risk-prevention'
                 },

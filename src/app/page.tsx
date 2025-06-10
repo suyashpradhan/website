@@ -80,7 +80,7 @@ export default function Home() {
                 <section data-aos="fade-up" className="px-6 py-16 bg-gray-100">
                     <div className=" max-w-7xl mx-auto">
                         <h2 className="text-3xl md:text-4xl font-bold text-left text-[#2C2F8F] mb-10">
-                            Built for your industry's toughest fraud problems
+                            Built For Your Industry's Toughest Fraud Problems
                         </h2>
                         <PrimaryFeatures/>
                     </div>
@@ -90,25 +90,27 @@ export default function Home() {
                 {/* Integrations */}
                 <section data-aos="fade-up" className="px-6 py-16">
                     <div className="max-w-7xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-bold text-left text-[#2C2F8F] mb-12">Integrate the way
-                            you
-                            want it!</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-left text-[#2C2F8F] mb-12">Integrate The Way
+                            You
+                            Want It!</h2>
                         <Integrations/>
                     </div>
                 </section>
 
                 {/* CTA Section */}
-                <section data-aos="fade-up" className="px-6 py-32 bg-gray-100">
+                <section data-aos="fade-up" className="px-6 py-32 bg-[#2C2F8F] text-white">
                     <div className="max-w-7xl mx-auto">
                         <div
                             className="flex flex-col items-center justify-center space-y-6 text-center"
                         >
-                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">
-                                Fraud-free growth starts here.
-                            </h2>
-                            <p className="mx-auto max-w-[700px] md:text-xl">
-                                No upfront costs. No lengthy contracts. Just results.
-                            </p>
+                            <div className="space-y-2">
+                                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                                    Fraud-free growth starts here.
+                                </h2>
+                                <p>
+                                    No upfront costs. No lengthy contracts. Just results.
+                                </p>
+                            </div>
                             <div className="mt-2 flex flex-wrap gap-4">
                                 <button className="p-[3px] relative">
                                     <div
@@ -120,7 +122,7 @@ export default function Home() {
                                 </button>
 
                                 <button
-                                    className="border border-[#2C2F8F] text-[#2C2F8F] px-6 py-3 rounded hover:bg-[#2C2F8F] hover:text-white hover:scale-105 transition shadow">
+                                    className="border border-white text-white px-6 py-3 rounded hover:bg-[#2C2F8F] hover:text-white hover:scale-105 transition shadow">
                                     Talk to an expert
                                 </button>
                             </div>

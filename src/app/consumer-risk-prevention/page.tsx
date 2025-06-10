@@ -151,7 +151,6 @@ export default function ConsumerRiskPrevention() {
                                     Talk to Fraud Expert
                                 </button>
                             </div>
-                            <div className="text-sm text-white/70">No credit card required | Cancel anytime</div>
                         </div>
                     </div>
                 </section>
