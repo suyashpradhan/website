@@ -1,9 +1,8 @@
-// middleware.ts  (at the project root)
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
+import type {NextRequest} from 'next/server'
+import {NextResponse} from 'next/server'
 
 export function middleware(request: NextRequest) {
-    const { pathname } = request.nextUrl
+    const {pathname} = request.nextUrl
 
     // Allow the Coming-Soon page itself and Next.js internals
     const isPublic =

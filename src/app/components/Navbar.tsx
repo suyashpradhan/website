@@ -40,46 +40,61 @@ export default function Navbar() {
                     icon: ChartPieIcon,
                     url: '/business-risk-prevention'
                 },
-                {title: 'Lending Risk Prevention', desc: 'AI-based fraud detection', icon: CalendarDaysIcon},
+                {
+                    title: 'Lending Risk Prevention',
+                    desc: 'AI-based fraud detection',
+                    icon: CalendarDaysIcon,
+                    url: '/coming-soon'
+                },
             ],
         },
         {
             label: 'Solutions',
             icon: ChartBarIcon,
             links: [
-                {title: 'D2C & eCommerce', desc: 'Custom fit your process', icon: CalendarIcon},
-                {title: 'Payment Gateways & Aggregators', desc: 'Modernize operations', icon: ChartPieIcon},
-                {title: 'Digital Lending', desc: 'Unify user flow', icon: CalendarDaysIcon},
-                {title: 'Travel & Quick Commerce', desc: 'Unify user flow', icon: CalendarDaysIcon},
+                {title: 'D2C & eCommerce', desc: 'Custom fit your process', icon: CalendarIcon, url: '/coming-soon'},
+                {
+                    title: 'Payment Gateways & Aggregators',
+                    desc: 'Modernize operations',
+                    icon: ChartPieIcon,
+                    url: '/coming-soon'
+                },
+                {title: 'Digital Lending', desc: 'Unify user flow', icon: CalendarDaysIcon, url: '/coming-soon'},
+                {
+                    title: 'Travel & Quick Commerce',
+                    desc: 'Unify user flow',
+                    icon: CalendarDaysIcon,
+                    url: '/coming-soon'
+                },
             ],
         },
         {
             label: 'Pricing',
             icon: HomeIcon,
             links: [
-                {title: 'Startup', desc: 'For early-stage teams', icon: CalendarIcon},
-                {title: 'Business', desc: 'Scaling and ops', icon: ChartPieIcon},
-                {title: 'Enterprise', desc: 'Full support & control', icon: CalendarDaysIcon},
+                {title: 'Startup', desc: 'For early-stage teams', icon: CalendarIcon, url: '/coming-soon'},
+                {title: 'Business', desc: 'Scaling and ops', icon: ChartPieIcon, url: '/coming-soon'},
+                {title: 'Enterprise', desc: 'Full support & control', icon: CalendarDaysIcon, url: '/coming-soon'},
             ],
         },
         {
             label: 'Integrations',
             icon: ServerStackIcon,
             links: [
-                {title: 'Shopify', desc: 'Ecom integration', icon: CalendarIcon},
-                {title: 'WooCommerce', desc: 'Plug & play store', icon: ChartPieIcon},
-                {title: 'Direct APIs', desc: 'Flexible developer stack', icon: CalendarDaysIcon},
-                {title: 'SDK', desc: 'Flexible mobile developer stack', icon: CalendarDaysIcon},
-                {title: 'Web SDK', desc: 'Flexible web developer stack', icon: CalendarDaysIcon},
+                {title: 'Shopify', desc: 'Ecom integration', icon: CalendarIcon, url: '/coming-soon'},
+                {title: 'WooCommerce', desc: 'Plug & play store', icon: ChartPieIcon, url: '/coming-soon'},
+                {title: 'Direct APIs', desc: 'Flexible developer stack', icon: CalendarDaysIcon, url: '/coming-soon'},
+                {title: 'SDK', desc: 'Flexible mobile developer stack', icon: CalendarDaysIcon, url: '/coming-soon'},
+                {title: 'Web SDK', desc: 'Flexible web developer stack', icon: CalendarDaysIcon, url: '/coming-soon'},
             ],
         },
         {
             label: 'About QuarkfinAI',
             icon: HomeIcon,
             links: [
-                {title: 'Our Mission', desc: 'Driving intelligent commerce', icon: CalendarIcon},
-                {title: 'Team', desc: 'Meet the minds', icon: ChartPieIcon},
-                {title: 'Careers', desc: 'Join us', icon: CalendarDaysIcon},
+                {title: 'Our Mission', desc: 'Driving intelligent commerce', icon: CalendarIcon, url: '/coming-soon'},
+                {title: 'Team', desc: 'Meet the minds', icon: ChartPieIcon, url: '/coming-soon'},
+                {title: 'Careers', desc: 'Join us', icon: CalendarDaysIcon, url: '/coming-soon'},
             ],
         },
     ];
