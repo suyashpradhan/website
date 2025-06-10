@@ -32,7 +32,7 @@ export default function BusinessRiskPrevention() {
                                     <h1 className="text-md font-bold uppercase tracking-normal text-[#2C2F8F]">
                                         Business Risk Prevention
                                     </h1>
-                                    <h1 className="text-6xl font-semibold tracking-tighter text-gray-800">AI-Powered
+                                    <h1 className="text-6xl font-semibold tracking-tighter text-gray-800">
                                         One Fraudulent Merchant Can Cost You Millions. We Stop Them at the Door.
                                     </h1>
                                     <p className="pt-4 text-md text-muted-foreground ">
