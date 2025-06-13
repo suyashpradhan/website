@@ -115,14 +115,16 @@ export default function Navbar() {
                 {/* Logo + Nav */}
                 <div className="flex items-center space-x-8">
                     <div className="text-2xl font-bold text-[#2C2F8F]">
-                        <Image
-                            src={logo}
-                            alt="QuarkfinAI logo"
-                            width={120}
-                            height={32}
-                            priority
-                            className="h-8 w-auto"
-                        />
+                        <Link href="/">
+                            <Image
+                                src={logo}
+                                alt="QuarkfinAI logo"
+                                width={120}
+                                height={32}
+                                priority
+                                className="h-8 w-auto"
+                            />
+                        </Link>
                     </div>
 
                     {/* Desktop Nav */}

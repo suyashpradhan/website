@@ -2,26 +2,26 @@ import {motion} from "motion/react";
 
 export function Customers() {
     const features = [
-            {
-                step: "01",
-                title: "Sign Up & Connect",
-                description: "Add our API or SDK to your stack. No DevOps required.",
-            },
-    {
-        step: "02",
+        {
+            step: "01",
+            title: "Sign Up & Connect",
+            description: "Add our API or SDK to your stack. No DevOps required.",
+        },
+        {
+            step: "02",
             title: "Set Your Rules",
-        description: "Drag-and-drop risk thresholds. Start with our defaults or customize.",
-    },
-    {
-        step: "03",
+            description: "Drag-and-drop risk thresholds. Start with our defaults or customize.",
+        },
+        {
+            step: "03",
             title: "Watch Fraud Drop",
-        description: "See real-time approvals, blocks, and revenue saved",
-    },
-]
+            description: "See real-time approvals, blocks, and revenue saved",
+        },
+    ]
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10 py-10 max-w-7xl mx-auto">
             {features.map((feature, index) => (
-                <Feature key={feature.title} {...feature} index={index} />
+                <Feature key={feature.title} {...feature} index={index}/>
             ))}
         </div>
     );
@@ -39,7 +39,7 @@ const Feature = ({
     index: number;
 }) => {
     return (
-        <section className="w-full relative overflow-hidden">
+        <section className="w-full  relative overflow-hidden">
             <div className="container relative">
                 <div className="gap-8 md:gap-12 relative">
                     <motion.div

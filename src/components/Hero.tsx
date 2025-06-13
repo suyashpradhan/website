@@ -1,5 +1,5 @@
-import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useState } from "react";
+import {AnimatePresence, motion} from "motion/react";
+import {useEffect, useState} from "react";
 
 const videos = ["/video1.mp4", "/video2.mp4"]; // add more if needed
 
@@ -54,14 +54,22 @@ export function Hero() {
 
                     <div className="mt-10 flex flex-wrap gap-4">
                         <button className="p-[3px] relative">
-                            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-sm" />
-                            <span className="relative z-10 px-8 py-3 bg-black rounded-[6px] text-white hover:bg-transparent transition">
+                            <div
+                                className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-sm"/>
+                            <span
+                                className="relative z-10 px-8 py-3 bg-black rounded-[6px] text-white hover:bg-transparent transition">
                 Get Started for free
               </span>
                         </button>
 
-                        <button className="border border-[#2C2F8F] text-[#2C2F8F] px-6 py-3 rounded hover:bg-[#2C2F8F] hover:text-white hover:scale-105 transition shadow">
+                        <button
+                            className="border border-[#2C2F8F] text-[#2C2F8F] px-6 py-3 rounded hover:bg-[#2C2F8F] hover:text-white hover:scale-105 transition shadow">
                             See How It Works
+                        </button>
+
+                        <button
+                            className="group relative inline-flex items-center justify-center px-6 py-3 font-medium text-white transition-transform duration-300 ease-in-out bg-[#2C2F8F] rounded-full shadow-md hover:scale-105 hover:bg-[#23267a] focus:outline-none focus:ring-2 focus:ring-[#2C2F8F]/50">
+                            <span className="relative z-10">Get Started</span>
                         </button>
                     </div>
                 </div>
@@ -77,10 +85,10 @@ export function Hero() {
                             muted
                             loop
                             playsInline
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.4 }}
+                            initial={{opacity: 0}}
+                            animate={{opacity: 1}}
+                            exit={{opacity: 0}}
+                            transition={{duration: 0.4}}
                         />
                     </AnimatePresence>
                 </div>

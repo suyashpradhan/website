@@ -109,29 +109,25 @@ function Feature({feature, className}) {
 
 function FeaturesDesktop() {
     return (
-        <Tab.Group as="div" className="lg:mt-12 lg:block ">
-            {({}) => (
-                <>
-                    <div className="grid grid-cols-3 gap-x-8">
-                        {features.map((feature) => (
-                            <Feature
-                                key={feature.summary}
-                                feature={{
-                                    ...feature,
-                                    name: (
-                                        <Tab className="[&:not(:focus-visible)]:focus:outline-none">
-                                            <span className="absolute inset-0"/>
-                                            {feature.summary}
-                                        </Tab>
-                                    ),
-                                }}
-                                className="relative"
-                            />
-                        ))}
-                    </div>
-                </>
-            )}
-        </Tab.Group>
+        <div className="mt-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {features.map((feature) => (
+                    <Feature
+                        key={feature.summary}
+                        feature={{
+                            ...feature,
+                            name: (
+                                <Tab className="[&:not(:focus-visible)]:focus:outline-none">
+                                    <span className="absolute inset-0"/>
+                                    {feature.summary}
+                                </Tab>
+                            ),
+                        }}
+                        className="relative"
+                    />
+                ))}
+            </div>
+        </div>
     )
 }
 
