@@ -247,9 +247,16 @@ export default function Navbar() {
                             </summary>
                             <ul className="pl-6 pr-4 pt-2 space-y-3">
                                 {item.links.map((link) => (
-                                    <li key={link.title} className="text-sm text-gray-600">
-                                        {link.title}
-                                    </li>
+                                    <Link
+                                        key={link.title}
+                                        href={link.url ?? ''}
+                                        className="flex items-start space-x-3 group cursor-pointer p-3 rounded-md
+                 transition-all duration-200 hover:bg-gray-100"
+                                    >
+                                        <li key={link.title} className="text-sm text-gray-600">
+                                            {link.title}
+                                        </li>
+                                    </Link>
                                 ))}
                             </ul>
                         </details>

@@ -67,7 +67,7 @@ export function Hero() {
                             See How It Works
                         </button>
 
-                        
+
                     </div>
                 </div>
 
