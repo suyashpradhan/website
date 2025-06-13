@@ -67,10 +67,7 @@ export function Hero() {
                             See How It Works
                         </button>
 
-                        <button
-                            className="group relative inline-flex items-center justify-center px-6 py-3 font-medium text-white transition-transform duration-300 ease-in-out bg-[#2C2F8F] rounded-full shadow-md hover:scale-105 hover:bg-[#23267a] focus:outline-none focus:ring-2 focus:ring-[#2C2F8F]/50">
-                            <span className="relative z-10">Get Started</span>
-                        </button>
+                        
                     </div>
                 </div>
 
