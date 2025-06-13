@@ -44,7 +44,7 @@ export default function Navbar() {
                     title: 'Lending Risk Prevention',
                     desc: 'AI-based fraud detection',
                     icon: CalendarDaysIcon,
-                    url: '/coming-soon'
+                    url: '/lending-risk-prevention'
                 },
             ],
         },
