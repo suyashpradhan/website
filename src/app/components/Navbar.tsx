@@ -52,7 +52,12 @@ export default function Navbar() {
             label: 'Solutions',
             icon: ChartBarIcon,
             links: [
-                {title: 'D2C & eCommerce', desc: 'Custom fit your process', icon: CalendarIcon, url: '/coming-soon'},
+                {
+                    title: 'D2C & eCommerce',
+                    desc: 'Custom fit your process',
+                    icon: CalendarIcon,
+                    url: 'solutions/d2c-ecommerce'
+                },
                 {
                     title: 'Payment Gateways & Aggregators',
                     desc: 'Modernize operations',

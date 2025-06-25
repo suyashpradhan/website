@@ -1,4 +1,3 @@
-// app/consumer-risk-prevention/ComparisonTable.tsx
 'use client'
 
 import React from 'react'
