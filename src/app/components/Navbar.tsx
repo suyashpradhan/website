@@ -74,13 +74,9 @@ export default function Navbar() {
             ],
         },
         {
-            label: 'Pricing',
+            label: 'Resources',
             icon: HomeIcon,
-            links: [
-                {title: 'Startup', desc: 'For early-stage teams', icon: CalendarIcon, url: '/coming-soon'},
-                {title: 'Business', desc: 'Scaling and ops', icon: ChartPieIcon, url: '/coming-soon'},
-                {title: 'Enterprise', desc: 'Full support & control', icon: CalendarDaysIcon, url: '/coming-soon'},
-            ],
+            links: [],
         },
         {
             label: 'Integrations',
@@ -97,6 +93,7 @@ export default function Navbar() {
             label: 'About QuarkfinAI',
             icon: HomeIcon,
             links: [
+                {title: 'About Us', desc: 'Driving intelligent commerce', icon: CalendarIcon, url: '/coming-soon'},
                 {title: 'Our Mission', desc: 'Driving intelligent commerce', icon: CalendarIcon, url: '/coming-soon'},
                 {title: 'Team', desc: 'Meet the minds', icon: ChartPieIcon, url: '/coming-soon'},
                 {title: 'Careers', desc: 'Join us', icon: CalendarDaysIcon, url: '/coming-soon'},
@@ -112,7 +109,6 @@ export default function Navbar() {
     ];
 
     const [selectedLang, setSelectedLang] = useState(languages[0]);
-
 
     return (
         <nav className="px-6 py-4 shadow-md bg-white sticky top-0 z-50">
@@ -138,44 +134,52 @@ export default function Navbar() {
                             <div
                                 key={item.label}
                                 className="relative group"
-                                onMouseEnter={() => setNavOpen(item.label)}
+                                onMouseEnter={() => item.links.length > 0 && setNavOpen(item.label)}
                                 onMouseLeave={() => setNavOpen(null)}
                             >
-                                <button
-                                    className="flex items-center text-sm font-medium text-gray-800 hover:text-[#2C2F8F] transition">
-                                    {item.label}
-                                    {navOpen === item.label ? (
-                                        <ChevronUpIcon className="w-4 h-4 ml-1 transition-transform duration-300"/>
-                                    ) : (
-                                        <ChevronDownIcon className="w-4 h-4 ml-1 transition-transform duration-300"/>
-                                    )}
-                                </button>
+                                <Link href='#' passHref>
+                                    <button
+                                        className="cursor-pointer flex items-center text-sm font-medium text-gray-800 hover:text-[#2C2F8F] transition"
+                                    >
+                                        {item.label}
+                                        {item.links.length > 0 && (
+                                            navOpen === item.label ? (
+                                                <ChevronUpIcon
+                                                    className="w-4 h-4 ml-1 transition-transform duration-300"/>
+                                            ) : (
+                                                <ChevronDownIcon
+                                                    className="w-4 h-4 ml-1 transition-transform duration-300"/>
+                                            )
+                                        )}
+                                    </button>
+                                </Link>
 
-                                <div
-                                    className={`absolute top-full mt-4 bg-white border border-gray-100 shadow-xl rounded-xl w-80 p-4 z-50 transition-all duration-300 ease-in-out origin-top transform ${
-                                        navOpen === item.label ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
-                                    }`}
-                                >
-                                    <ul className="space-y-4">
-                                        {item.links.map((link) => (
-                                            <Link
-                                                key={link.title}
-                                                href={link.url ?? ''}
-                                                className="flex items-start space-x-3 group cursor-pointer p-3 rounded-md
-                 transition-all duration-200 hover:bg-gray-100"
-                                            >
-                                                <link.icon
-                                                    className="w-5 h-5 mt-1 text-gray-400 group-hover:text-[#2C2F8F]"/>
-                                                <div>
-                                                    <p className="text-sm font-semibold text-gray-500 group-hover:text-[#2C2F8F]">
-                                                        {link.title}
-                                                    </p>
-                                                    <p className="text-sm text-gray-400">{link.desc}</p>
-                                                </div>
-                                            </Link>
-                                        ))}
-                                    </ul>
-                                </div>
+                                {item.links.length > 0 && (
+                                    <div
+                                        className={` cursor-pointer absolute top-full mt-4 bg-white border border-gray-100 shadow-xl rounded-xl w-80 p-4 z-50 transition-all duration-300 ease-in-out origin-top transform ${
+                                            navOpen === item.label ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
+                                        }`}
+                                    >
+                                        <ul className="space-y-4">
+                                            {item.links.map((link) => (
+                                                <Link
+                                                    key={link.title}
+                                                    href={link.url ?? ''}
+                                                    className="flex items-start space-x-3 group cursor-pointer p-3 rounded-md transition-all duration-200 hover:bg-gray-100"
+                                                >
+                                                    <link.icon
+                                                        className="w-5 h-5 mt-1 text-gray-400 group-hover:text-[#2C2F8F]"/>
+                                                    <div>
+                                                        <p className="text-sm font-semibold text-gray-500 group-hover:text-[#2C2F8F]">
+                                                            {link.title}
+                                                        </p>
+                                                        <p className="text-sm text-gray-400">{link.desc}</p>
+                                                    </div>
+                                                </Link>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
                             </div>
                         ))}
                     </div>
@@ -190,7 +194,8 @@ export default function Navbar() {
                         className="relative"
                     >
                         <button
-                            className="flex items-center text-sm font-medium text-gray-800 hover:text-[#2C2F8F] transition">
+                            className="flex items-center text-sm font-medium text-gray-800 hover:text-[#2C2F8F] transition"
+                        >
                             EN
                             {langOpen ? (
                                 <ChevronUpIcon className="w-4 h-4 ml-1 transition-transform duration-300"/>
@@ -212,7 +217,7 @@ export default function Navbar() {
                                     >
                                         <span className="text-lg">{lang.flag}</span>
                                         <div>
-                                            <p className="text-sm font-semibold text-gray-500 group-hover:text-[#2C2F8F] transition-colors">
+                                            <p className="text-sm font-semibold text-gray-500 group-hover:text-[#2C2F8F]">
                                                 {lang.label}
                                             </p>
                                             <p className="text-sm text-gray-400">{lang.code}</p>
@@ -223,9 +228,12 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    <button className="bg-[#2C2F8F] text-white px-4 py-2 rounded hover:bg-[#3A50D9] transition">
-                        Login
-                    </button>
+                    <Link href="/pricing">
+                        <button
+                            className=" cursor-pointer bg-[#2C2F8F] text-white px-4 py-2 rounded hover:bg-[#3A50D9] transition">
+                            Book A Demo
+                        </button>
+                    </Link>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -246,24 +254,27 @@ export default function Navbar() {
                     {navItems.map((item) => (
                         <details key={item.label} className="group">
                             <summary
-                                className="cursor-pointer px-4 py-2 flex justify-between items-center text-sm text-gray-800 hover:text-[#2C2F8F]">
+                                className="cursor-pointer px-4 py-2 flex justify-between items-center text-sm text-gray-800 hover:text-[#2C2F8F]"
+                            >
                                 {item.label}
-                                <ChevronDownIcon className="w-4 h-4 ml-1 group-open:rotate-180 transition-transform"/>
+                                {item.links.length > 0 && (
+                                    <ChevronDownIcon
+                                        className="w-4 h-4 ml-1 group-open:rotate-180 transition-transform"/>
+                                )}
                             </summary>
-                            <ul className="pl-6 pr-4 pt-2 space-y-3">
-                                {item.links.map((link) => (
-                                    <Link
-                                        key={link.title}
-                                        href={link.url ?? ''}
-                                        className="flex items-start space-x-3 group cursor-pointer p-3 rounded-md
-                 transition-all duration-200 hover:bg-gray-100"
-                                    >
-                                        <li key={link.title} className="text-sm text-gray-600">
-                                            {link.title}
-                                        </li>
-                                    </Link>
-                                ))}
-                            </ul>
+                            {item.links.length > 0 && (
+                                <ul className="pl-6 pr-4 pt-2 space-y-3">
+                                    {item.links.map((link) => (
+                                        <Link
+                                            key={link.title}
+                                            href={link.url ?? ''}
+                                            className="flex items-start space-x-3 group cursor-pointer p-3 rounded-md transition-all duration-200 hover:bg-gray-100"
+                                        >
+                                            <li className="text-sm text-gray-600">{link.title}</li>
+                                        </Link>
+                                    ))}
+                                </ul>
+                            )}
                         </details>
                     ))}
                     <div className="px-4 pt-4">
@@ -286,7 +297,7 @@ export default function Navbar() {
 
                         <button
                             className="w-full mt-6 bg-[#2C2F8F] text-white py-2 rounded hover:bg-[#3A50D9] transition">
-                            Login
+                            Book a Demo
                         </button>
                     </div>
                 </div>
