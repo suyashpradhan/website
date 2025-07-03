@@ -81,10 +81,10 @@ export default function D2CPage() {
                         <div className="flex flex-col items-center justify-center space-y-4 text-center">
                             <div className="space-y-2">
                                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                                    What's Your Fraud Blind Spot Costing You?
+                                    See the Difference in Your Next 500 Orders
                                 </h2>
                                 <p>
-                                    Get 100 free KYB checks + ongoing monitoring for 30 days. No credit card needed."
+                                    Free RTO analysis + 30-day chargeback protection + No credit card required.
                                 </p>
                             </div>
                             <div className="mt-2 flex flex-wrap gap-4">
