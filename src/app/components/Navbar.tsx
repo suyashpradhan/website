@@ -62,14 +62,19 @@ export default function Navbar() {
                     title: 'Payment Gateways & Aggregators',
                     desc: 'Modernize operations',
                     icon: ChartPieIcon,
-                    url: '/coming-soon'
+                    url: 'solutions/payment-gateways-and-aggregators'
                 },
-                {title: 'Digital Lending', desc: 'Unify user flow', icon: CalendarDaysIcon, url: '/coming-soon'},
+                {
+                    title: 'Digital Lending',
+                    desc: 'Unify user flow',
+                    icon: CalendarDaysIcon,
+                    url: 'solutions/digital-lending'
+                },
                 {
                     title: 'Travel & Quick Commerce',
                     desc: 'Unify user flow',
                     icon: CalendarDaysIcon,
-                    url: '/coming-soon'
+                    url: 'solutions/travel-ecommerce'
                 },
             ],
         },
@@ -121,7 +126,7 @@ export default function Navbar() {
                                 src={logo}
                                 alt="QuarkfinAI logo"
                                 width={120}
-                                height={32}
+                                height={100}
                                 priority
                                 className="h-8 w-auto"
                             />

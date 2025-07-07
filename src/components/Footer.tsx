@@ -1,5 +1,5 @@
 import {SVGProps} from "react";
-import logo from "@/images/logos/logo.jpg";
+import logo from "@/images/logos/logoWhite.png";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -102,10 +102,10 @@ export default function Footer() {
                     <Image
                         src={logo}
                         alt="QuarkfinAI logo"
-                        width={120}
-                        height={32}
+                        width={132}
+                        height={132}
                         priority
-                        className="h-8 w-auto"
+                        className="h-32 object-fill"
                     />
                     <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
                         <div className="md:grid md:grid-cols-2 md:gap-8">
