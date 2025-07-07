@@ -98,9 +98,8 @@ export default function Navbar() {
             label: 'About QuarkfinAI',
             icon: HomeIcon,
             links: [
-                {title: 'About Us', desc: 'Driving intelligent commerce', icon: CalendarIcon, url: '/coming-soon'},
-                {title: 'Our Mission', desc: 'Driving intelligent commerce', icon: CalendarIcon, url: '/coming-soon'},
-                {title: 'Team', desc: 'Meet the minds', icon: ChartPieIcon, url: '/coming-soon'},
+                {title: 'Contact Us', desc: 'Driving intelligent commerce', icon: CalendarIcon, url: '/contact-us'},
+                {title: 'About us', desc: 'Driving intelligent commerce', icon: CalendarIcon, url: '/about-us'},
                 {title: 'Careers', desc: 'Join us', icon: CalendarDaysIcon, url: '/coming-soon'},
             ],
         },

@@ -173,7 +173,7 @@ export default function Footer() {
                 <h1 className="text-white">© 2025 QuarkinAI</h1>
 
                 <div>
-                    <Link href="/coming-soon" className="text-white mr-4">Privacy Policy</Link>
+                    <Link href="/privacy-policy" className="text-white mr-4">Privacy Policy</Link>
                     <Link href="/coming-soon" className="text-white">Terms and Condition</Link>
                 </div>
             </div>
