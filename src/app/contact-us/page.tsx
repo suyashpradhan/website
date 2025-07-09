@@ -67,8 +67,7 @@ export default function ContactUs() {
                                         </div>
                                         <div className="ml-4">
                                             <h3 className="text-lg font-medium text-gray-900">Email</h3>
-                                            <p className="text-gray-600">hello@example.com</p>
-                                            <p className="text-gray-600">support@example.com</p>
+                                            <p className="text-gray-600">hello@quarkinfin.ai</p>
                                         </div>
                                     </div>
 
@@ -135,19 +134,19 @@ export default function ContactUs() {
                                         </div>
 
                                         <div>
-                                            <label htmlFor="subject"
+                                            <label htmlFor="phone-number"
                                                    className="block text-sm font-medium text-gray-700 mb-2">
-                                                Subject *
+                                                Phone Number
                                             </label>
                                             <input
                                                 type="text"
-                                                id="subject"
-                                                name="subject"
+                                                id="phone-number"
+                                                name="phone-number"
                                                 required
                                                 value={formData.subject}
                                                 onChange={handleInputChange}
                                                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                                                placeholder="What is this regarding?"
+                                                placeholder="Phone Number"
                                             />
                                         </div>
 
@@ -172,7 +171,7 @@ export default function ContactUs() {
                                             <button
                                                 type="submit"
                                                 disabled={isSubmitting}
-                                                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                                                className="w-full bg-[#2C2F8F] text-white py-3 cursor-pointer px-6 rounded-lg font-medium hover-[#2C2F4F] focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                                             >
                                                 {isSubmitting ? (
                                                     <>
