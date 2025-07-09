@@ -1,6 +1,6 @@
 "use client"
 
-import {Award, Calendar, Heart, Target, TrendingUp, Users} from "lucide-react"
+import {Award, Calendar, Heart, Target, Users} from "lucide-react"
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -127,58 +127,6 @@ export default function AboutUs() {
                 </section>
 
                 {/* Mission, Vision, Values */}
-                <section className="py-20 px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Mission & Values</h2>
-                            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                                We believe in creating technology that makes a positive impact on businesses and
-                                communities
-                                worldwide.
-                            </p>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-                            {values.map((value, index) => (
-                                <div key={index}
-                                     className="text-center p-6 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors">
-                                    <div className="text-blue-600 mb-4 flex justify-center">{value.icon}</div>
-                                    <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
-                                    <p className="text-gray-600">{value.description}</p>
-                                </div>
-                            ))}
-                        </div>
-
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                            <div>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
-                                <p className="text-gray-600 mb-6">
-                                    To empower businesses of all sizes with cutting-edge technology solutions that drive
-                                    growth, efficiency,
-                                    and innovation. We strive to make complex technology accessible and valuable for
-                                    everyone.
-                                </p>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
-                                <p className="text-gray-600">
-                                    To be the global leader in business technology solutions, creating a world where
-                                    every
-                                    organization can
-                                    harness the power of technology to achieve their full potential.
-                                </p>
-                            </div>
-                            <div className="bg-gradient-to-br from-blue-100 to-indigo-200 rounded-lg p-8 text-center">
-                                <div className="grid grid-cols-2 gap-6">
-                                    {stats.map((stat, index) => (
-                                        <div key={index}>
-                                            <div className="text-3xl font-bold text-blue-600 mb-2">{stat.number}</div>
-                                            <div className="text-gray-700 font-medium">{stat.label}</div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
 
                 {/* Team Section */}
                 <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
@@ -267,70 +215,7 @@ export default function AboutUs() {
                 </section>
 
                 {/* Culture Section */}
-                <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                            <div>
-                                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Culture</h2>
-                                <p className="text-gray-600 mb-6">
-                                    We foster an inclusive, collaborative environment where innovation thrives. Our team
-                                    is
-                                    our greatest
-                                    asset, and we invest in their growth, well-being, and success.
-                                </p>
-                                <ul className="space-y-4">
-                                    <li className="flex items-start">
-                                        <TrendingUp className="w-6 h-6 text-blue-600 mr-3 mt-0.5 flex-shrink-0"/>
-                                        <div>
-                                            <h4 className="font-semibold text-gray-900">Continuous Learning</h4>
-                                            <p className="text-gray-600">
-                                                We encourage professional development and provide learning
-                                                opportunities.
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <Users className="w-6 h-6 text-blue-600 mr-3 mt-0.5 flex-shrink-0"/>
-                                        <div>
-                                            <h4 className="font-semibold text-gray-900">Work-Life Balance</h4>
-                                            <p className="text-gray-600">
-                                                We believe in maintaining a healthy balance between work and personal
-                                                life.
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li className="flex items-start">
-                                        <Heart className="w-6 h-6 text-blue-600 mr-3 mt-0.5 flex-shrink-0"/>
-                                        <div>
-                                            <h4 className="font-semibold text-gray-900">Diversity & Inclusion</h4>
-                                            <p className="text-gray-600">We celebrate diversity and create an inclusive
-                                                environment for all.</p>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="grid grid-cols-2 gap-4">
-                                <img
-                                    src="/placeholder.svg?height=250&width=250"
-                                    alt="Team collaboration"
-                                    className="rounded-lg shadow-sm"
-                                />
-                                <img
-                                    src="/placeholder.svg?height=250&width=250"
-                                    alt="Office environment"
-                                    className="rounded-lg shadow-sm mt-8"
-                                />
-                                <img
-                                    src="/placeholder.svg?height=250&width=250"
-                                    alt="Team meeting"
-                                    className="rounded-lg shadow-sm -mt-8"
-                                />
-                                <img src="/placeholder.svg?height=250&width=250" alt="Company event"
-                                     className="rounded-lg shadow-sm"/>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                
 
                 {/* CTA Section */}
                 <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#2C2F8F]">

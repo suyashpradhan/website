@@ -15,7 +15,8 @@ const features = [
             two: 'Chargeback Guarantee: Auto-dispute fraud.',
             three: 'Card Fraud Suite: Block stolen cards, friendly fraud, and card testing.'
         }],
-        link: 'Secure your checkout'
+        link: 'Secure your checkout',
+        href: '/consumer-risk-prevention',
     },
     {
         summary:
@@ -28,7 +29,8 @@ const features = [
             two: 'Merchant Monitoring: Detect shady behavior post-onboarding',
             three: 'AML Compliance: Screen against global watchlists (OFAC, PEPs)'
         }],
-        link: 'Make onboarding airtight'
+        link: 'Make onboarding airtight',
+        href: '/business-risk-prevention',
     },
     {
         summary:
@@ -41,7 +43,8 @@ const features = [
             two: 'Self-Serve LMS/LOS: Configure rules without engineering help',
             three: 'Lending-as-a-Service: White-label credit infrastructure'
         }],
-        link: 'Power your lending'
+        link: 'Power your lending',
+        href: '/lending-risk-prevention',
     },
 ]
 
@@ -94,7 +97,7 @@ function Feature({feature, className}) {
 
                 {/* ▾ CTA link ▾ */}
                 <Link
-                    href="#"
+                    href={feature.href}
                     className="mt-6 text-left inline-flex gap-1 text-md items-center font-bold
                      text-blue-600 transition-colors hover:text-blue-800"
                 >
