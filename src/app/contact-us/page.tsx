@@ -2,7 +2,7 @@
 
 import type React from "react"
 import {useState} from "react"
-import {Clock, Mail, MapPin, Phone, Send} from "lucide-react"
+import {Mail, Send} from "lucide-react"
 import Footer from "@/components/Footer";
 import Navbar from "@/app/components/Navbar";
 
@@ -72,71 +72,9 @@ export default function ContactUs() {
                                         </div>
                                     </div>
 
-                                    <div className="flex items-start">
-                                        <div className="flex-shrink-0">
-                                            <Phone className="w-6 h-6 text-blue-600 mt-1"/>
-                                        </div>
-                                        <div className="ml-4">
-                                            <h3 className="text-lg font-medium text-gray-900">Phone</h3>
-                                            <p className="text-gray-600">+1 (555) 123-4567</p>
-                                            <p className="text-gray-600">+1 (555) 987-6543</p>
-                                        </div>
-                                    </div>
 
-                                    <div className="flex items-start">
-                                        <div className="flex-shrink-0">
-                                            <MapPin className="w-6 h-6 text-blue-600 mt-1"/>
-                                        </div>
-                                        <div className="ml-4">
-                                            <h3 className="text-lg font-medium text-gray-900">Office</h3>
-                                            <p className="text-gray-600">
-                                                123 Business Street
-                                                <br/>
-                                                Suite 100
-                                                <br/>
-                                                New York, NY 10001
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex items-start">
-                                        <div className="flex-shrink-0">
-                                            <Clock className="w-6 h-6 text-blue-600 mt-1"/>
-                                        </div>
-                                        <div className="ml-4">
-                                            <h3 className="text-lg font-medium text-gray-900">Business Hours</h3>
-                                            <p className="text-gray-600">
-                                                Monday - Friday: 9:00 AM - 6:00 PM
-                                                <br/>
-                                                Saturday: 10:00 AM - 4:00 PM
-                                                <br/>
-                                                Sunday: Closed
-                                            </p>
-                                        </div>
-                                    </div>
                                 </div>
 
-                                {/* Social Links */}
-                                <div className="mt-8 pt-8 border-t border-gray-200">
-                                    <h3 className="text-lg font-medium text-gray-900 mb-4">Follow Us</h3>
-                                    <div className="flex space-x-4">
-                                        <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors">
-                                            <span className="sr-only">Facebook</span>
-                                            <div
-                                                className="w-6 h-6 bg-gray-400 hover:bg-blue-600 rounded transition-colors"></div>
-                                        </a>
-                                        <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors">
-                                            <span className="sr-only">Twitter</span>
-                                            <div
-                                                className="w-6 h-6 bg-gray-400 hover:bg-blue-600 rounded transition-colors"></div>
-                                        </a>
-                                        <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors">
-                                            <span className="sr-only">LinkedIn</span>
-                                            <div
-                                                className="w-6 h-6 bg-gray-400 hover:bg-blue-600 rounded transition-colors"></div>
-                                        </a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
@@ -275,17 +213,17 @@ export default function ContactUs() {
                     </div>
 
                     {/* Map Section */}
-                    <div className="mt-16">
-                        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-                            <div className="h-96 bg-gray-200 flex items-center justify-center">
-                                <div className="text-center">
-                                    <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-4"/>
-                                    <p className="text-gray-500 text-lg">Interactive Map Placeholder</p>
-                                    <p className="text-gray-400 text-sm">123 Business Street, New York, NY 10001</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {/*<div className="mt-16">*/}
+                    {/*    <div className="bg-white rounded-lg shadow-sm overflow-hidden">*/}
+                    {/*        <div className="h-96 bg-gray-200 flex items-center justify-center">*/}
+                    {/*            <div className="text-center">*/}
+                    {/*                <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-4"/>*/}
+                    {/*                <p className="text-gray-500 text-lg">Interactive Map Placeholder</p>*/}
+                    {/*                <p className="text-gray-400 text-sm">123 Business Street, New York, NY 10001</p>*/}
+                    {/*            </div>*/}
+                    {/*        </div>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </div>
             </div>
             <Footer/>
