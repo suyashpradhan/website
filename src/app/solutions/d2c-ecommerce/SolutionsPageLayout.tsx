@@ -2,14 +2,12 @@
 
 import {CheckCircleIcon} from "lucide-react";
 import React from "react";
-import Image from "next/image";
-import D2CImage from "../../../images/d2CImage.svg"
 
 const featureContent = [
     {
         title: "Quark Secure (Intelligent Onboarding)",
         features: ['Fake accounts', 'RTO fraud ', 'Guest checkout scams'],
-        image: D2CImage
+        video: '/videos/CustomerRelationshipManager.mp4'
     },
     {
         title: "Chargeback Shield",
@@ -27,6 +25,7 @@ type Section = {
     title: string;
     features?: string[];
     image?: string;
+    video?: string;
 };
 
 
@@ -59,11 +58,13 @@ export default function SolutionsPageLayout() {
                     <div
                         className="w-full overflow-hidden flex items-center justify-center">
                         {/* Swap this for a real <Image> when you have one */}
-                        <Image
-                            height={700}
-                            width={700}
-                            src={sec?.image || 'https://kzmisvh5wvcb96m3c5zs.lite.vusercontent.net/placeholder.svg?height=300&width=500&text=D2C/eCommerce'}
-                            alt="image"/>
+                        <video
+                            src={sec?.video}
+                            className="rounded-lg w-full max-w-lg mx-auto"
+                            autoPlay
+                            muted
+                            loop
+                        />
                     </div>
                 );
 
