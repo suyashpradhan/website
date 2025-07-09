@@ -3,12 +3,13 @@
 import {CheckCircleIcon} from "lucide-react";
 import React from "react";
 import Image from "next/image";
-
+import D2CImage from "../../../images/d2CImage.svg"
 
 const featureContent = [
     {
         title: "Quark Secure (Intelligent Onboarding)",
-        features: ['Fake accounts', 'RTO fraud ', 'Guest checkout scams']
+        features: ['Fake accounts', 'RTO fraud ', 'Guest checkout scams'],
+        image: D2CImage
     },
     {
         title: "Chargeback Shield",
@@ -25,6 +26,7 @@ type Section = {
     subHeading?: string;
     title: string;
     features?: string[];
+    image?: string;
 };
 
 
@@ -60,7 +62,7 @@ export default function SolutionsPageLayout() {
                         <Image
                             height={700}
                             width={700}
-                            src={'https://kzmisvh5wvcb96m3c5zs.lite.vusercontent.net/placeholder.svg?height=300&width=500&text=D2C/eCommerce'}
+                            src={sec?.image || 'https://kzmisvh5wvcb96m3c5zs.lite.vusercontent.net/placeholder.svg?height=300&width=500&text=D2C/eCommerce'}
                             alt="image"/>
                     </div>
                 );

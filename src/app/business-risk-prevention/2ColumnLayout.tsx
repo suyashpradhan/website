@@ -2,7 +2,6 @@
 
 import {CheckCircleIcon} from "lucide-react";
 import React from "react";
-import Image from "next/image";
 
 const featureContent = [
     {
@@ -13,6 +12,7 @@ const featureContent = [
             "IP Forensics (We detect VPNs, proxies, spoofing)",
             "Website Legitimacy Engine (We analyze content changes, TOR links)",
         ],
+        video: '/videos/DataExtraction.mp4'
     },
     {
         title: "Financial DNA Analysis",
@@ -21,6 +21,7 @@ const featureContent = [
             "Financial Health Scoring (We predict cash flow risks)",
             "Beneficial Owner Mapping (We uncover hidden ownership)",
         ],
+        video: '/videos/FinancialData.mp4'
     },
     {
         title: "24/7 Merchant Monitoring",
@@ -29,6 +30,7 @@ const featureContent = [
             "Social Media Sentinel (We flag deleted LinkedIn profiles)",
             "Website Defacement Detection (We spot bait-and-switch)",
         ],
+        video: '/videos/DataExtraction1.mp4'
     },
 ];
 
@@ -38,6 +40,7 @@ type Section = {
     features: string[];
     imgSrc?: string;
     imgAlt?: string;
+    video?: string;
 };
 
 
@@ -71,11 +74,15 @@ export default function TwoColumnSections() {
                     <div
                         className="w-full overflow-hidden flex items-center justify-center">
                         {/* Swap this for a real <Image> when you have one */}
-                        <Image
-                            height={700}
-                            width={700}
-                            src={'https://kzmisvh5wvcb96m3c5zs.lite.vusercontent.net/placeholder.svg?height=300&width=500&text=D2C/eCommerce'}
-                            alt="image"/>
+                        {
+                            <video
+                                src={sec?.video}
+                                className="rounded-lg w-full max-w-lg mx-auto"
+                                autoPlay
+                                muted
+                                loop
+                            />
+                        }
                     </div>
                 );
 
