@@ -1,7 +1,7 @@
 "use client"
 
 import Navbar from "@/app/components/Navbar";
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 import Footer from "@/components/Footer";
 import HowItWorksBusiness from "@/app/business-risk-prevention/HowItWorksBusiness";
 import TwoColumnSections from "@/app/business-risk-prevention/2ColumnLayout";
@@ -55,6 +55,17 @@ export default function BusinessRiskPrevention() {
                             </div>
 
                             {/* →→→ Right side: Animated Dashboard */}
+
+                            <div>
+
+                                <video
+                                    src="/videos/DE.mp4"
+                                    className="rounded-lg w-full max-w-lg mx-auto"
+                                    autoPlay
+                                    muted
+                                    loop
+                                />
+                            </div>
                         </div>
                     </div>
                 </section>

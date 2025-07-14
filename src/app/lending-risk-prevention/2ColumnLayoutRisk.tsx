@@ -2,7 +2,6 @@
 
 import {CheckCircleIcon} from "lucide-react";
 import React from "react";
-import Image from "next/image";
 
 const featureContent = [
     {
@@ -13,6 +12,7 @@ const featureContent = [
             "Friendly Fraud Blocking (behavioral analysis catches \"buyer’s remorse\" fraud)",
             "Card Testing Protection (flags rapid-fire card testing attacks)",
         ],
+        video: '/videos/CreditCard.mp4'
     },
     {
         title: "Smarter Credit Underwriting",
@@ -23,6 +23,7 @@ const featureContent = [
             "Delinquency Analytics (spots high-risk borrowers before they default)",
             "Self-Serve LOS (drag-and-drop rules, no engineering needed)",
         ],
+        video: '/videos/CreditAssessment.mp4'
     },
     {
         title: "Lending-as-a-Service\n",
@@ -32,6 +33,7 @@ const featureContent = [
             "White-Label Underwriting (embed risk scoring into your app)\n",
             "Automated Decisioning (real-time approvals, no manual reviews)",
         ],
+        video: '/videos/OnlineTransactions.mp4'
     },
 ];
 
@@ -42,6 +44,7 @@ type Section = {
     features: string[];
     imgSrc?: string;
     imgAlt?: string;
+    video?: string;
 };
 
 
@@ -78,11 +81,13 @@ export default function TwoColumnSectionsRisk() {
                     <div
                         className="w-full overflow-hidden flex items-center justify-center">
                         {/* Swap this for a real <Image> when you have one */}
-                        <Image
-                            height={700}
-                            width={700}
-                            src={'https://kzmisvh5wvcb96m3c5zs.lite.vusercontent.net/placeholder.svg?height=300&width=500&text=D2C/eCommerce'}
-                            alt="image"/>
+                        <video
+                            src={sec?.video}
+                            className="rounded-lg w-full max-w-lg mx-auto"
+                            autoPlay
+                            muted
+                            loop
+                        />
                     </div>
                 );
 

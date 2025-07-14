@@ -1,4 +1,5 @@
 import {AlertTriangle, ArrowRight, CheckCircle, Shield, TrendingUp, XCircle, Zap} from "lucide-react"
+import React from "react";
 
 export default function IndustrySolution() {
     return (
@@ -81,25 +82,26 @@ export default function IndustrySolution() {
                             <div className="grid grid-cols-2 gap-6">
                                 <div className="text-center">
                                     <div className="bg-red-100 p-4 rounded-lg mb-3">
-                                        <div className="h-32 bg-red-200 rounded relative overflow-hidden">
-                                            <div
-                                                className="absolute bottom-0 left-0 w-full bg-red-500 h-8 rounded-t-lg"></div>
-                                            <div className="absolute bottom-8 left-0 w-3/4 bg-red-400 h-6"></div>
-                                            <div className="absolute bottom-14 left-0 w-1/2 bg-red-300 h-4"></div>
-                                            <div className="absolute bottom-18 left-0 w-1/4 bg-red-200 h-2"></div>
-                                        </div>
+                                        <video
+                                            src="/videos/CA2.mp4"
+                                            className="rounded-lg w-full max-w-lg mx-auto"
+                                            autoPlay
+                                            muted
+                                            loop
+                                        />
                                     </div>
                                     <p className="text-sm font-medium text-red-700">Without Quarkfin</p>
                                     <p className="text-xs text-red-600">Steep drop at checkout</p>
                                 </div>
                                 <div className="text-center">
                                     <div className="bg-green-100 p-4 rounded-lg mb-3">
-                                        <div className="h-32 bg-green-200 rounded relative overflow-hidden">
-                                            <div
-                                                className="absolute bottom-0 left-0 w-full bg-green-500 h-24 rounded-t-lg"></div>
-                                            <div className="absolute bottom-24 left-0 w-3/4 bg-green-400 h-6"></div>
-                                            <div className="absolute bottom-30 left-0 w-1/2 bg-green-300 h-2"></div>
-                                        </div>
+                                        <video
+                                            src="/videos/CA1.mp4"
+                                            className="rounded-lg w-full max-w-lg mx-auto"
+                                            autoPlay
+                                            muted
+                                            loop
+                                        />
                                     </div>
                                     <p className="text-sm font-medium text-green-700">With Quarkfin</p>
                                     <p className="text-xs text-green-600">Smooth conversion curve</p>
