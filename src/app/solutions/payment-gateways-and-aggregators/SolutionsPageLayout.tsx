@@ -2,25 +2,26 @@
 
 import {CheckCircle, XCircle} from "lucide-react";
 import React from "react";
-import Image from "next/image";
 
 
 const featureContent = [
     {
         title: "AI-Powered Merchant Onboarding",
         features: ['Fake businesses', 'Shell companies ', 'High-risk MCC hiding'],
-        works: ['Instant KYB: Verifies domain age, financials, and ownership in less than 5 mins', 'Geo-Fencing: Auto-blocks jurisdictions with high fraud rates', ' AML Sentinel: Screens 200+ global watchlists (OFAC, PEPs, sanctions)']
+        works: ['Instant KYB: Verifies domain age, financials, and ownership in less than 5 mins', 'Geo-Fencing: Auto-blocks jurisdictions with high fraud rates', ' AML Sentinel: Screens 200+ global watchlists (OFAC, PEPs, sanctions)'],
+        video: '/videos/AI.mp4'
     },
     {
         title: "Chargeback Shield",
         features: ['MCC changes', 'Website defacement', 'Social media deletions'],
-        works: ['MCC Alerts: Notifies when merchants shift to high-risk categories', 'Content Snapshotting: Archives TOS pages to prevent bait-and-switch', 'Sentiment Analysis: Flags merchant reputation drops']
+        works: ['MCC Alerts: Notifies when merchants shift to high-risk categories', 'Content Snapshotting: Archives TOS pages to prevent bait-and-switch', 'Sentiment Analysis: Flags merchant reputation drops'],
+        video: '/videos/CS.mp4'
     },
     {
         title: "Chargeback Prevention",
         features: ['Friendly fraud', 'Card testing', 'Merchant collusion'],
-        works: ['Behavioral Scoring: Identifies suspicious transaction patterns', 'Dispute Automation: Substitutes evidence for 85% of chargebacks', 'Guarantee: We cover costs if fraud slips through']
-
+        works: ['Behavioral Scoring: Identifies suspicious transaction patterns', 'Dispute Automation: Substitutes evidence for 85% of chargebacks', 'Guarantee: We cover costs if fraud slips through'],
+        video: '/videos/CP.mp4'
     }
 ];
 
@@ -30,6 +31,7 @@ type Section = {
     title: string;
     features?: string[];
     works?: string[];
+    video?: string;
 };
 
 
@@ -79,11 +81,13 @@ export default function SolutionsPageLayout() {
                     <div
                         className="w-full overflow-hidden flex items-center justify-center">
                         {/* Swap this for a real <Image> when you have one */}
-                        <Image
-                            height={700}
-                            width={700}
-                            src={'https://kzmisvh5wvcb96m3c5zs.lite.vusercontent.net/placeholder.svg?height=300&width=500&text=D2C/eCommerce'}
-                            alt="image"/>
+                        <video
+                            src={sec?.video}
+                            className="rounded-lg w-full max-w-lg mx-auto"
+                            autoPlay
+                            muted
+                            loop
+                        />
                     </div>
                 );
 

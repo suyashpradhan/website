@@ -2,24 +2,28 @@
 
 import {CheckCircle, XCircle} from "lucide-react";
 import React from "react";
-import Image from "next/image";
 
 
 const featureContent = [
     {
         title: "Synthetic Identity Detection",
         features: ['Stolen SSNs', 'Fabricated credit histories', 'Ghost applicants'],
-        works: ['Cross-Lender Network: Flags identities applying simultaneously elsewhere', 'Document Forensics: Detects tampered pay stubs/bank statements', ' Behavioral Scoring: Analyzes application patterns (typing speed, device hops)']
+        works: ['Cross-Lender Network: Flags identities applying simultaneously elsewhere', 'Document Forensics: Detects tampered pay stubs/bank statements', ' Behavioral Scoring: Analyzes application patterns (typing speed, device hops)'],
+        video: '/videos/Sol1.mp4'
+
     },
     {
         title: "Smart NTC Underwriting",
         features: ['Safe thin-file lending', 'Lower defaults', 'Higher approval rates'],
-        works: ['Alternative Data Scoring: Analyzes cash flow, education, and employment signals', 'Portfolio Immunization: Learns from your historical defaults', 'Self-Serve Rules Engine: Drag-and-drop credit policies']
+        works: ['Alternative Data Scoring: Analyzes cash flow, education, and employment signals', 'Portfolio Immunization: Learns from your historical defaults', 'Self-Serve Rules Engine: Drag-and-drop credit policies'],
+        video: '/videos/Sol2.mp4'
+
     },
     {
         title: "Loan Stacking Shield",
         features: ['Multi-lender exposure ', 'Bust-out schemes'],
-        works: ['Real-Time Consortium Data: Shares risk alerts across lender network', 'Velocity Checks: Flags rapid sequential applications', 'Device Fingerprinting: Links borrowers across aliases']
+        works: ['Real-Time Consortium Data: Shares risk alerts across lender network', 'Velocity Checks: Flags rapid sequential applications', 'Device Fingerprinting: Links borrowers across aliases'],
+        video: '/videos/Sol3.mp4'
 
     }
 ];
@@ -30,6 +34,7 @@ type Section = {
     title: string;
     features?: string[];
     works?: string[];
+    video?: string;
 };
 
 
@@ -79,11 +84,13 @@ export default function SolutionsPageLayout() {
                     <div
                         className="w-full overflow-hidden flex items-center justify-center">
                         {/* Swap this for a real <Image> when you have one */}
-                        <Image
-                            height={700}
-                            width={700}
-                            src={'https://kzmisvh5wvcb96m3c5zs.lite.vusercontent.net/placeholder.svg?height=300&width=500&text=D2C/eCommerce'}
-                            alt="image"/>
+                        <video
+                            src={sec?.video}
+                            className="rounded-lg w-full max-w-lg mx-auto"
+                            autoPlay
+                            muted
+                            loop
+                        />
                     </div>
                 );
 

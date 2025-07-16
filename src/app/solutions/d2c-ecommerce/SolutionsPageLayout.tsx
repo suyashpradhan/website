@@ -11,11 +11,13 @@ const featureContent = [
     },
     {
         title: "Chargeback Shield",
-        features: [' Friendly fraud ', 'Card testing ', ' Merchant scams']
+        features: [' Friendly fraud ', 'Card testing ', ' Merchant scams'],
+        video: '/videos/Shield.mp4'
     },
     {
         title: "Promo Abuse Protection",
-        features: ['Coupon stacking', 'Fake referrals', ' Loyalty fraud']
+        features: ['Coupon stacking', 'Fake referrals', ' Loyalty fraud'],
+        video: '/videos/Promo.mp4'
     }
 ];
 
@@ -56,7 +58,7 @@ export default function SolutionsPageLayout() {
 
                 const ImageBlock = (
                     <div
-                        className="w-full overflow-hidden flex items-center justify-center">
+                        className="w-full overflow-hidden flex">
                         {/* Swap this for a real <Image> when you have one */}
                         <video
                             src={sec?.video}

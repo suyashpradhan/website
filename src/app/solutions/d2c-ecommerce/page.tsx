@@ -1,7 +1,7 @@
 "use client"
 
 import Navbar from "@/app/components/Navbar";
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 import Footer from "@/components/Footer";
 import {MainComponent} from "@/app/solutions/d2c-ecommerce/MainComponent";
 import {SolutionsTable} from "@/app/solutions/d2c-ecommerce/SolutionsTable";
@@ -53,7 +53,17 @@ export default function D2CPage() {
                                 </div>
                             </div>
 
-                            {/* →→→ Right side: Animated Dashboard */}
+                            <div
+                                className="w-full overflow-hidden flex">
+                                {/* Swap this for a real <Image> when you have one */}
+                                <video
+                                    src='/videos/Hero.mp4'
+                                    className="rounded-lg w-full max-w-lg mx-auto"
+                                    autoPlay
+                                    muted
+                                    loop
+                                />
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -62,7 +72,7 @@ export default function D2CPage() {
 
             {/* 2 Column Layout with text on left and image on right */}
             <section data-aos="fade-up" className="px-6 py-32 bg-gray-100">
-                <div className=" max-w-7xl mx-auto">
+                <div className="max-w-7xl mx-auto">
                     <SolutionsTable/>
                 </div>
             </section>

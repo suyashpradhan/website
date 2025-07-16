@@ -1,7 +1,7 @@
 "use client"
 
 import Navbar from "@/app/components/Navbar";
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 import Footer from "@/components/Footer";
 import {MainComponent} from "@/app/solutions/payment-gateways-and-aggregators/MainComponent";
 import {SolutionsTable} from "@/app/solutions/payment-gateways-and-aggregators/SolutionsTable";
@@ -53,7 +53,13 @@ export default function PaymentGatewaysAndAggregatorsPage() {
                                 </div>
                             </div>
 
-                            {/* →→→ Right side: Animated Dashboard */}
+                            <video
+                                src='/videos/Hero1.mp4'
+                                className="rounded-lg w-full max-w-lg mx-auto"
+                                autoPlay
+                                muted
+                                loop
+                            />
                         </div>
                     </div>
                 </section>

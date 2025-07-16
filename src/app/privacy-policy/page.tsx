@@ -6,18 +6,11 @@ import Navbar from "@/app/components/Navbar";
 import Footer from "@/components/Footer";
 
 const sections = [
-    {id: "introduction", title: "Introduction"},
-    {id: "information-collection", title: "Information We Collect"},
-    {id: "how-we-use", title: "How We Use Your Information"},
-    {id: "information-sharing", title: "Information Sharing"},
-    {id: "data-security", title: "Data Security"},
-    {id: "cookies", title: "Cookies and Tracking"},
-    {id: "third-party", title: "Third-Party Services"},
-    {id: "data-retention", title: "Data Retention"},
-    {id: "your-rights", title: "Your Rights"},
-    {id: "children-privacy", title: "Children's Privacy"},
-    {id: "changes", title: "Changes to This Policy"},
-    {id: "contact", title: "Contact Us"},
+    {id: "introduction", title: "Data Controller"},
+    {id: "information-collection", title: "Data Collected"},
+    {id: "how-we-use", title: "Legal Bases for Processing"},
+    {id: "information-sharing", title: "International Transfers"},
+    {id: "data-security", title: "User Rights"},
 ]
 
 export default function Page() {
@@ -87,21 +80,19 @@ export default function Page() {
                         <div className="lg:col-span-3 mt-8 lg:mt-0">
                             <div className="bg-white rounded-lg shadow-sm p-8">
                                 <header className="mb-8">
-                                    <h1 className="text-3xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
-                                    <p className="text-gray-600">Last updated: January 1, 2024</p>
+                                    <h1 className="text-3xl font-bold text-gray-900 mb-2">QuarkfinAI's Privacy
+                                        Policy</h1>
+                                    <p className="text-gray-600">Last updated: January 1, 2025</p>
                                 </header>
 
                                 <div className="prose prose-gray max-w-none">
                                     <section id="introduction" className="mb-12">
                                         <h2 className="text-2xl font-semibold text-gray-900 mb-4">Introduction</h2>
                                         <p className="text-gray-700 leading-relaxed mb-4">
-                                            Welcome to our Privacy Policy. Your privacy is critically important to us.
-                                            This
-                                            Privacy Policy
-                                            explains how we collect, use, disclose, and safeguard your information when
-                                            you
-                                            visit our website
-                                            and use our services.
+                                            Quarkfin Tech Private Limited ([Registered Address], India) operates as the
+                                            data controller for customer account data and as a processor for fraud
+                                            detection data.
+
                                         </p>
                                         <p className="text-gray-700 leading-relaxed">
                                             By using our service, you agree to the collection and use of information in
@@ -113,250 +104,91 @@ export default function Page() {
                                     </section>
 
                                     <section id="information-collection" className="mb-12">
-                                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">Information We
-                                            Collect</h2>
-                                        <h3 className="text-xl font-medium text-gray-800 mb-3">Personal Information</h3>
-                                        <p className="text-gray-700 leading-relaxed mb-4">
-                                            We may collect personally identifiable information, such as your name, email
-                                            address, phone number,
-                                            and postal address when you voluntarily provide it to us.
-                                        </p>
-                                        <h3 className="text-xl font-medium text-gray-800 mb-3">Usage Data</h3>
-                                        <p className="text-gray-700 leading-relaxed mb-4">
-                                            We may also collect information about how you access and use our service.
-                                            This
-                                            usage data may
-                                            include your computer's Internet Protocol address, browser type, browser
-                                            version, the pages you
-                                            visit, the time and date of your visit, and other diagnostic data.
-                                        </p>
+                                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">Data Collected</h2>
+                                        <h3 className="text-xl font-medium text-gray-800">From Customers
+                                            (Controllers):</h3>
                                         <ul className="list-disc list-inside text-gray-700 space-y-2">
-                                            <li>IP address and location data</li>
-                                            <li>Browser and device information</li>
-                                            <li>Pages visited and time spent</li>
-                                            <li>Referring website information</li>
+                                            <li>Company name, billing details, admin user credentials</li>
+                                        </ul>
+                                        <h3 className="text-xl font-medium text-gray-800 mt-3">Processed for Customers
+                                            (Processors):</h3>
+                                        <ul className="list-disc list-inside text-gray-700 space-y-2">
+                                            <li>Transaction data, device fingerprints, behavioral signals
+                                                (hashed/anonymized where possible)
+                                            </li>
                                         </ul>
                                     </section>
 
                                     <section id="how-we-use" className="mb-12">
-                                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">How We Use Your
-                                            Information</h2>
-                                        <p className="text-gray-700 leading-relaxed mb-4">We use the collected data for
-                                            various purposes:</p>
-                                        <ul className="list-disc list-inside text-gray-700 space-y-2">
-                                            <li>To provide and maintain our service</li>
-                                            <li>To notify you about changes to our service</li>
-                                            <li>To provide customer support</li>
-                                            <li>To gather analysis or valuable information to improve our service</li>
-                                            <li>To monitor the usage of our service</li>
-                                            <li>To detect, prevent and address technical issues</li>
-                                            <li>To send you marketing communications (with your consent)</li>
-                                        </ul>
+                                        <h2 className="text-2xl font-semibold text-gray-900 mb-4"> Legal Bases for
+                                            Processing</h2>
+                                        <table
+                                            className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <thead
+                                                className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                            <tr>
+                                                <td className="px-6 py-3">Purpose</td>
+                                                <td className="px-6 py-3">Legal Basis
+                                                </td>
+                                                <td className="px-6 py-3">Retention Period</td>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+                                            <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 border-gray-200">
+                                                <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    Fraud Prevention
+
+                                                </td>
+                                                <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    Legitimate Interest (Art 6.1.f GDPR)
+
+                                                </td>
+                                                <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    90 days post-processing
+
+                                                </td>
+                                            </tr>
+                                            <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 border-gray-200">
+                                                <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    Service Improvement
+
+                                                </td>
+                                                <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    Anonymized analytics only
+
+                                                </td>
+                                                <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                    N/A (aggregate data)
+
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
                                     </section>
 
                                     <section id="information-sharing" className="mb-12">
-                                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">Information
-                                            Sharing</h2>
-                                        <p className="text-gray-700 leading-relaxed mb-4">
-                                            We do not sell, trade, or otherwise transfer your personal information to
-                                            third
-                                            parties without your
-                                            consent, except in the following circumstances:
-                                        </p>
+                                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">International
+                                            Transfers</h2>
+
                                         <ul className="list-disc list-inside text-gray-700 space-y-2">
-                                            <li>With service providers who assist us in operating our website</li>
-                                            <li>When required by law or to protect our rights</li>
-                                            <li>In connection with a merger, acquisition, or sale of assets</li>
-                                            <li>With your explicit consent</li>
+                                            <li>EU/Swiss data: Protected under Standard Contractual Clauses (SCCs)
+                                            </li>
+                                            <li>US data: Compliant with CCPA "service provider" requirements</li>
                                         </ul>
                                     </section>
 
                                     <section id="data-security" className="mb-12">
-                                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">Data Security</h2>
-                                        <p className="text-gray-700 leading-relaxed mb-4">
-                                            The security of your data is important to us. We implement appropriate
-                                            technical
-                                            and organizational
-                                            measures to protect your personal information against unauthorized access,
-                                            alteration, disclosure,
-                                            or destruction.
+                                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">User Rights</h2>
+                                        <p className="text-gray-700 leading-relaxed">
+                                            Requests for access/deletion must be submitted via:
                                         </p>
                                         <p className="text-gray-700 leading-relaxed">
-                                            However, please remember that no method of transmission over the Internet or
-                                            method of electronic
-                                            storage is 100% secure. While we strive to use commercially acceptable means
-                                            to
-                                            protect your
-                                            personal information, we cannot guarantee its absolute security.
-                                        </p>
-                                    </section>
-
-                                    <section id="cookies" className="mb-12">
-                                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">Cookies and Tracking
-                                            Technologies</h2>
-                                        <p className="text-gray-700 leading-relaxed mb-4">
-                                            We use cookies and similar tracking technologies to track activity on our
-                                            service and hold certain
-                                            information. Cookies are files with small amounts of data which may include
-                                            an
-                                            anonymous unique
-                                            identifier.
-                                        </p>
-                                        <h3 className="text-xl font-medium text-gray-800 mb-3">Types of Cookies We
-                                            Use</h3>
-                                        <ul className="list-disc list-inside text-gray-700 space-y-2">
-                                            <li>
-                                                <strong>Essential Cookies:</strong> Required for the website to function
-                                                properly
-                                            </li>
-                                            <li>
-                                                <strong>Analytics Cookies:</strong> Help us understand how visitors
-                                                interact
-                                                with our website
-                                            </li>
-                                            <li>
-                                                <strong>Marketing Cookies:</strong> Used to deliver relevant
-                                                advertisements
-                                            </li>
-                                            <li>
-                                                <strong>Preference Cookies:</strong> Remember your settings and
-                                                preferences
-                                            </li>
-                                        </ul>
-                                    </section>
-
-                                    <section id="third-party" className="mb-12">
-                                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">Third-Party
-                                            Services</h2>
-                                        <p className="text-gray-700 leading-relaxed mb-4">
-                                            Our service may contain links to other sites that are not operated by us. We
-                                            may
-                                            also use
-                                            third-party services to help us operate our website and provide our
-                                            services.
-                                        </p>
-                                        <h3 className="text-xl font-medium text-gray-800 mb-3">Third-Party Services We
-                                            Use</h3>
-                                        <ul className="list-disc list-inside text-gray-700 space-y-2">
-                                            <li>Google Analytics for website analytics</li>
-                                            <li>Payment processors for handling transactions</li>
-                                            <li>Email service providers for communications</li>
-                                            <li>Cloud storage providers for data hosting</li>
-                                        </ul>
-                                    </section>
-
-                                    <section id="data-retention" className="mb-12">
-                                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">Data Retention</h2>
-                                        <p className="text-gray-700 leading-relaxed mb-4">
-                                            We will retain your personal information only for as long as is necessary
-                                            for
-                                            the purposes set out
-                                            in this Privacy Policy. We will retain and use your information to the
-                                            extent
-                                            necessary to comply
-                                            with our legal obligations, resolve disputes, and enforce our policies.
+                                            Email: bidya@quarkfin.ai
                                         </p>
                                         <p className="text-gray-700 leading-relaxed">
-                                            Usage data is generally retained for a shorter period of time, except when
-                                            this
-                                            data is used to
-                                            strengthen the security or to improve the functionality of our service.
+                                            Response within 30 days (free of charge)
                                         </p>
-                                    </section>
-
-                                    <section id="your-rights" className="mb-12">
-                                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">Your Rights</h2>
-                                        <p className="text-gray-700 leading-relaxed mb-4">
-                                            You have certain rights regarding your personal information:
-                                        </p>
-                                        <ul className="list-disc list-inside text-gray-700 space-y-2">
-                                            <li>
-                                                <strong>Right to Access:</strong> Request copies of your personal data
-                                            </li>
-                                            <li>
-                                                <strong>Right to Rectification:</strong> Request correction of
-                                                inaccurate
-                                                data
-                                            </li>
-                                            <li>
-                                                <strong>Right to Erasure:</strong> Request deletion of your personal
-                                                data
-                                            </li>
-                                            <li>
-                                                <strong>Right to Restrict Processing:</strong> Request limitation of
-                                                data
-                                                processing
-                                            </li>
-                                            <li>
-                                                <strong>Right to Data Portability:</strong> Request transfer of your
-                                                data
-                                            </li>
-                                            <li>
-                                                <strong>Right to Object:</strong> Object to processing of your personal
-                                                data
-                                            </li>
-                                        </ul>
-                                    </section>
-
-                                    <section id="children-privacy" className="mb-12">
-                                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">Children's
-                                            Privacy</h2>
-                                        <p className="text-gray-700 leading-relaxed mb-4">
-                                            Our service does not address anyone under the age of 13. We do not knowingly
-                                            collect personally
-                                            identifiable information from children under 13.
-                                        </p>
-                                        <p className="text-gray-700 leading-relaxed">
-                                            If you are a parent or guardian and you are aware that your child has
-                                            provided
-                                            us with personal
-                                            information, please contact us. If we become aware that we have collected
-                                            personal information from
-                                            children without verification of parental consent, we take steps to remove
-                                            that
-                                            information from our
-                                            servers.
-                                        </p>
-                                    </section>
-
-                                    <section id="changes" className="mb-12">
-                                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">Changes to This
-                                            Privacy
-                                            Policy</h2>
-                                        <p className="text-gray-700 leading-relaxed mb-4">
-                                            We may update our Privacy Policy from time to time. We will notify you of
-                                            any
-                                            changes by posting the
-                                            new Privacy Policy on this page and updating the "Last updated" date.
-                                        </p>
-                                        <p className="text-gray-700 leading-relaxed">
-                                            You are advised to review this Privacy Policy periodically for any changes.
-                                            Changes to this Privacy
-                                            Policy are effective when they are posted on this page.
-                                        </p>
-                                    </section>
-
-                                    <section id="contact" className="mb-12">
-                                        <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contact Us</h2>
-                                        <p className="text-gray-700 leading-relaxed mb-4">
-                                            If you have any questions about this Privacy Policy, please contact us:
-                                        </p>
-                                        <div className="bg-gray-50 p-4 rounded-lg">
-                                            <ul className="text-gray-700 space-y-2">
-                                                <li>
-                                                    <strong>Email:</strong> privacy@example.com
-                                                </li>
-                                                <li>
-                                                    <strong>Phone:</strong> +1 (555) 123-4567
-                                                </li>
-                                                <li>
-                                                    <strong>Address:</strong> 123 Privacy Street, Data City, DC 12345
-                                                </li>
-                                                <li>
-                                                    <strong>Website:</strong> www.example.com/contact
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </section>
                                 </div>
                             </div>

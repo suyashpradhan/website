@@ -100,7 +100,6 @@ export default function Navbar() {
             links: [
                 {title: 'Contact Us', desc: 'Driving intelligent commerce', icon: CalendarIcon, url: '/contact-us'},
                 {title: 'About us', desc: 'Driving intelligent commerce', icon: CalendarIcon, url: '/about-us'},
-                {title: 'Careers', desc: 'Join us', icon: CalendarDaysIcon, url: '/coming-soon'},
             ],
         },
     ];

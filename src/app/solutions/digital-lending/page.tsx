@@ -1,7 +1,7 @@
 "use client"
 
 import Navbar from "@/app/components/Navbar";
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 import Footer from "@/components/Footer";
 import {MainComponent} from "@/app/solutions/digital-lending/MainComponent";
 import {SolutionsTable} from "@/app/solutions/digital-lending/SolutionsTable";
@@ -53,7 +53,17 @@ export default function DigitalLendingPage() {
                                 </div>
                             </div>
 
-                            {/* →→→ Right side: Animated Dashboard */}
+                            <div
+                                className="w-full overflow-hidden flex items-center justify-center">
+                                {/* Swap this for a real <Image> when you have one */}
+                                <video
+                                    src="/videos/H2.mp4"
+                                    className="rounded-lg w-full max-w-lg mx-auto"
+                                    autoPlay
+                                    muted
+                                    loop
+                                />
+                            </div>
                         </div>
                     </div>
                 </section>

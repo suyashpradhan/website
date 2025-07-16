@@ -5,25 +5,19 @@ import Link from "next/link";
 
 const navigation = {
     products: [
-        {name: 'Consumer Risk Prevention', href: '#'},
-        {name: 'Business Risk Prevention', href: '#'},
-        {name: 'Lending Risk Prevention', href: '#'},
+        {name: 'Consumer Risk Prevention', href: '/consumer-risk-prevention'},
+        {name: 'Business Risk Prevention', href: '/business-risk-prevention'},
+        {name: 'Lending Risk Prevention', href: '/lending-risk-prevention'},
     ],
     solutions: [
-        {name: 'D2C & eCommerce Solutions', href: '#'},
-        {name: 'Payment Gateways & Merchant Aggregators', href: '#'},
-        {name: 'Digital Lending (B2B & B2C)', href: '#'},
-        {name: 'Travel & Quick Commerce Solutions', href: '#'},
+        {name: 'D2C & eCommerce Solutions', href: 'solutions/d2c-ecommerce'},
+        {name: 'Payment Gateways & Merchant Aggregators', href: 'solutions/payment-gateways-and-aggregators'},
+        {name: 'Digital Lending (B2B & B2C)', href: 'solutions/digital-lending'},
+        {name: 'Travel & Quick Commerce Solutions', href: 'solutions/travel-ecommerce'},
     ],
     company: [
-        {name: 'Mission', href: '#'},
-        {name: 'Team', href: '#'},
-        {name: 'Careers', href: '#'},
-    ],
-    pricing: [
-        {name: 'Startup', href: '#'},
-        {name: 'Business', href: '#'},
-        {name: 'Enterprise', href: '#'},
+        {name: 'Contact Us', href: '/contact-us'},
+        {name: 'About Us', href: '/about-us'},
     ],
     social: [
         {
@@ -137,20 +131,6 @@ export default function Footer() {
                             </div>
                         </div>
                         <div className="md:grid md:grid-cols-2 md:gap-8">
-
-                            <div className="mt-10 md:mt-0">
-                                <h3 className="text-sm font-semibold leading-6 text-white">Pricing</h3>
-                                <ul role="list" className="mt-6 space-y-4">
-                                    {navigation.pricing.map((item) => (
-                                        <li key={item.name}>
-                                            <a href={item.href}
-                                               className="text-sm leading-6 text-gray-300 hover:text-white">
-                                                {item.name}
-                                            </a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
                             <div>
                                 <h3 className="text-sm font-semibold leading-6 text-white">About QuarkfinAI</h3>
                                 <ul role="list" className="mt-6 space-y-4">
