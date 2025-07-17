@@ -1,7 +1,7 @@
 "use client"
 
 import {useEffect, useState} from "react"
-import {ChevronRight} from "lucide-react"
+import {ChevronRight, FileText, Scale} from "lucide-react"
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -52,7 +52,10 @@ export default function Page() {
                         {/* Sidebar Navigation */}
                         <div className="lg:col-span-1">
                             <div className="sticky top-8">
-                                <h2 className="text-lg font-semibold text-gray-900 mb-4">Table of Contents</h2>
+                                <div className="flex items-center mb-4">
+                                    <Scale className="w-6 h-6 text-blue-600 mr-2"/>
+                                    <h2 className="text-lg font-semibold text-gray-900">Table of Contents</h2>
+                                </div>
                                 <nav className="space-y-1">
                                     {sections.map((section) => (
                                         <button
@@ -80,8 +83,11 @@ export default function Page() {
                         <div className="lg:col-span-3 mt-8 lg:mt-0">
                             <div className="bg-white rounded-lg shadow-sm p-8">
                                 <header className="mb-8">
-                                    <h1 className="text-3xl font-bold text-gray-900 mb-2">QuarkfinAI's Privacy
-                                        Policy</h1>
+                                    <div className="flex items-center mb-4">
+                                        <FileText className="w-8 h-8 text-blue-600 mr-3"/>
+                                        <h1 className="text-3xl font-bold text-gray-900">QuarkfinAI's Privacy
+                                            Policy</h1>
+                                    </div>
                                     <p className="text-gray-600">Last updated: January 1, 2025</p>
                                 </header>
 
@@ -89,7 +95,8 @@ export default function Page() {
                                     <section id="introduction" className="mb-12">
                                         <h2 className="text-2xl font-semibold text-gray-900 mb-4">Introduction</h2>
                                         <p className="text-gray-700 leading-relaxed mb-4">
-                                            Quarkfin Tech Private Limited ([Registered Address], India) operates as the
+                                            Quarkfin Tech Private Limited (A1307, Gopalan Olympia, Kumbalagodu,
+                                            Bangalore, India, 560074) operates as the
                                             data controller for customer account data and as a processor for fraud
                                             detection data.
 

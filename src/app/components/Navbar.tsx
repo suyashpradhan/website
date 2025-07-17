@@ -56,25 +56,25 @@ export default function Navbar() {
                     title: 'D2C & eCommerce',
                     desc: 'Custom fit your process',
                     icon: CalendarIcon,
-                    url: 'solutions/d2c-ecommerce'
+                    url: '/solutions/d2c-ecommerce'
                 },
                 {
                     title: 'Payment Gateways & Aggregators',
                     desc: 'Modernize operations',
                     icon: ChartPieIcon,
-                    url: 'solutions/payment-gateways-and-aggregators'
+                    url: '/solutions/payment-gateways-and-aggregators'
                 },
                 {
                     title: 'Digital Lending',
                     desc: 'Unify user flow',
                     icon: CalendarDaysIcon,
-                    url: 'solutions/digital-lending'
+                    url: '/solutions/digital-lending'
                 },
                 {
                     title: 'Travel & Quick Commerce',
                     desc: 'Unify user flow',
                     icon: CalendarDaysIcon,
-                    url: 'solutions/travel-ecommerce'
+                    url: '/solutions/travel-ecommerce'
                 },
             ],
         },
