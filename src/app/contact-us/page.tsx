@@ -87,7 +87,7 @@ export default function ContactUs() {
                                             <h3 className="text-lg font-medium text-gray-900">
                                                 Email
                                             </h3>
-                                            <p className="text-gray-600">hello@quarkinfin.ai</p>
+                                            <p className="text-gray-600">hello@quarkfin.ai</p>
                                         </div>
                                     </div>
                                 </div>
