@@ -102,7 +102,7 @@ export default function Footer() {
                         className="h-32 object-fill"
                     />
                     <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-                        <div className="md:grid md:grid-cols-2 md:gap-8">
+                        <div className="md:grid md:grid-cols-2 md:gap-8 px-4">
                             <div>
                                 <h3 className="text-sm font-semibold leading-6 text-white">Products</h3>
                                 <ul role="list" className="mt-6 space-y-4">
@@ -130,7 +130,7 @@ export default function Footer() {
                                 </ul>
                             </div>
                         </div>
-                        <div className="md:grid md:grid-cols-2 md:gap-8">
+                        <div className="md:grid md:grid-cols-2 md:gap-8 px-4">
                             <div>
                                 <h3 className="text-sm font-semibold leading-6 text-white">About QuarkfinAI</h3>
                                 <ul role="list" className="mt-6 space-y-4">
@@ -149,7 +149,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="border-t border-gray-700"/>
-            <div className="mx-auto max-w-7xl py-6 flex justify-between">
+            <div className="mx-auto max-w-7xl py-6  px-4 flex justify-between">
                 <h1 className="text-white">© 2025 QuarkinAI</h1>
 
                 <div>

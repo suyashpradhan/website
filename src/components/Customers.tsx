@@ -40,7 +40,7 @@ const Feature = ({
 }) => {
     return (
         <section className="w-full  relative overflow-hidden">
-            <div className="container relative">
+            <div className="container  relative">
                 <div className="gap-8 md:gap-12 relative">
                     <motion.div
                         key={index}
@@ -48,7 +48,7 @@ const Feature = ({
                         whileInView={{opacity: 1, y: 0}}
                         viewport={{once: true}}
                         transition={{duration: 0.5, delay: index * 0.1}}
-                        className="relative space-y-4 pr-8"
+                        className="relative space-y-4 pr-8 pb-8"
                     >
                         <div
                             className="flex h-16 w-16 items-center justify-center rounded-full bg-[#2C2F8F] text-primary-foreground text-xl font-bold shadow-lg">

@@ -77,7 +77,7 @@ export default function TravelCommercePage() {
                 {/* Final CTA */}
                 <section className="w-full font-sora bg-[#2C2F8F] py-12 md:py-24 lg:py-32 text-white">
                     <div className="max-w-7xl mx-auto ">
-                        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                        <div className="flex flex-col items-center justify-center space-y-4 text-center px-4">
                             <div className="space-y-2">
                                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
                                     See Your Hidden Fraud Exposure </h2>
