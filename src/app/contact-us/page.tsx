@@ -32,7 +32,6 @@ export default function ContactUs() {
 
         const {error} = await supabase.from('leads').insert([
             {
-                id: '123',
                 name: formData.name,
                 business_email: formData.business_email,
                 phone: formData.phone,
