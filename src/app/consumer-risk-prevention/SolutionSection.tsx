@@ -1,5 +1,4 @@
-import {ChevronRight, CreditCard, Fingerprint, Shield} from "lucide-react"
-import Link from "next/link";
+import {CreditCard, Fingerprint, Shield} from "lucide-react"
 
 export function SolutionSection() {
     const solutions = [
@@ -10,21 +9,18 @@ export function SolutionSection() {
                 "AI-powered onboarding intent scoring to block fake accounts and RTO.\n"
             ,
             gradient: "from-emerald-500 to-teal-600",
-            link: 'Learn More',
         },
         {
             icon: CreditCard,
             title: "Chargeback Guarantee",
             description: "Fewer chargebacks &  more revenue for your business.",
             gradient: "from-purple-500 to-indigo-600",
-            link: 'Learn More',
         },
         {
             icon: Fingerprint,
             title: "Device Fingerprinting",
             description: "Detect risky devices, VPNs, account takeovers, and prevent promo abuse.",
             gradient: "from-orange-500 to-red-600",
-            link: 'Learn More',
         },
     ]
 
@@ -52,14 +48,6 @@ export function SolutionSection() {
                                 <h1 className="text-xl font-bold text-gray-900 mb-2">{solution.title}</h1>
                                 <p className="text-gray-600">{solution.description}</p>
                             </div>
-                            <Link
-                                href="#"
-                                className="mt-6 text-left inline-flex gap-1 text-md items-center font-bold
-                     text-blue-600 transition-colors hover:text-blue-800"
-                            >
-                                {solution.link}
-                                <ChevronRight className="h-4 w-4"/>
-                            </Link>
                         </div>
 
                     ))}
