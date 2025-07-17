@@ -78,11 +78,10 @@ export default function Navbar() {
                 },
             ],
         },
-        {
-            label: 'Resources',
-            icon: HomeIcon,
-            links: [],
-        },
+        // {
+        //     label: 'Resources',
+        //     icon: HomeIcon,
+        //     links: [],
         {
             label: 'Integrations',
             icon: ServerStackIcon,

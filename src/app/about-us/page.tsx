@@ -1,6 +1,6 @@
 "use client"
 
-import {Award, Calendar, Heart, Target, Users} from "lucide-react"
+import {Award, Heart, Target, Users} from "lucide-react"
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -173,50 +173,6 @@ export default function AboutUs() {
                     </div>
                 </section>
 
-                {/* Company Timeline */}
-                <section className="py-20 px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Journey</h2>
-                            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                                From a small startup to an industry leader, here's how we've grown over the years.
-                            </p>
-                        </div>
-
-                        <div className="relative">
-                            {/* Timeline line */}
-                            <div
-                                className="absolute left-4 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-gray-300"></div>
-
-                            <div className="space-y-12">
-                                {timeline.map((item, index) => (
-                                    <div key={index} className="relative flex items-center">
-                                        {/* Timeline dot */}
-                                        <div
-                                            className="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow"></div>
-
-                                        {/* Content */}
-                                        <div
-                                            className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12 md:ml-auto"}`}>
-                                            <div className="bg-white p-6 rounded-lg shadow-sm border">
-                                                <div className="flex items-center mb-2">
-                                                    <Calendar className="w-5 h-5 text-blue-600 mr-2"/>
-                                                    <span className="text-blue-600 font-semibold">{item.year}</span>
-                                                </div>
-                                                <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
-                                                <p className="text-gray-600">{item.description}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Culture Section */}
-                
-
                 {/* CTA Section */}
                 <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#2C2F8F]">
                     <div className="max-w-4xl mx-auto text-center">
@@ -225,10 +181,6 @@ export default function AboutUs() {
                             Whether you're looking to work with us or join our team, we'd love to hear from you.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button
-                                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-                                View Open Positions
-                            </button>
                             <button
                                 className="border border-white text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
                                 Get in Touch
