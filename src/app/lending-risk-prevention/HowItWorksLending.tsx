@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function HowItWorksRisk() {
     return (
         <section className="w-full">
@@ -42,10 +44,12 @@ export default function HowItWorksRisk() {
                                 rise—automatically.</p>
                         </div>
                     </div>
-                    <button
-                        className=" mt-8 border bg-[#2c2f8f] border-white text-white px-6 py-3 rounded  cursor-pointer hover:scale-105 transition shadow">
-                        Talk to Fraud Expert
-                    </button>
+                    <Link href="/pricing">
+                        <button
+                            className=" mt-8 border bg-[#2c2f8f] border-white text-white px-6 py-3 rounded  cursor-pointer hover:scale-105 transition shadow">
+                            Talk to Fraud Expert
+                        </button>
+                    </Link>
 
                 </div>
             </div>

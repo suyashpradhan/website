@@ -5,6 +5,7 @@ import React, {useEffect} from "react";
 import Footer from "@/components/Footer";
 import {MainComponent} from "@/app/solutions/d2c-ecommerce/MainComponent";
 import {SolutionsTable} from "@/app/solutions/d2c-ecommerce/SolutionsTable";
+import Link from "next/link";
 
 export default function D2CPage() {
 
@@ -40,14 +41,16 @@ export default function D2CPage() {
                                     </p>
                                 </div>
                                 <div className="mt-4 flex flex-wrap gap-4">
+                                    <Link href="/pricing">
+                                        <button type="button"
+                                                className=" cursor-pointer bg-[#2C2F8F] text-white px-4 py-4 rounded hover:bg-[#3A50D9] transition hover:bg-[#2C2F8F] hover:text-white hover:scale-105 transition shadow">
+                                            Get Started For Free
+                                        </button>
+
+                                    </Link>
+
                                     <button
-                                        className="relative px-8 py-3 overflow-hidden rounded-[6px] text-white transition group">
-                                        <div
-                                            className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 group-hover:scale-110 transition-transform"></div>
-                                        <span className="relative z-10 px-8 py-3 rounded-[6px]">Start Free Trial</span>
-                                    </button>
-                                    <button
-                                        className="border border-[#2C2F8F] px-6 py-3 rounded text-[#2C2F8F] hover:bg-[#2C2F8F] hover:text-white transition shadow">
+                                        className="cursor-pointer border border-[#2C2F8F] text-[#2C2F8F] px-6 py-3 rounded hover:bg-[#2C2F8F] hover:text-white hover:scale-105 transition shadow">
                                         See How It Works
                                     </button>
                                 </div>
@@ -98,18 +101,16 @@ export default function D2CPage() {
                                 </p>
                             </div>
                             <div className="mt-2 flex flex-wrap gap-4">
-                                <button className="p-[3px] relative">
-                                    <div
-                                        className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-sm"/>
-                                    <span
-                                        className="relative z-10 px-8 py-3 bg-black rounded-[6px] text-white hover:bg-transparent transition">
-                Start Free Trial
-              </span>
-                                </button>
+                                <Link href="/pricing">
+                                    <button type="button"
+                                            className=" cursor-pointer text-[#2C2F8F] bg-white px-4 py-4 rounded hover:bg-[#3A50D9] transition  hover:text-white hover:scale-105 transition shadow">
+                                        Get Started For Free
+                                    </button>
+                                </Link>
 
                                 <button
-                                    className="border bg-white border-white text-black px-6 py-3 rounded hover:bg-white hover:text- hover:scale-105 transition shadow">
-                                    Talk to Fraud Expert
+                                    className="cursor-pointer border border-white text-white px-6 py-3 rounded hover:bg-[#2C2F8F] hover:text-white hover:scale-105 transition shadow">
+                                    Talk to an expert
                                 </button>
                             </div>
                         </div>

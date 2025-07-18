@@ -1,15 +1,13 @@
 "use client"
-
-import {Award, Heart, Target, Users} from "lucide-react"
-import Navbar from "@/app/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from "@/app/components/Navbar"
+import Footer from "@/components/Footer"
 
 const teamMembers = [
     {
         name: "Bidya",
         role: "CEO & Founder",
         image: "/placeholder.svg?height=300&width=300",
-        bio: 'Nothing',
+        bio: "Nothing",
         linkedin: "#",
         twitter: "#",
     },
@@ -17,7 +15,7 @@ const teamMembers = [
         name: "Sachinn",
         role: "Head of Marketing",
         image: "/placeholder.svg?height=300&width=300",
-        bio: 'Nothing',
+        bio: "Nothing",
         linkedin: "#",
         twitter: "#",
     },
@@ -25,78 +23,24 @@ const teamMembers = [
         name: "Mehul Dhikonia",
         role: "CTO",
         image: "/placeholder.svg?height=300&width=300",
-        bio: 'Nothing',
+        bio: "Nothing",
         linkedin: "#",
         twitter: "#",
     },
 ]
 
-const timeline = [
-    {
-        year: "2018",
-        title: "Company Founded",
-        description: "Started with a small team of 3 people in a garage, driven by a big vision.",
-    },
-    {
-        year: "2019",
-        title: "First Product Launch",
-        description: "Launched our flagship product and acquired our first 1,000 customers.",
-    },
-    {
-        year: "2020",
-        title: "Series A Funding",
-        description: "Raised $5M in Series A funding to accelerate growth and expand the team.",
-    },
-    {
-        year: "2021",
-        title: "International Expansion",
-        description: "Expanded operations to Europe and Asia, serving customers globally.",
-    },
-    {
-        year: "2022",
-        title: "Major Partnership",
-        description: "Formed strategic partnerships with industry leaders to enhance our offerings.",
-    },
-    {
-        year: "2023",
-        title: "AI Integration",
-        description: "Integrated cutting-edge AI technology to improve user experience.",
-    },
-    {
-        year: "2024",
-        title: "Market Leader",
-        description: "Became the leading solution in our category with over 100,000 users.",
-    },
-]
-
-const stats = [
-    {number: "100K+", label: "Happy Customers"},
-    {number: "50+", label: "Team Members"},
-    {number: "25+", label: "Countries Served"},
-    {number: "99.9%", label: "Uptime"},
-]
-
-const values = [
-    {
-        icon: <Users className="w-8 h-8"/>,
-        title: "Customer First",
-        description: "We put our customers at the center of everything we do, ensuring their success is our success.",
-    },
-    {
-        icon: <Target className="w-8 h-8"/>,
-        title: "Innovation",
-        description: "We constantly push boundaries and embrace new technologies to solve complex problems.",
-    },
-    {
-        icon: <Heart className="w-8 h-8"/>,
-        title: "Integrity",
-        description: "We operate with transparency, honesty, and ethical practices in all our interactions.",
-    },
-    {
-        icon: <Award className="w-8 h-8"/>,
-        title: "Excellence",
-        description: "We strive for excellence in every project, delivering quality that exceeds expectations.",
-    },
+const brandLogos = [
+    {name: "Amazon", logo: "/logos/5.jpeg"},
+    {name: "PA Media", logo: "/logos/7.jpeg"},
+    {name: "CRED", logo: "/logos/1.jpeg"},
+    {name: "Deliveryhero", logo: "/logos/6.jpeg"},
+    {name: "Bureauid", logo: "/logos/9.jpeg"},
+    {name: "Chargebee", logo: "/logos/3.jpeg"},
+    {name: "Oracle", logo: "/logos/2.jpeg"},
+    {name: "MoEngage", logo: "/logos/8.jpeg"},
+    {name: "Practo", logo: "/logos/4.jpeg"},
+    {name: "Infotrie", logo: "/logos/10.jpeg"},
+    {name: "Premier Logic", logo: "/logos/11.jpeg"},
 ]
 
 export default function AboutUs() {
@@ -104,50 +48,122 @@ export default function AboutUs() {
         <>
             <Navbar/>
             <div className="min-h-screen bg-white">
-                {/* Hero Section */}
-                <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20 px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-7xl mx-auto text-center">
-                        <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">About Our Company</h1>
-                        <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-8">
-                            We're on a mission to transform the way businesses operate through innovative technology
-                            solutions and
-                            exceptional service.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button
-                                className="bg-[#2C2f8f] text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
-                                Join Our Team
-                            </button>
-                            <button
-                                className="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
-                                Our Story
-                            </button>
+                {/* Our Story Section */}
+                <section className="py-20 px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="text-center mb-12">
+                            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">About QuarkfinAI</h1>
+
+                        </div>
+                        <div className="prose prose-lg mx-auto text-gray-800 leading-relaxed">
+                            <p className="mb-6 text-lg">
+                                We built QuarkfinAI out of frustration from watching good businesses get blindsided by
+                                fraud, over and
+                                over. Enterprises with bold ideas, scaling companies on the verge of breakthroughs, have
+                                all been
+                                derailed by preventable threats. The existing tools meant to protect them are relics of
+                                the past:
+                                clunky, expensive, and built for legacy, not innovators, or built for scale. We knew
+                                there had to be a
+                                better way!
+                            </p>
+                            <p className="mb-6 text-lg">
+                                So we built it ourselves. Drawing on years in fraud prevention, we designed QuarkfinAI
+                                to be what we'd
+                                always needed: smart enough to outthink modern risks, but so simple that any team could
+                                use it. No army
+                                of techies required. In an era where AI is rewriting the rules of fraud daily, we
+                                flipped the script:
+                                instead of reacting to losses, we help businesses stop threats before they strike.
+                            </p>
+                            <p className="text-lg">
+                                Not to be dramatic, but this isn't just software; it's a shield for ambition. Because
+                                every company, big
+                                or small, deserves to grow fearlessly.
+                            </p>
                         </div>
                     </div>
                 </section>
 
-                {/* Mission, Vision, Values */}
+                {/* Vision & Mission Section */}
+                <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                            <div className="text-center lg:text-left">
+                                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Our Vision</h3>
+                                <p className="text-lg text-gray-600 leading-relaxed">
+                                    Where trust drives growth, and growth builds trust.
+                                </p>
+                            </div>
+                            <div className="text-center lg:text-left">
+                                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
+                                <p className="text-lg text-gray-600 leading-relaxed">
+                                    To become the trusted risk intelligence layer, an always-learning AI platform that
+                                    makes
+                                    high-velocity, high-trust transactions possible for every business, in every market.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Brands Ticker Section */}
+                <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="text-center mb-12">
+                            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Team background
+                            </h2>
+                        </div>
+                        <div className="relative overflow-hidden">
+                            <div className="flex animate-scroll">
+                                {/* First set of logos */}
+                                {brandLogos.map((brand, index) => (
+                                    <div key={index} className="flex-shrink-0 mx-8">
+                                        <img
+                                            src={brand.logo}
+                                            alt={brand.name}
+                                            height={120}
+                                            width={120}
+                                            className="h-12 w-auto duration-300 opacity-100 transition-opacity"
+                                        />
+                                    </div>
+                                ))}
+                                {brandLogos.map((brand, index) => (
+                                    <div key={`duplicate-${index}`} className="flex-shrink-0 mx-8">
+                                        <img
+                                            src={brand.logo || "/placeholder.svg"}
+                                            alt={brand.name}
+                                            className="h-12 w-auto duration-300 opacity-100 transition-opacity"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 {/* Team Section */}
                 <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The People Behind the
+                                Magic</h2>
                             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                                 Our diverse team of experts brings together decades of experience in technology, design,
-                                and
-                                business.
+                                and business.
                             </p>
                         </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
                             {teamMembers.map((member, index) => (
                                 <div
                                     key={index}
                                     className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow"
                                 >
-                                    <img src={member.image || "/placeholder.svg"} alt={member.name}
-                                         className="w-full h-64 object-cover"/>
+                                    <img
+                                        src={member.image || "/placeholder.svg"}
+                                        alt={member.name}
+                                        className="w-full h-64 object-cover"
+                                    />
                                     <div className="p-6">
                                         <h3 className="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>
                                         <p className="text-blue-600 font-medium mb-3">{member.role}</p>
@@ -172,24 +188,28 @@ export default function AboutUs() {
                         </div>
                     </div>
                 </section>
-
-                {/* CTA Section */}
-                <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#2C2F8F]">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Join Our Mission?</h2>
-                        <p className="text-xl text-blue-100 mb-8">
-                            Whether you're looking to work with us or join our team, we'd love to hear from you.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button
-                                className="border border-white text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
-                                Get in Touch
-                            </button>
-                        </div>
-                    </div>
-                </section>
             </div>
             <Footer/>
+
+            <style jsx>{`
+                @keyframes scroll {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
+
+                .animate-scroll {
+                    animation: scroll 30s linear infinite;
+                    width: calc(200% + 4rem);
+                }
+
+                .animate-scroll:hover {
+                    animation-play-state: paused;
+                }
+            `}</style>
         </>
     )
 }

@@ -1,5 +1,6 @@
 import {AlertTriangle, ArrowRight, CheckCircle, Shield, TrendingUp, XCircle, Zap} from "lucide-react"
 import React from "react";
+import Link from "next/link";
 
 export default function IndustrySolution() {
     return (
@@ -65,15 +66,14 @@ export default function IndustrySolution() {
                                 </div>
                             </div>
 
-                            <button className="p-[3px] relative cursor-pointer">
-                                <div
-                                    className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-sm"/>
-                                <div
-                                    className="px-8 py-3 flex items-center bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+
+                            <Link href="/pricing">
+                                <button
+                                    className=" cursor-pointer flex items-center  hover:text-white hover:scale-105 transition shadow bg-[#2C2F8F] text-white px-4 py-4 rounded hover:bg-[#3A50D9] transition">
                                     Try free, Get RTO protection for your next 100 orders
                                     <ArrowRight className="h-5 w-5 ml-2"/>
-                                </div>
-                            </button>
+                                </button>
+                            </Link>
                         </div>
 
                         <div className="bg-gray-50 p-8 rounded-xl">
@@ -200,15 +200,14 @@ export default function IndustrySolution() {
                                 </div>
                             </div>
 
-                            <button className="p-[3px] relative cursor-pointer">
-                                <div
-                                    className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-sm"/>
-                                <div
-                                    className="px-8 py-3 flex items-center bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+
+                            <Link href="/pricing">
+                                <button
+                                    className=" cursor-pointer flex items-center  hover:text-white hover:scale-105 transition shadow bg-[#2C2F8F] text-white px-4 py-4 rounded hover:bg-[#3A50D9] transition">
                                     Free audit: We&#39;ll analyze your last 100 onboardings for risk
                                     <ArrowRight className="h-5 w-5 ml-2"/>
-                                </div>
-                            </button>
+                                </button>
+                            </Link>
 
                         </div>
                     </div>
@@ -272,15 +271,14 @@ export default function IndustrySolution() {
                                 </div>
                             </div>
 
-                            <button className="p-[3px] relative cursor-pointer">
-                                <div
-                                    className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-sm"/>
-                                <div
-                                    className="px-8 py-3 flex items-center bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+                            <Link href="/pricing">
+                                <button
+                                    className=" cursor-pointer flex items-center  hover:text-white hover:scale-105 transition shadow bg-[#2C2F8F] text-white px-4 py-4 rounded hover:bg-[#3A50D9] transition">
                                     Test our API: Underwrite 100 loans free
                                     <ArrowRight className="h-5 w-5 ml-2"/>
-                                </div>
-                            </button>
+                                </button>
+                            </Link>
+
                         </div>
 
                         <div className="bg-gray-50 p-8 rounded-xl">
@@ -394,15 +392,13 @@ export default function IndustrySolution() {
                                 </div>
                             </div>
 
-                            <button className="p-[3px] relative cursor-pointer">
-                                <div
-                                    className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-sm"/>
-                                <div
-                                    className="px-8 py-3 flex items-center bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+                            <Link href="/pricing">
+                                <button
+                                    className=" cursor-pointer flex items-center  hover:text-white hover:scale-105 transition shadow bg-[#2C2F8F] text-white px-4 py-4 rounded hover:bg-[#3A50D9] transition">
                                     Stop card testing now: Free 14-day trial
                                     <ArrowRight className="h-5 w-5 ml-2"/>
-                                </div>
-                            </button>
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </section>

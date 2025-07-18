@@ -11,6 +11,7 @@ import {Hero} from "@/components/Hero";
 import {Features2} from "@/components/Features2";
 import Footer from "@/components/Footer";
 import '../app/globals.css'
+import Link from "next/link";
 
 export default function Home() {
 
@@ -64,14 +65,12 @@ export default function Home() {
                         </h2>
                         <Customers/>
 
-                        <button className="p-[3px] relative">
-                            <div
-                                className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-sm"/>
-                            <div
-                                className="px-8 py-3  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+                        <Link href="/pricing">
+                            <button
+                                className=" cursor-pointer  hover:text-white hover:scale-105 transition shadow bg-[#2C2F8F] text-white px-4 py-4 rounded hover:bg-[#3A50D9] transition">
                                 Try free for 14 Days
-                            </div>
-                        </button>
+                            </button>
+                        </Link>
                     </div>
                 </section>
 
@@ -112,17 +111,15 @@ export default function Home() {
                                 </p>
                             </div>
                             <div className="mt-2 flex flex-wrap gap-4">
-                                <button className="p-[3px] relative">
-                                    <div
-                                        className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-sm"/>
-                                    <span
-                                        className="relative z-10 px-8 py-3 bg-black rounded-[6px] text-white hover:bg-transparent transition">
-                Get Started
-              </span>
-                                </button>
+                                <Link href="/pricing">
+                                    <button type="button"
+                                            className=" cursor-pointer text-[#2C2F8F] bg-white px-4 py-4 rounded hover:bg-[#3A50D9] transition  hover:text-white hover:scale-105 transition shadow">
+                                        Get Started For Free
+                                    </button>
+                                </Link>
 
                                 <button
-                                    className="border border-white text-white px-6 py-3 rounded hover:bg-[#2C2F8F] hover:text-white hover:scale-105 transition shadow">
+                                    className="cursor-pointer border border-white text-white px-6 py-3 rounded hover:bg-[#2C2F8F] hover:text-white hover:scale-105 transition shadow">
                                     Talk to an expert
                                 </button>
                             </div>
