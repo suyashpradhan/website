@@ -82,6 +82,7 @@ export default function Navbar() {
         //     label: 'Resources',
         //     icon: HomeIcon,
         //     links: [],
+        // },
         {
             label: 'Integrations',
             icon: ServerStackIcon,
@@ -230,12 +231,22 @@ export default function Navbar() {
                         </div>
                     </div>
 
+
+                    <Link href="/coming-soon">
+                        <button
+                            className="cursor-pointer border border-[#2C2F8F] text-[#2C2F8F] px-6 py-1.5 rounded hover:bg-[#2C2F8F] hover:text-white hover:scale-105 transition shadow">
+                            Login
+                        </button>
+                    </Link>
+
                     <Link href="/pricing">
                         <button
-                            className=" cursor-pointer bg-[#2C2F8F] text-white px-4 py-2 rounded hover:bg-[#3A50D9] transition">
+                            className=" cursor-pointer hover:text-white hover:scale-105 transition shadow bg-[#2C2F8F] text-white px-4 py-2 rounded hover:bg-[#3A50D9] transition">
                             Book A Demo
                         </button>
                     </Link>
+
+
                 </div>
 
                 {/* Mobile Toggle */}
