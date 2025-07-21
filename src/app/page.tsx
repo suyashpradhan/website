@@ -40,12 +40,12 @@ export default function Home() {
                 <Navbar/>
 
                 {/* Hero Section */}
-                <section data-aos="fade-in" className="px-6 py-20">
+                <section data-aos="fade-in" className="px-6">
                     <Hero/>
                 </section>
 
                 {/* Features Section */}
-                <section data-aos="fade-up" className="px-6 py-32 bg-gray-100">
+                <section data-aos="fade-up" className="px-6 py-12 bg-gray-100">
                     <div className="max-w-7xl mx-auto">
                         <h2 className="text-3xl md:text-4xl font-bold text-left text-[#2C2F8F] text-left font-bold">Commerce
                             Protection That Works While You Sleep</h2>
@@ -58,7 +58,7 @@ export default function Home() {
 
 
                 {/* how it works */}
-                <section data-aos="fade-up" className="px-6 py-32">
+                <section data-aos="fade-up" className="px-6 py-12">
                     <div className=" max-w-7xl mx-auto">
                         <h2 className="text-3xl md:text-4xl font-bold text-left text-[#2C2F8F] mb-10">
                             Integrate In Minutes, Protect Forever
@@ -76,7 +76,7 @@ export default function Home() {
 
 
                 {/* Made for every business */}
-                <section data-aos="fade-up" className="px-6 py-16 bg-gray-100">
+                <section data-aos="fade-up" className="px-6 py-12 bg-gray-100">
                     <div className=" max-w-7xl mx-auto">
                         <h2 className="text-3xl md:text-4xl font-bold text-left text-[#2C2F8F] mb-10">
                             Built For Your Industry's Toughest Fraud Problems
@@ -87,7 +87,7 @@ export default function Home() {
 
 
                 {/* Integrations */}
-                <section data-aos="fade-up" className="px-6 py-16">
+                <section data-aos="fade-up" className="px-6 py-12">
                     <div className="max-w-7xl mx-auto">
                         <h2 className="text-3xl md:text-4xl font-bold text-left text-[#2C2F8F] mb-12">Integrate The Way
                             You
@@ -97,7 +97,7 @@ export default function Home() {
                 </section>
 
                 {/* CTA Section */}
-                <section data-aos="fade-up" className="px-6 py-32 bg-[#2C2F8F] text-white">
+                <section data-aos="fade-up" className="px-6 py-12 bg-[#2C2F8F] text-white">
                     <div className="max-w-7xl mx-auto">
                         <div
                             className="flex flex-col items-center justify-center space-y-6 text-center"
