@@ -242,7 +242,7 @@ export default function Navbar() {
                     <Link href="/pricing">
                         <button
                             className=" cursor-pointer hover:text-white hover:scale-105 transition shadow bg-[#2C2F8F] text-white px-4 py-2 rounded hover:bg-[#3A50D9] transition">
-                            Book A Demo
+                            Pricing
                         </button>
                     </Link>
 
