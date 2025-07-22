@@ -62,7 +62,7 @@ export default function ConsumerRiskPrevention() {
                 <Navbar/>
                 {/* Hero Section */}
                 <section
-                    className="py-20 relative overflow-hidden bg-gradient-to-b from-[#2C2F8F]/10 to-background pt-16 md:pt-24 lg:pt-32">
+                    className="py-12 relative overflow-hidden bg-gradient-to-b from-[#2C2F8F]/10 to-background pt-12">
                     <div className="max-w-7xl mx-auto px-4 md:px-6">
                         <div className="grid gap-6 items-center lg:grid-cols-2 lg:gap-12">
                             {/* ←←← Left side: your existing copy/buttons */}
@@ -104,26 +104,26 @@ export default function ConsumerRiskPrevention() {
             </div>
 
 
-            <section data-aos="fade-up" className="px-6 py-32 bg-gray-100">
+            <section data-aos="fade-up" className="px-6 py-12 bg-gray-100">
                 <div className=" max-w-7xl mx-auto">
                     <SolutionSection/>
                 </div>
             </section>
 
 
-            <section data-aos="fade-up" className="px-6 py-32">
+            <section data-aos="fade-up" className="px-6 py-12">
                 <div className=" max-w-7xl mx-auto">
                     <IndustryPainPoints/>
                 </div>
             </section>
 
-            <section data-aos="fade-up" className="px-6 py-32 bg-gray-100">
+            <section data-aos="fade-up" className="px-6 py-12 bg-gray-100">
                 <div className=" max-w-7xl mx-auto">
                     <HowItWorks/>
                 </div>
             </section>
 
-            <section data-aos="fade-up" className="px-6 py-32">
+            <section data-aos="fade-up" className="px-6 py-12">
                 <div className=" max-w-7xl mx-auto">
                     <ComparisonTable/>
                 </div>
@@ -131,7 +131,7 @@ export default function ConsumerRiskPrevention() {
 
             <section>
                 {/* Final CTA */}
-                <section className="w-full bg-[#2C2F8F] py-12 md:py-24 lg:py-32 text-white">
+                <section className="w-full bg-[#2C2F8F] py-12 text-white">
                     <div className="max-w-7xl mx-auto ">
                         <div className="flex flex-col items-center justify-center space-y-4 text-center">
                             <div className="space-y-2">

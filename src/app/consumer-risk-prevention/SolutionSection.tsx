@@ -27,7 +27,7 @@ export function SolutionSection() {
     return (
         <div id="solutions">
             <div className="text-sora container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-left mb-16">
+                <div className="text-left mb-12">
                     <h2 className=" text-[#2C2F8F] text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight">Everything
                         You Need to
                         Stop Fraud,
@@ -35,7 +35,7 @@ export function SolutionSection() {
                     </h2>
                 </div>
 
-                <div className="grid lg:grid-cols-3 gap-8">
+                <div className="grid lg:grid-cols-3 gap-8 mb-4">
                     {solutions.map((solution, index) => (
                         <div key={index}
                              className="p-6 rounded-md cursor-pointer relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow">

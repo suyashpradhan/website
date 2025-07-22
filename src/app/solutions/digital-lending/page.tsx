@@ -23,7 +23,7 @@ export default function DigitalLendingPage() {
                 <Navbar/>
                 {/* Hero Section */}
                 <section
-                    className="py-20 relative overflow-hidden bg-gradient-to-b from-[#2C2F8F]/10 to-background pt-16 md:pt-24 lg:pt-32">
+                    className="py-20 relative overflow-hidden bg-gradient-to-b from-[#2C2F8F]/10 to-background">
                     <div className="max-w-7xl mx-auto px-4 md:px-6">
                         <div className="grid items-center lg:grid-cols-2 lg:gap-6">
                             {/* ←←← Left side: your existing copy/buttons */}
@@ -73,13 +73,13 @@ export default function DigitalLendingPage() {
 
 
             {/* 2 Column Layout with text on left and image on right */}
-            <section data-aos="fade-up" className="px-6 py-32 bg-gray-100">
+            <section data-aos="fade-up" className="px-6 py-12 bg-gray-100">
                 <div className=" max-w-7xl mx-auto">
                     <SolutionsTable/>
                 </div>
             </section>
 
-            <section data-aos="fade-up" className="px-6 py-32">
+            <section data-aos="fade-up" className="px-6 py-12">
                 <div className=" max-w-7xl mx-auto">
                     <MainComponent/>
                 </div>
@@ -88,7 +88,7 @@ export default function DigitalLendingPage() {
 
             <section>
                 {/* Final CTA */}
-                <section className="w-full font-sora bg-[#2C2F8F] py-12 md:py-24 lg:py-32 text-white">
+                <section className="w-full font-sora bg-[#2C2F8F] py-12 text-white">
                     <div className="max-w-7xl mx-auto ">
                         <div className="flex flex-col items-center justify-center space-y-4 text-center">
                             <div className="space-y-2">

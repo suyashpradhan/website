@@ -30,17 +30,15 @@ const teamMembers = [
 ]
 
 const brandLogos = [
-    {name: "Amazon", logo: "/logos/5.jpeg"},
-    {name: "PA Media", logo: "/logos/7.jpeg"},
-    {name: "CRED", logo: "/logos/1.jpeg"},
-    {name: "Deliveryhero", logo: "/logos/6.jpeg"},
-    {name: "Bureauid", logo: "/logos/9.jpeg"},
-    {name: "Chargebee", logo: "/logos/3.jpeg"},
-    {name: "Oracle", logo: "/logos/2.jpeg"},
-    {name: "MoEngage", logo: "/logos/8.jpeg"},
-    {name: "Practo", logo: "/logos/4.jpeg"},
-    {name: "Infotrie", logo: "/logos/10.jpeg"},
-    {name: "Premier Logic", logo: "/logos/11.jpeg"},
+    {name: "Amazon", logo: "/logos/amazon.png"},
+    {name: "CRED", logo: "/logos/cred.png"},
+    {name: "Deliveryhero", logo: "/logos/delivery_hero.jpg"},
+    {name: "Chargebee", logo: "/logos/chargebee.avif"},
+    {name: "Oracle", logo: "/logos/oracle.png"},
+    {name: "MoEngage", logo: "/logos/moengage.jpg"},
+    {name: "Practo", logo: "/logos/practo.jpg"},
+    {name: "IIT Delhi", logo: "/logos/iit.png"},
+    {name: "Bits Pilani", logo: "/logos/bits.avif"},
 ]
 
 export default function AboutUs() {
@@ -52,7 +50,7 @@ export default function AboutUs() {
                 <section className="py-20 px-4 sm:px-6 lg:px-8">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-12">
-                            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">About QuarkfinAI</h1>
+                            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">About Us</h1>
 
                         </div>
                         <div className="prose prose-lg mx-auto text-gray-800 leading-relaxed">
@@ -86,18 +84,18 @@ export default function AboutUs() {
                 </section>
 
                 {/* Vision & Mission Section */}
-                <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+                <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[#2C2F8F]">
                     <div className="max-w-7xl mx-auto">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                             <div className="text-center lg:text-left">
-                                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Our Vision</h3>
-                                <p className="text-lg text-gray-600 leading-relaxed">
+                                <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Our Vision</h3>
+                                <p className="text-lg text-white leading-relaxed">
                                     Where trust drives growth, and growth builds trust.
                                 </p>
                             </div>
                             <div className="text-center lg:text-left">
-                                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Our Mission</h3>
-                                <p className="text-lg text-gray-600 leading-relaxed">
+                                <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Our Mission</h3>
+                                <p className="text-lg text-white leading-relaxed">
                                     To become the trusted risk intelligence layer, an always-learning AI platform that
                                     makes
                                     high-velocity, high-trust transactions possible for every business, in every market.
@@ -122,9 +120,9 @@ export default function AboutUs() {
                                         <img
                                             src={brand.logo}
                                             alt={brand.name}
-                                            height={120}
-                                            width={120}
-                                            className="h-12 w-auto duration-300 opacity-100 transition-opacity"
+                                            height={200}
+                                            width={200}
+                                            className="h-18 w-auto duration-300 opacity-100 transition-opacity"
                                         />
                                     </div>
                                 ))}
@@ -133,7 +131,9 @@ export default function AboutUs() {
                                         <img
                                             src={brand.logo || "/placeholder.svg"}
                                             alt={brand.name}
-                                            className="h-12 w-auto duration-300 opacity-100 transition-opacity"
+                                            height={200}
+                                            width={200}
+                                            className="h-18 w-auto duration-300 opacity-100 transition-opacity"
                                         />
                                     </div>
                                 ))}
@@ -143,15 +143,11 @@ export default function AboutUs() {
                 </section>
 
                 {/* Team Section */}
-                <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+                <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
                     <div className="max-w-7xl mx-auto">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The People Behind the
                                 Magic</h2>
-                            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                                Our diverse team of experts brings together decades of experience in technology, design,
-                                and business.
-                            </p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
                             {teamMembers.map((member, index) => (

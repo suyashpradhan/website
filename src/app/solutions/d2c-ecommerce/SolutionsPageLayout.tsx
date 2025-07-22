@@ -31,7 +31,7 @@ type Section = {
 
 export default function SolutionsPageLayout() {
     return (
-        <div className="space-y-24 px-4 sm:px-6 lg:px-12 py-10">
+        <div className="px-4 sm:px-6 lg:px-12 py-12">
             {featureContent.map((sec: Section, idx) => {
                 const isReversed = idx % 2 === 1;
 
@@ -40,7 +40,7 @@ export default function SolutionsPageLayout() {
                         key={idx}
                         className={`flex flex-col-reverse lg:flex-row ${
                             isReversed ? "lg:flex-row-reverse" : ""
-                        } items-center gap-10`}
+                        } items-center gap-1`}
                     >
                         {/* Text */}
                         <div className="w-full lg:w-1/2">

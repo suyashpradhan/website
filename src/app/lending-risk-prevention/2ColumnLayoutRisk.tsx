@@ -57,7 +57,7 @@ export default function TwoColumnSectionsRisk() {
                         key={idx}
                         className={`flex flex-col-reverse lg:flex-row ${
                             isReversed ? "lg:flex-row-reverse" : ""
-                        } items-center gap-10`}
+                        } gap-1`}
                     >
                         {/* Text Block */}
                         <div className="w-full lg:w-1/2">

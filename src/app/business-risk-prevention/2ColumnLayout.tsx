@@ -42,7 +42,7 @@ type Section = {
 
 export default function TwoColumnSections() {
     return (
-        <div className="space-y-24 px-4 sm:px-6 lg:px-12 py-10">
+        <div className="space-y-24 px-4 sm:px-6 lg:px-12 py-2">
             <h2 className="text-[#2C2F8F] text-left text-3xl md:text-4xl lg:text-5xl font-bold">
                 From Suspicion to Certainty in Minutes
             </h2>
