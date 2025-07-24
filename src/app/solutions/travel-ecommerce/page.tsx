@@ -55,7 +55,13 @@ export default function TravelCommercePage() {
                                 </div>
                             </div>
 
-                            {/* →→→ Right side: Animated Dashboard */}
+                            <video
+                                src="/videos/HT.mp4"
+                                className="rounded-lg w-full max-w-lg mx-auto"
+                                autoPlay
+                                muted
+                                loop
+                            />
                         </div>
                     </div>
                 </section>

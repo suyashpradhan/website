@@ -91,73 +91,92 @@ export default function Footer() {
             <h2 id="footer-heading" className="sr-only">
                 Footer
             </h2>
-            <div className="mx-auto max-w-7xl py-12 lg:px-8">
+            <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+                {/* Main grid for logo and navigation links */}
                 <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-                    <Image
-                        src={logo}
-                        alt="QuarkfinAI logo"
-                        width={132}
-                        height={132}
-                        priority
-                        className="h-32 object-fill"
-                    />
-                    <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-                        <div className="md:grid md:grid-cols-2 md:gap-8 px-4">
-                            <div>
-                                <h3 className="text-sm font-semibold leading-6 text-white">Products</h3>
-                                <ul role="list" className="mt-6 space-y-4">
-                                    {navigation.products.map((item) => (
-                                        <li key={item.name}>
-                                            <a href={item.href}
-                                               className="text-sm leading-6 text-gray-300 hover:text-white">
-                                                {item.name}
-                                            </a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="mt-10 md:mt-0">
-                                <h3 className="text-sm font-semibold leading-6 text-white">Solutions</h3>
-                                <ul role="list" className="mt-6 space-y-4">
-                                    {navigation.solutions.map((item) => (
-                                        <li key={item.name}>
-                                            <a href={item.href}
-                                               className="text-sm leading-6 text-gray-300 hover:text-white">
-                                                {item.name}
-                                            </a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+                    <div>
+                        <Image
+                            src={logo}
+                            alt="QuarkfinAI logo"
+                            width={160}
+                            height={100}
+                            priority
+                            className="h-30 w-auto mt-[-40]" // Use Tailwind classes for responsive sizing
+                        />
+                        <p className="text-sm leading-6 text-gray-300">
+                            Advanced AI solutions for comprehensive risk prevention and business growth.
+                        </p>
+                    </div>
+                    {/* Restructured navigation links into a balanced 3-column grid */}
+                    <div className="mt-16 grid grid-cols-2 gap-8 md:grid-cols-3 xl:col-span-2 xl:mt-0">
+                        <div>
+                            <h3 className="text-sm font-semibold leading-6 text-white">Products</h3>
+                            <ul role="list" className="mt-6 space-y-4">
+                                {navigation.products.map((item) => (
+                                    <li key={item.name}>
+                                        <a href={item.href}
+                                           className="text-sm leading-6 text-gray-300 hover:text-white">
+                                            {item.name}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
-                        <div className="md:grid md:grid-cols-2 md:gap-8 px-4">
-                            <div>
-                                <h3 className="text-sm font-semibold leading-6 text-white">About QuarkfinAI</h3>
-                                <ul role="list" className="mt-6 space-y-4">
-                                    {navigation.company.map((item) => (
-                                        <li key={item.name}>
-                                            <a href={item.href}
-                                               className="text-sm leading-6 text-gray-300 hover:text-white">
-                                                {item.name}
-                                            </a>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+                        <div className="mt-10 md:mt-0">
+                            <h3 className="text-sm font-semibold leading-6 text-white">Solutions</h3>
+                            <ul role="list" className="mt-6 space-y-4">
+                                {navigation.solutions.map((item) => (
+                                    <li key={item.name}>
+                                        <a href={item.href}
+                                           className="text-sm leading-6 text-gray-300 hover:text-white">
+                                            {item.name}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="mt-10 md:mt-0">
+                            <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
+                            <ul role="list" className="mt-6 space-y-4">
+                                {navigation.company.map((item) => (
+                                    <li key={item.name}>
+                                        <a href={item.href}
+                                           className="text-sm leading-6 text-gray-300 hover:text-white">
+                                            {item.name}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Bottom bar with copyright, social icons, and policy links */}
+                <div
+                    className="mt-16 border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
+                    <div className="flex space-x-6 md:order-2">
+                        {navigation.social.map((item) => (
+                            <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-300">
+                                <span className="sr-only">{item.name}</span>
+                                <item.icon className="h-6 w-6" aria-hidden="true"/>
+                            </a>
+                        ))}
+                    </div>
+                    <div className="mt-8 md:order-1 md:mt-0">
+                        <p className="text-center text-xs leading-5 text-gray-400">
+                            &copy; 2025 QuarkfinAI, Inc. All rights reserved.
+                        </p>
+                        <div className="mt-4 flex justify-center space-x-4 text-xs leading-5">
+                            <Link href="/privacy-policy" className="text-gray-400 hover:text-gray-300">
+                                Privacy Policy
+                            </Link>
+                            <Link href="/terms-and-conditions" className="text-gray-400 hover:text-gray-300">
+                                Terms and Conditions
+                            </Link>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="border-t border-gray-700"/>
-            <div className="mx-auto max-w-7xl py-6  px-4 flex justify-between">
-                <h1 className="text-white">© 2025 QuarkinAI</h1>
-
-                <div>
-                    <Link href="/privacy-policy" className="text-white mr-4">Privacy Policy</Link>
-                    <Link href="/terms-and-conditions" className="text-white">Terms and Conditions</Link>
-                </div>
-            </div>
-
         </footer>
     )
 }

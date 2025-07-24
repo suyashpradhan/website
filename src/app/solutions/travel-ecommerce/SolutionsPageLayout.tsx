@@ -2,7 +2,6 @@
 
 import {CheckCircle, XCircle} from "lucide-react";
 import React from "react";
-import Image from "next/image";
 
 const featureContent = [
     {
@@ -13,6 +12,8 @@ const featureContent = [
             "Device Fingerprinting: Links devices across failed attempts",
             "Proxy/VPN Detection: Blocks hidden fraud hubs",
         ],
+        video: "/videos/SolT1.mp4",
+
     },
     {
         title: "Smart Promo Protection",
@@ -22,6 +23,8 @@ const featureContent = [
             "Behavioral AI: Spots scripted coupon harvesting",
             "Geo-Validation: Blocks offshore exploiters",
         ],
+        video: "/videos/SolT2.mp4",
+
     },
     {
         title: "Booking Intent Scoring",
@@ -31,6 +34,8 @@ const featureContent = [
             "Journey Mapping: Flags illogical routes (e.g., NYC→Paris for $1)",
             "Dynamic Hold: Releases high-risk bookings pre-checkout",
         ],
+        video: "/videos/SolT3.mp4",
+
     },
 ];
 
@@ -39,6 +44,7 @@ type Section = {
     title: string;
     features?: string[];
     works?: string[];
+    video?: string;
 };
 
 export default function SolutionsPageLayout() {
@@ -89,12 +95,12 @@ export default function SolutionsPageLayout() {
 
                         {/* Image Block */}
                         <div className="w-full lg:w-1/2 flex justify-center">
-                            <Image
-                                height={400}
-                                width={600}
-                                src="https://kzmisvh5wvcb96m3c5zs.lite.vusercontent.net/placeholder.svg?height=300&width=500&text=D2C/eCommerce"
-                                alt="Solution illustration"
-                                className="rounded-lg w-full max-w-md sm:max-w-lg h-auto"
+                            <video
+                                src={sec?.video}
+                                className="rounded-lg w-full max-w-md sm:max-w-lg"
+                                autoPlay
+                                muted
+                                loop
                             />
                         </div>
                     </section>

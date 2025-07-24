@@ -1,300 +1,263 @@
 "use client"
 
 import {useState} from "react"
-import {Check, ChevronDown, ChevronUp, Star, X} from "lucide-react"
+import {Briefcase, Check, ChevronDown, ChevronUp, Star, TrendingUp, X} from "lucide-react" // Added new icons
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/components/Footer";
 
+// Data remains the same as before...
 const plans = [
     {
-        name: "Starter",
-        description: "Perfect for individuals getting started",
-        monthlyPrice: 9,
-        yearlyPrice: 90,
-        features: ["Up to 5 projects", "10GB storage", "Basic support", "Standard templates", "Mobile app access"],
+        name: "Freemium",
+        description: "For developers and individuals to test and explore the full platform.",
+        monthlyPrice: 0,
+        yearlyPrice: 0,
+        features: ["500 Credits/month", "Top up at $0.01 / credit"],
         popular: false,
-        buttonText: "Get Started",
+        buttonText: "Start For Free",
+    },
+    {
+        name: "Startup",
+        description: "For early-stage startups with growing usage and a need for basic support.",
+        monthlyPrice: 20,
+        yearlyPrice: 200,
+        features: [
+            "2,250 Credits/month",
+            "Community & Email Support",
+        ],
+        popular: false,
+        buttonText: "Choose Startup",
     },
     {
         name: "Pro",
-        description: "Best for growing businesses",
-        monthlyPrice: 29,
-        yearlyPrice: 290,
+        description: "Best value for scaling businesses that need faster support and more credits.",
+        monthlyPrice: 40,
+        yearlyPrice: 400,
         features: [
-            "Up to 25 projects",
-            "100GB storage",
-            "Priority support",
-            "Premium templates",
-            "Advanced analytics",
-            "Team collaboration",
-            "API access",
+            "5,000 Credits/month (Best Value)",
+            "Priority Email & Chat Support",
         ],
         popular: true,
-        buttonText: "Start Free Trial",
-    },
-    {
-        name: "Premium",
-        description: "For established companies",
-        monthlyPrice: 59,
-        yearlyPrice: 590,
-        features: [
-            "Up to 100 projects",
-            "500GB storage",
-            "24/7 phone support",
-            "Custom templates",
-            "Advanced analytics",
-            "Team collaboration",
-            "Full API access",
-            "Custom integrations",
-            "White-label options",
-        ],
-        popular: false,
-        buttonText: "Start Free Trial",
+        buttonText: "Choose Pro",
     },
     {
         name: "Enterprise",
-        description: "For large organizations",
-        monthlyPrice: 99,
-        yearlyPrice: 990,
+        description: "For large-scale deployments that require custom terms, SLAs, and dedicated support.",
+        monthlyPrice: 'Custom',
+        yearlyPrice: 'Custom',
         features: [
-            "Unlimited projects",
-            "Unlimited storage",
-            "Dedicated support",
-            "Custom everything",
-            "Advanced security",
-            "SSO integration",
-            "Custom contracts",
-            "On-premise deployment",
-            "Training & onboarding",
+            "Custom Credit Volume",
+            "Dedicated Account Manager & SLA",
         ],
         popular: false,
         buttonText: "Contact Sales",
     },
 ]
 
-const features = [
-    {name: "Projects", starter: "5", pro: "25", premium: "100", enterprise: "Unlimited"},
-    {name: "Storage", starter: "10GB", pro: "100GB", premium: "500GB", enterprise: "Unlimited"},
-    {name: "Team Members", starter: "1", pro: "5", premium: "25", enterprise: "Unlimited"},
-    {name: "API Access", starter: false, pro: true, premium: true, enterprise: true},
-    {name: "Custom Templates", starter: false, pro: false, premium: true, enterprise: true},
-    {name: "Priority Support", starter: false, pro: true, premium: true, enterprise: true},
-    {name: "Phone Support", starter: false, pro: false, premium: true, enterprise: true},
-    {name: "SSO Integration", starter: false, pro: false, premium: false, enterprise: true},
-    {name: "Custom Contracts", starter: false, pro: false, premium: false, enterprise: true},
-]
+const featureComparison = [
+    {
+        category: "Core Platform Access",
+        features: [
+            {name: "All Features Included", freemium: true, startup: true, pro: true, enterprise: true},
+        ]
+    },
+    {
+        category: "Usage & Support Differentiation",
+        features: [
+            {name: "Monthly Credits", freemium: "500", startup: "2,250", pro: "5,000", enterprise: "Custom"},
+            {
+                name: "Support",
+                freemium: "Community",
+                startup: "Email",
+                pro: "Priority Chat",
+                enterprise: "Dedicated Manager"
+            },
+            {name: "Response Time SLA", freemium: "-", startup: "48 hours", pro: "< 8 hours", enterprise: "Custom"},
+        ]
+    }
+];
+
+const creditConsumption = [
+    {service: "Business Risk Assessment", credits: 50},
+    {service: "Lending & Credit Underwriting Report", credits: 100},
+    {service: "AML Compliance Check", credits: 25},
+    {service: "Intelligent Checkout (RTO Score)", credits: 10},
+    {service: "Device Fingerprinting", credits: 5},
+    {service: "Chargeback Guarantee Submission", credits: 5},
+    {service: "All Other Individual Checks", credits: 5},
+];
 
 const faqs = [
     {
+        question: "What happens if I go over my monthly credits?",
+        answer: "If you're on the Freemium plan, you can purchase Pay-As-You-Go credits to top up. If you're on a paid plan, you can upgrade to the next tier for a better value or discuss custom overage rates with our team.",
+    },
+    {
+        question: "Are all features really included in every plan?",
+        answer: "Yes. We believe every user should have access to the full power of our platform. Our plans are designed to scale with your usage, not to lock features away. You get everything from day one.",
+    },
+    {
         question: "Can I change my plan at any time?",
-        answer:
-            "Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any billing differences.",
-    },
-    {
-        question: "Is there a free trial available?",
-        answer: "Yes, we offer a 14-day free trial for all paid plans. No credit card required to start your trial.",
-    },
-    {
-        question: "What payment methods do you accept?",
-        answer:
-            "We accept all major credit cards (Visa, MasterCard, American Express) and PayPal. Enterprise customers can also pay by invoice.",
-    },
-    {
-        question: "Can I cancel my subscription anytime?",
-        answer:
-            "Absolutely. You can cancel your subscription at any time from your account settings. Your access will continue until the end of your current billing period.",
-    },
-    {
-        question: "Do you offer refunds?",
-        answer:
-            "We offer a 30-day money-back guarantee for all new subscriptions. If you're not satisfied, contact us for a full refund.",
-    },
-    {
-        question: "Is my data secure?",
-        answer:
-            "Yes, we take security seriously. All data is encrypted in transit and at rest, and we're SOC 2 Type II compliant with regular security audits.",
-    },
-    {
-        question: "Do you offer discounts for nonprofits or students?",
-        answer:
-            "Yes, we offer special pricing for qualified nonprofits and educational institutions. Contact our sales team for more information.",
-    },
-    {
-        question: "What kind of support do you provide?",
-        answer:
-            "Support varies by plan: Starter gets email support, Pro gets priority email support, Premium gets phone support, and Enterprise gets dedicated support.",
+        answer: "Absolutely. You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any billing differences.",
     },
 ]
+
 
 export default function MainComponent() {
     const [isYearly, setIsYearly] = useState(false)
     const [openIndex, setOpenIndex] = useState<number | null>(null)
+    const [transactions, setTransactions] = useState(5000);
+    const [onboards, setOnboards] = useState(50);
 
+    const estimatedCredits = (transactions * 10) + (onboards * 50);
+    let recommendedPlan = 'The <strong>Enterprise Plan</strong> is recommended for this volume.';
+    if (estimatedCredits <= 500) {
+        recommendedPlan = 'The <strong>Freemium Plan</strong> is a great place to start.';
+    } else if (estimatedCredits <= 2250) {
+        recommendedPlan = 'The <strong>Startup Plan</strong> would be a perfect fit.';
+    } else if (estimatedCredits <= 5000) {
+        recommendedPlan = 'The <strong>Pro Plan</strong> offers the best value for this usage.';
+    }
 
     return (
         <>
             <Navbar/>
-            <div className="py-12 px-4 max-w-7xl mx-auto">
-                {/* Header */}
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">Choose Your Plan</h2>
-                    <p className="text-lg text-gray-600 mb-8">
-                        Select the perfect plan for your needs. Upgrade or downgrade at any time.
-                    </p>
+            <div className="bg-white">
+                {/* Header Section */}
+                <div className="py-12 px-4 max-w-7xl mx-auto">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Pricing that scales
+                            with you</h2>
+                        <p className="mt-4 text-lg text-gray-600">
+                            Every plan includes all features. The only difference is usage, support, and SLAs. Start for
+                            free and upgrade as you grow.
+                        </p>
+                        <div className="mt-8 flex items-center justify-center gap-4">
+                            <span
+                                className={`text-sm font-medium ${!isYearly ? "text-gray-900" : "text-gray-500"}`}>Monthly</span>
+                            <button
+                                onClick={() => setIsYearly(!isYearly)}
+                                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${isYearly ? "bg-blue-600" : "bg-gray-200"}`}
+                            >
+                                <span
+                                    className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${isYearly ? "translate-x-6" : "translate-x-1"}`}/>
+                            </button>
+                            <span
+                                className={`text-sm font-medium ${isYearly ? "text-gray-900" : "text-gray-500"}`}>Yearly</span>
+                            {isYearly && (<span
+                                className="text-sm font-medium text-green-600 bg-green-100 px-2 py-1 rounded-full">Save ~17%</span>)}
+                        </div>
+                    </div>
 
-                    {/* Billing Toggle */}
-                    <div className="flex items-center justify-center gap-4 mb-8">
-                    <span
-                        className={`text-sm font-medium ${!isYearly ? "text-gray-900" : "text-gray-500"}`}>Monthly</span>
-                        <button
-                            onClick={() => setIsYearly(!isYearly)}
-                            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
-                                isYearly ? "bg-blue-600" : "bg-gray-200"
-                            }`}
-                        >
-            <span
-                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                    isYearly ? "translate-x-6" : "translate-x-1"
-                }`}
-            />
-                        </button>
-                        <span
-                            className={`text-sm font-medium ${isYearly ? "text-gray-900" : "text-gray-500"}`}>Yearly</span>
-                        {isYearly && (
-                            <span className="text-sm font-medium text-green-600 bg-green-100 px-2 py-1 rounded-full">Save 17%</span>
-                        )}
+                    {/* Pricing Cards Section */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {plans.map((plan) => (
+                            <div
+                                key={plan.name}
+                                className={`relative flex flex-col rounded-2xl border-2 p-6 shadow-sm transition-all hover:shadow-lg ${plan.popular ? "border-blue-500 bg-blue-50/50 scale-105" : "border-gray-200 bg-white"}`}
+                            >
+                                {plan.popular && (
+                                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                                        <div
+                                            className="flex items-center gap-1 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                                            <Star className="w-3 h-3 fill-current"/> Most Popular
+                                        </div>
+                                    </div>
+                                )}
+                                <div className="flex-grow">
+                                    <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">{plan.name}</h3>
+                                    <p className="text-sm text-gray-600 mb-4 text-center">{plan.description}</p>
+                                    <div className="mb-4 text-center">
+                                        <span className="text-4xl font-bold text-gray-900">
+                                            {typeof (isYearly ? plan.yearlyPrice : plan.monthlyPrice) === 'number' ? `$${isYearly ? plan.yearlyPrice : plan.monthlyPrice}` : 'Custom'}
+                                        </span>
+                                        {typeof (isYearly ? plan.yearlyPrice : plan.monthlyPrice) === 'number' &&
+                                            <span className="text-gray-600 ml-1">/{isYearly ? "year" : "month"}</span>}
+                                    </div>
+                                    <ul className="space-y-3 mb-8">
+                                        {plan.features.map((feature, featureIndex) => (
+                                            <li key={featureIndex} className="flex items-start gap-3">
+                                                <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5"/>
+                                                <span className="text-sm text-gray-700">{feature}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <button
+                                    className={`w-full mt-auto cursor-pointer px-6 py-3 rounded-md transition shadow-sm font-semibold ${plan.popular ? 'bg-[#2C2F8F] text-white hover:bg-blue-800' : 'border border-[#2C2F8F] text-[#2C2F8F] hover:bg-[#2C2F8F] hover:text-white'}`}>
+                                    {plan.buttonText}
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Pay-As-You-Go Section */}
+                    <div
+                        className="mt-16 p-8 rounded-2xl border border-gray-200 bg-gray-50 md:flex md:justify-between md:items-center">
+                        <div className="text-center md:text-left mb-6 md:mb-0">
+                            <h4 className="text-xl font-bold text-gray-900 mb-1">Pay-As-You-Go Credits</h4>
+                            <p className="text-gray-600">Need to top up? Buy credits on demand without a monthly
+                                commitment.</p>
+                        </div>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <span className="text-2xl font-bold text-gray-900">$1 USD <span
+                                className="font-medium text-gray-600">/ 100 credits</span></span>
+                            <a href="#"
+                               className="bg-[#2C2F8F] text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-800 transition shadow">
+                                Buy Credits
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                {/* Pricing Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {plans.map((plan) => (
-                        <div
-                            key={plan.name}
-                            className={`relative rounded-2xl border-2 p-6 shadow-sm transition-all hover:shadow-lg ${
-                                plan.popular ? "border-blue-500 bg-blue-50/50" : "border-gray-200 bg-white"
-                            }`}
-                        >
-                            {/* Popular Badge */}
-                            {plan.popular && (
-                                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                                    <div
-                                        className="flex items-center gap-1 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                                        <Star className="w-3 h-3 fill-current"/>
-                                        Most Popular
-                                    </div>
-                                </div>
-                            )}
-
-                            {/* Plan Header */}
-                            <div className="text-center mb-6">
-                                <h3 className="text-xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                                <p className="text-sm text-gray-600 mb-4">{plan.description}</p>
-
-                                {/* Price */}
-                                <div className="mb-4">
-                <span className="text-4xl font-bold text-gray-900">
-                  ${isYearly ? plan.yearlyPrice : plan.monthlyPrice}
-                </span>
-                                    <span className="text-gray-600 ml-1">/{isYearly ? "year" : "month"}</span>
-                                </div>
-
-                                {isYearly && (
-                                    <p className="text-sm text-green-600 font-medium">
-                                        ${plan.monthlyPrice * 12 - plan.yearlyPrice} saved annually
-                                    </p>
-                                )}
-                            </div>
-
-                            {/* Features */}
-                            <ul className="space-y-3 mb-8">
-                                {plan.features.map((feature, featureIndex) => (
-                                    <li key={featureIndex} className="flex items-start gap-3">
-                                        <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5"/>
-                                        <span className="text-sm text-gray-700">{feature}</span>
-                                    </li>
-                                ))}
-                            </ul>
-
-                            {/* CTA Button */}
-
-                            <button
-                                className=" cursor-pointer border border-[#2C2F8F] text-[#2C2F8F] px-6 py-3 rounded hover:bg-[#2C2F8F] hover:text-white hover:scale-105 transition shadow">
-                                {plan.buttonText}
-                            </button>
-                        </div>
-                    ))}
-                </div>
-
-                <section className="py-20 px-4 bg-white">
-                    <div className="max-w-6xl mx-auto">
+                {/* Feature Comparison Table Section */}
+                <section className="py-20 bg-gray-50">
+                    <div className="max-w-7xl mx-auto px-4">
                         <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Compare Plans</h2>
-                            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                                See exactly what's included in each plan to make the best choice for your needs.
+                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Full Feature
+                                Comparison</h2>
+                            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                                Every plan includes all features. Our plans are designed to scale with your usage, not
+                                to lock features away. You get everything from day one.
                             </p>
                         </div>
-
-                        <div className="overflow-x-auto">
-                            <table className="w-full border-collapse">
+                        <div className="overflow-x-auto rounded-lg border border-gray-200">
+                            <table className="w-full min-w-[800px] border-collapse">
                                 <thead>
-                                <tr className="border-b-2 border-gray-200">
+                                <tr className="bg-gray-100">
                                     <th className="text-left py-4 px-6 font-semibold text-gray-900">Features</th>
-                                    <th className="text-center py-4 px-6 font-semibold text-gray-900">Starter</th>
-                                    <th className="text-center py-4 px-6 font-semibold text-primary-800 bg-primary-50">Pro</th>
-                                    <th className="text-center py-4 px-6 font-semibold text-gray-900">Premium</th>
+                                    <th className="text-center py-4 px-6 font-semibold text-gray-900">Freemium</th>
+                                    <th className="text-center py-4 px-6 font-semibold text-gray-900">Startup</th>
+                                    <th className="text-center py-4 px-6 font-semibold text-blue-700 bg-blue-100/50">Pro</th>
                                     <th className="text-center py-4 px-6 font-semibold text-gray-900">Enterprise</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {features.map((feature, index) => (
-                                    <tr key={feature.name} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
-                                        <td className="py-4 px-6 font-medium text-gray-900">{feature.name}</td>
-                                        <td className="py-4 px-6 text-center">
-                                            {typeof feature.starter === "boolean" ? (
-                                                feature.starter ? (
-                                                    <Check className="w-5 h-5 text-green-500 mx-auto"/>
-                                                ) : (
-                                                    <X className="w-5 h-5 text-gray-300 mx-auto"/>
-                                                )
-                                            ) : (
-                                                <span className="text-gray-700">{feature.starter}</span>
-                                            )}
-                                        </td>
-                                        <td className="py-4 px-6 text-center bg-primary-50">
-                                            {typeof feature.pro === "boolean" ? (
-                                                feature.pro ? (
-                                                    <Check className="w-5 h-5 text-green-500 mx-auto"/>
-                                                ) : (
-                                                    <X className="w-5 h-5 text-gray-300 mx-auto"/>
-                                                )
-                                            ) : (
-                                                <span className="text-primary-800 font-semibold">{feature.pro}</span>
-                                            )}
-                                        </td>
-                                        <td className="py-4 px-6 text-center">
-                                            {typeof feature.premium === "boolean" ? (
-                                                feature.premium ? (
-                                                    <Check className="w-5 h-5 text-green-500 mx-auto"/>
-                                                ) : (
-                                                    <X className="w-5 h-5 text-gray-300 mx-auto"/>
-                                                )
-                                            ) : (
-                                                <span className="text-gray-700">{feature.premium}</span>
-                                            )}
-                                        </td>
-                                        <td className="py-4 px-6 text-center">
-                                            {typeof feature.enterprise === "boolean" ? (
-                                                feature.enterprise ? (
-                                                    <Check className="w-5 h-5 text-green-500 mx-auto"/>
-                                                ) : (
-                                                    <X className="w-5 h-5 text-gray-300 mx-auto"/>
-                                                )
-                                            ) : (
-                                                <span className="text-gray-700">{feature.enterprise}</span>
-                                            )}
-                                        </td>
-                                    </tr>
+                                {featureComparison.map((category, catIndex) => (
+                                    <>
+                                        <tr key={catIndex} className="bg-gray-200/60">
+                                            <td colSpan={5}
+                                                className="py-3 px-6 font-bold text-gray-800">{category.category}</td>
+                                        </tr>
+                                        {category.features.map((feature, featIndex) => (
+                                            <tr key={featIndex} className="border-t border-gray-200 bg-white">
+                                                <td className="py-4 px-6 font-medium text-gray-800">{feature.name}</td>
+                                                {[feature.freemium, feature.startup, feature.pro, feature.enterprise].map((value, planIndex) => (
+                                                    <td key={planIndex}
+                                                        className={`py-4 px-6 text-center ${planIndex === 2 ? 'bg-blue-50/50' : ''}`}>
+                                                        {typeof value === "boolean" ? (
+                                                            value ?
+                                                                <Check className="w-5 h-5 text-green-500 mx-auto"/> :
+                                                                <X className="w-5 h-5 text-gray-300 mx-auto"/>
+                                                        ) : (
+                                                            <span
+                                                                className={`font-medium ${planIndex === 2 ? 'text-blue-700' : 'text-gray-700'}`}>{value}</span>
+                                                        )}
+                                                    </td>
+                                                ))}
+                                            </tr>
+                                        ))}
+                                    </>
                                 ))}
                                 </tbody>
                             </table>
@@ -302,48 +265,133 @@ export default function MainComponent() {
                     </div>
                 </section>
 
-                {/* Bottom CTA */}
-                <div className="text-center mt-2">
-                    <p className="text-gray-600 mb-4">Need a custom solution? We're here to help.</p>
-                    <div>Contact Sales</div>
-                </div>
-            </div>
-
-            <section className="py-20 px-4 bg-gray-50">
-                <div className="max-w-4xl mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked
-                            Questions</h2>
-                        <p className="text-lg text-gray-600">
-                            Got questions? We've got answers. If you can't find what you're looking for, contact our
-                            support team.
-                        </p>
-                    </div>
-
-                    <div className="space-y-4">
-                        {faqs.map((faq, index) => (
-                            <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
-                                <button
-                                    className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
-                                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                                >
-                                    <span className="font-semibold text-gray-900">{faq.question}</span>
-                                    {openIndex === index ? (
-                                        <ChevronUp className="w-5 h-5 text-primary-800"/>
-                                    ) : (
-                                        <ChevronDown className="w-5 h-5 text-primary-800"/>
-                                    )}
-                                </button>
-                                {openIndex === index && (
-                                    <div className="px-6 pb-4">
-                                        <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                {/* ================================================================== */}
+                {/* [START] REDESIGNED USAGE CALCULATOR SECTION                     */}
+                {/* ================================================================== */}
+                <section className="py-20 bg-white">
+                    <div className="max-w-7xl mx-auto px-4">
+                        <div
+                            className="bg-gradient-to-br from-gray-100 to-blue-100/80 rounded-2xl shadow-lg p-8 lg:p-12">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                                {/* Left side: Inputs */}
+                                <div className="space-y-10">
+                                    <h3 className="text-3xl font-bold text-gray-900">Calculate Your Credits</h3>
+                                    <div>
+                                        <div className="flex justify-between items-center mb-2">
+                                            <label htmlFor="transactions"
+                                                   className="font-semibold text-gray-700 flex items-center gap-2">
+                                                <TrendingUp className="w-5 h-5 text-blue-600"/>
+                                                Monthly Transactions
+                                            </label>
+                                            <span
+                                                className="font-bold text-blue-800 bg-blue-200/70 px-3 py-1 rounded-md">{transactions.toLocaleString()}</span>
+                                        </div>
+                                        <input id="transactions" type="range" min="0" max="50000" step="100"
+                                               value={transactions}
+                                               onChange={(e) => setTransactions(Number(e.target.value))}
+                                               className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:bg-blue-600 [&::-webkit-slider-thumb]:rounded-full transition"/>
                                     </div>
-                                )}
+                                    <div>
+                                        <div className="flex justify-between items-center mb-2">
+                                            <label htmlFor="onboards"
+                                                   className="font-semibold text-gray-700 flex items-center gap-2">
+                                                <Briefcase className="w-5 h-5 text-blue-600"/>
+                                                Monthly B2B Onboards
+                                            </label>
+                                            <span
+                                                className="font-bold text-blue-800 bg-blue-200/70 px-3 py-1 rounded-md">{onboards.toLocaleString()}</span>
+                                        </div>
+                                        <input id="onboards" type="range" min="0" max="500" step="1" value={onboards}
+                                               onChange={(e) => setOnboards(Number(e.target.value))}
+                                               className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:bg-blue-600 [&::-webkit-slider-thumb]:rounded-full transition"/>
+                                    </div>
+                                </div>
+                                {/* Right side: Results */}
+                                <div
+                                    className="flex flex-col items-center justify-center text-center bg-white/50 p-8 rounded-xl shadow-inner-lg">
+                                    <p className="text-base font-semibold text-gray-600">Estimated Monthly Credits</p>
+                                    <div
+                                        className="my-4 text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-slate-800">
+                                        {estimatedCredits.toLocaleString()}
+                                    </div>
+                                    <p className="font-semibold text-gray-800 text-lg"
+                                       dangerouslySetInnerHTML={{__html: recommendedPlan}}></p>
+                                </div>
                             </div>
-                        ))}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+                {/* ================================================================== */}
+                {/* [END] REDESIGNED USAGE CALCULATOR SECTION                       */}
+                {/* ================================================================== */}
+
+                {/* ================================================================== */}
+                {/* [START] REDESIGNED CREDIT CONSUMPTION SECTION                    */}
+                {/* ================================================================== */}
+                <section className="py-20 bg-gray-900">
+                    <div className="max-w-7xl mx-auto px-4">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Credit Consumption
+                                Breakdown</h2>
+                            <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+                                Understand how your actions translate into credits. Each service has a clear,
+                                transparent cost.
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {creditConsumption.map((item, index) => (
+                                <div key={index}
+                                     className="bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center transform hover:scale-105 hover:bg-gray-800 transition-all duration-300">
+                                    <p className="font-semibold text-white mb-4 h-12 flex items-center justify-center">{item.service}</p>
+                                    <div className="text-5xl font-extrabold text-blue-400">
+                                        {item.credits}
+                                    </div>
+                                    <p className="text-gray-400 font-medium">credits</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+                {/* ================================================================== */}
+                {/* [END] REDESIGNED CREDIT CONSUMPTION SECTION                      */}
+                {/* ================================================================== */}
+
+                {/* FAQ Section */}
+                <section className="py-20 px-4 bg-white">
+                    <div className="max-w-4xl mx-auto">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked
+                                Questions</h2>
+                            <p className="text-lg text-gray-600">
+                                Got questions? We've got answers. If you can't find what you're looking for, contact our
+                                support team.
+                            </p>
+                        </div>
+                        <div className="space-y-4">
+                            {faqs.map((faq, index) => (
+                                <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200">
+                                    <button
+                                        className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+                                        onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                                    >
+                                        <span className="font-semibold text-gray-900">{faq.question}</span>
+                                        {openIndex === index ? (
+                                            <ChevronUp className="w-5 h-5 text-blue-600"/>
+                                        ) : (
+                                            <ChevronDown className="w-5 h-5 text-blue-600"/>
+                                        )}
+                                    </button>
+                                    {openIndex === index && (
+                                        <div className="px-6 pb-4 border-t border-gray-100">
+                                            <p className="text-gray-600 leading-relaxed pt-4">{faq.answer}</p>
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            </div>
             <Footer/>
         </>
     )
