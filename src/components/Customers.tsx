@@ -39,7 +39,7 @@ const Feature = ({
     index: number;
 }) => {
     return (
-        <section className="w-full  relative overflow-hidden">
+        <section className="w-full relative overflow-hidden">
             <div className="container  relative">
                 <div className="gap-8 md:gap-12 relative">
                     <motion.div

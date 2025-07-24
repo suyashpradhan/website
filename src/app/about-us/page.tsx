@@ -5,34 +5,39 @@ import Footer from "@/components/Footer"
 const teamMembers = [
     {
         name: "Bidya",
-        role: "CEO & Founder",
+        role: "Co-Founder",
         image: "/placeholder.svg?height=300&width=300",
-        bio: "Nothing",
         linkedin: "#",
         twitter: "#",
     },
     {
         name: "Sachinn",
-        role: "Head of Marketing",
+        role: "Co-Founder",
         image: "/placeholder.svg?height=300&width=300",
-        bio: "Nothing",
         linkedin: "#",
         twitter: "#",
     },
     {
         name: "Mehul Dhikonia",
-        role: "CTO",
+        role: "Co-Founder",
         image: "/placeholder.svg?height=300&width=300",
-        bio: "Nothing",
         linkedin: "#",
         twitter: "#",
     },
+    {
+        name: "Suyash Pradhan",
+        role: "Tech",
+        image: "/placeholder.svg?height=300&width=300",
+        linkedin: "#",
+        twitter: "#",
+    },
+
 ]
 
 const brandLogos = [
     {name: "Amazon", logo: "/logos/amazon.png"},
     {name: "CRED", logo: "/logos/cred.png"},
-    {name: "Deliveryhero", logo: "/logos/delivery_hero.jpg"},
+    {name: "Deliveryhero", logo: "/logos/dh1.png"},
     {name: "Chargebee", logo: "/logos/chargebee.avif"},
     {name: "Oracle", logo: "/logos/oracle.png"},
     {name: "MoEngage", logo: "/logos/moengage.jpg"},
@@ -149,7 +154,7 @@ export default function AboutUs() {
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The People Behind the
                                 Magic</h2>
                         </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
                             {teamMembers.map((member, index) => (
                                 <div
                                     key={index}

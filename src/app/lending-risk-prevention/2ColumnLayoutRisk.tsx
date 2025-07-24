@@ -55,7 +55,7 @@ export default function TwoColumnSectionsRisk() {
                 return (
                     <section
                         key={idx}
-                        className={`flex flex-col-reverse lg:flex-row ${
+                        className={`flex flex-col-reverse items-center lg:flex-row ${
                             isReversed ? "lg:flex-row-reverse" : ""
                         } gap-1`}
                     >

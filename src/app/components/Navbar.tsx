@@ -234,15 +234,39 @@ export default function Navbar() {
 
                     <Link href="/coming-soon">
                         <button
-                            className="cursor-pointer border border-[#2C2F8F] text-[#2C2F8F] px-6 py-1.5 rounded hover:bg-[#2C2F8F] hover:text-white hover:scale-105 transition shadow">
-                            Login
+                            className="
+              relative inline-block rounded-lg p-[2px]
+              cursor-pointer
+              font-semibold text-white
+              bg-gradient-to-r from-indigo-500 via-purple-500 to-orange-400
+              transition-all duration-300 ease-in-out
+              hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/40
+              active:translate-y-0 active:shadow-md
+              focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2
+            "
+                        >
+            <span className="block rounded-[6px] bg-gray-900 px-6 py-3">
+              Login
+            </span>
                         </button>
                     </Link>
 
                     <Link href="/pricing">
                         <button
-                            className=" cursor-pointer hover:text-white hover:scale-105 transition shadow bg-[#2C2F8F] text-white px-4 py-2 rounded hover:bg-[#3A50D9] transition">
-                            Pricing
+                            type="button"
+                            className="
+                            cursor-pointer
+              group inline-flex items-center justify-center gap-2
+              rounded-lg bg-[#2C2F8F] px-6 py-3
+              text-center font-semibold text-white
+              shadow-md transition-all duration-300 ease-in-out
+              hover:bg-[#3A50D9] hover:-translate-y-1 hover:shadow-xl
+              active:translate-y-0 active:shadow-md
+              focus:outline-none focus:ring-2 focus:ring-[#3A50D9] focus:ring-offset-2
+            "
+                        >
+                            <span>Pricing</span>
+                            
                         </button>
                     </Link>
 

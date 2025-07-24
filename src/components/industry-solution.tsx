@@ -69,9 +69,21 @@ export default function IndustrySolution() {
 
                             <Link href="/pricing">
                                 <button
-                                    className=" cursor-pointer flex items-center  hover:text-white hover:scale-105 transition shadow bg-[#2C2F8F] text-white px-4 py-4 rounded hover:bg-[#3A50D9] transition">
-                                    Try free, Get RTO protection for your next 100 orders
-                                    <ArrowRight className="h-5 w-5 ml-2"/>
+                                    className="
+              relative inline-block rounded-lg p-[2px]
+              cursor-pointer
+              font-semibold text-white
+              bg-gradient-to-r from-indigo-500 via-purple-500 to-orange-400
+              transition-all duration-300 ease-in-out
+              hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/40
+              active:translate-y-0 active:shadow-md
+              focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2
+            "
+                                >
+            <span className="block rounded-[6px] bg-gray-900 px-6 py-3">
+             Try free, Get RTO protection for your next 100 orders
+                                    <ArrowRight className="h-5 w-5 ml-2 inline"/>
+            </span>
                                 </button>
                             </Link>
                         </div>
@@ -203,9 +215,21 @@ export default function IndustrySolution() {
 
                             <Link href="/pricing">
                                 <button
-                                    className=" cursor-pointer flex items-center  hover:text-white hover:scale-105 transition shadow bg-[#2C2F8F] text-white px-4 py-4 rounded hover:bg-[#3A50D9] transition">
-                                    Free audit: We&#39;ll analyze your last 100 onboardings for risk
-                                    <ArrowRight className="h-5 w-5 ml-2"/>
+                                    className="
+              relative inline-block rounded-lg p-[2px]
+              cursor-pointer
+              font-semibold text-white
+              bg-gradient-to-r from-indigo-500 via-purple-500 to-orange-400
+              transition-all duration-300 ease-in-out
+              hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/40
+              active:translate-y-0 active:shadow-md
+              focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2
+            "
+                                >
+            <span className="block rounded-[6px] bg-gray-900 px-6 py-3">
+              Free audit: We&#39;ll analyze your last 100 onboardings for risk
+                                    <ArrowRight className="h-5 w-5 ml-2 inline"/>
+            </span>
                                 </button>
                             </Link>
 
@@ -273,11 +297,25 @@ export default function IndustrySolution() {
 
                             <Link href="/pricing">
                                 <button
-                                    className=" cursor-pointer flex items-center  hover:text-white hover:scale-105 transition shadow bg-[#2C2F8F] text-white px-4 py-4 rounded hover:bg-[#3A50D9] transition">
-                                    Test our API: Underwrite 100 loans free
-                                    <ArrowRight className="h-5 w-5 ml-2"/>
+                                    className="
+              relative inline-block rounded-lg p-[2px]
+              cursor-pointer
+              font-semibold text-white
+              bg-gradient-to-r from-indigo-500 via-purple-500 to-orange-400
+              transition-all duration-300 ease-in-out
+              hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/40
+              active:translate-y-0 active:shadow-md
+              focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2
+            "
+                                >
+            <span className="block rounded-[6px] bg-gray-900 px-6 py-3">
+                                                 Test our API: Underwrite 100 loans free
+
+                                    <ArrowRight className="h-5 w-5 ml-2 inline"/>
+            </span>
                                 </button>
                             </Link>
+
 
                         </div>
 
@@ -391,12 +429,26 @@ export default function IndustrySolution() {
                                     </div>
                                 </div>
                             </div>
+                            
 
                             <Link href="/pricing">
                                 <button
-                                    className=" cursor-pointer flex items-center  hover:text-white hover:scale-105 transition shadow bg-[#2C2F8F] text-white px-4 py-4 rounded hover:bg-[#3A50D9] transition">
-                                    Stop card testing now: Free 14-day trial
-                                    <ArrowRight className="h-5 w-5 ml-2"/>
+                                    className="
+              relative inline-block rounded-lg p-[2px]
+              cursor-pointer
+              font-semibold text-white
+              bg-gradient-to-r from-indigo-500 via-purple-500 to-orange-400
+              transition-all duration-300 ease-in-out
+              hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/40
+              active:translate-y-0 active:shadow-md
+              focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2
+            "
+                                >
+            <span className="block rounded-[6px] bg-gray-900 px-6 py-3">
+                                                 Stop card testing now: Free 14-day trial
+
+                                    <ArrowRight className="h-5 w-5 ml-2 inline"/>
+            </span>
                                 </button>
                             </Link>
                         </div>

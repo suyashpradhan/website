@@ -1,7 +1,7 @@
 "use client";
 
 import Head from 'next/head';
-import {useEffect} from 'react';
+import React, {useEffect} from 'react';
 import 'aos/dist/aos.css';
 import Navbar from "@/app/components/Navbar";
 import {Integrations} from "@/components/Integrations";
@@ -12,6 +12,7 @@ import {Features2} from "@/components/Features2";
 import Footer from "@/components/Footer";
 import '../app/globals.css'
 import Link from "next/link";
+import {ArrowRight} from "lucide-react";
 
 export default function Home() {
 
@@ -65,10 +66,24 @@ export default function Home() {
                         </h2>
                         <Customers/>
 
+
                         <Link href="/pricing">
                             <button
-                                className=" cursor-pointer  hover:text-white hover:scale-105 transition shadow bg-[#2C2F8F] text-white px-4 py-4 rounded hover:bg-[#3A50D9] transition">
-                                Try free for 14 Days
+                                className="
+              relative inline-block rounded-lg p-[2px]
+              cursor-pointer
+              font-semibold text-white
+              bg-gradient-to-r from-indigo-500 via-purple-500 to-orange-400
+              transition-all duration-300 ease-in-out
+              hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/40
+              active:translate-y-0 active:shadow-md
+              focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2
+            "
+                            >
+            <span className="block rounded-[6px] bg-gray-900 px-6 py-3">
+              Try free for 14 Days
+                <ArrowRight className="h-5 w-5 ml-2 inline"/>
+            </span>
                             </button>
                         </Link>
                     </div>
@@ -111,15 +126,31 @@ export default function Home() {
                                 </p>
                             </div>
                             <div className="mt-2 flex flex-wrap gap-4">
+
+
                                 <Link href="/pricing">
-                                    <button type="button"
-                                            className=" cursor-pointer text-[#2C2F8F] bg-white px-4 py-4 rounded hover:bg-[#3A50D9] transition  hover:text-white hover:scale-105 transition shadow">
-                                        Get Started For Free
+                                    <button
+                                        className="
+              relative inline-block rounded-lg p-[2px]
+              cursor-pointer
+              font-semibold text-white
+              bg-gradient-to-r from-indigo-500 via-purple-500 to-orange-400
+              transition-all duration-300 ease-in-out
+              hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/40
+              active:translate-y-0 active:shadow-md
+              focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2
+            "
+                                    >
+            <span className="block rounded-[6px] bg-gray-900 px-6 py-3">
+                                                Get Started For Free
+
+                                    <ArrowRight className="h-5 w-5 ml-2 inline"/>
+            </span>
                                     </button>
                                 </Link>
 
                                 <button
-                                    className="cursor-pointer border border-white text-white px-6 py-3 rounded hover:bg-[#2C2F8F] hover:text-white hover:scale-105 transition shadow">
+                                    className="cursor-pointer border border-white text-white px-6 py-3 rounded-lg hover:bg-[#2C2F8F] hover:text-white hover:scale-105 transition shadow">
                                     Talk to an expert
                                 </button>
                             </div>

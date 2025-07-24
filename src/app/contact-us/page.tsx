@@ -223,11 +223,12 @@ export default function ContactUs() {
                                             />
                                         </div>
 
+
                                         <div>
                                             <button
                                                 type="submit"
                                                 disabled={isSubmitting}
-                                                className="flex w-full items-center justify-center rounded-lg bg-[#2C2F8F] px-6 py-3 font-medium text-white transition-colors hover:bg-[#272a7a] focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
+                                                className="cursor-pointer flex w-full items-center justify-center rounded-lg bg-[#2C2F8F] px-6 py-3 font-medium text-white transition-colors hover:bg-[#272a7a] focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
                                             >
                                                 {isSubmitting ? (
                                                     <>
