@@ -210,6 +210,106 @@ export default function MainComponent() {
                     </div>
                 </div>
 
+                {/* ================================================================== */}
+                {/* [MOVED] USAGE CALCULATOR SECTION                                   */}
+                {/* ================================================================== */}
+                <section className="py-6 pb-24 bg-white">
+                    <div className="max-w-7xl mx-auto px-4">
+                        <div
+                            className="bg-gradient-to-br from-gray-100 to-blue-100/80 rounded-2xl shadow-lg p-8 lg:p-12">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                                {/* Left side: Inputs */}
+                                <div className="space-y-10">
+                                    <h3 className="text-3xl font-bold text-gray-900">Calculate Your Credits</h3>
+                                    <div>
+                                        <div className="flex justify-between items-center mb-2">
+                                            <label htmlFor="transactions"
+                                                   className="font-semibold text-gray-700 flex items-center gap-2">
+                                                <TrendingUp className="w-5 h-5 text-blue-600"/>
+                                                Monthly Transactions
+                                            </label>
+                                            <span
+                                                className="font-bold text-blue-800 bg-blue-200/70 px-3 py-1 rounded-md">{transactions.toLocaleString()}</span>
+                                        </div>
+                                        <input id="transactions" type="range" min="0" max="50000" step="100"
+                                               value={transactions}
+                                               onChange={(e) => setTransactions(Number(e.target.value))}
+                                               className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:bg-blue-600 [&::-webkit-slider-thumb]:rounded-full transition"/>
+                                    </div>
+                                    <div>
+                                        <div className="flex justify-between items-center mb-2">
+                                            <label htmlFor="onboards"
+                                                   className="font-semibold text-gray-700 flex items-center gap-2">
+                                                <Briefcase className="w-5 h-5 text-blue-600"/>
+                                                Monthly B2B Onboards
+                                            </label>
+                                            <span
+                                                className="font-bold text-blue-800 bg-blue-200/70 px-3 py-1 rounded-md">{onboards.toLocaleString()}</span>
+                                        </div>
+                                        <input id="onboards" type="range" min="0" max="500" step="1" value={onboards}
+                                               onChange={(e) => setOnboards(Number(e.target.value))}
+                                               className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:bg-blue-600 [&::-webkit-slider-thumb]:rounded-full transition"/>
+                                    </div>
+                                </div>
+                                {/* Right side: Results */}
+                                <div
+                                    className="flex flex-col items-center justify-center text-center bg-white/50 p-8 rounded-xl shadow-inner-lg">
+                                    <p className="text-base font-semibold text-gray-600">Estimated Monthly Credits</p>
+                                    <div
+                                        className="my-4 text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-slate-800">
+                                        {estimatedCredits.toLocaleString()}
+                                    </div>
+                                    <p className="font-semibold text-gray-800 text-lg"
+                                       dangerouslySetInnerHTML={{__html: recommendedPlan}}></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* ================================================================== */}
+                {/* [CHANGED] CREDIT CONSUMPTION TABLE                               */}
+                {/* ================================================================== */}
+                <section className="py-20 bg-gray-50">
+                    <div className="max-w-4xl mx-auto px-4">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl font-bold text-gray-900 mb-4">Credit Consumption Breakdown</h2>
+                            <p className="text-lg text-gray-600">
+                                Understand how your actions translate into credits. Each service has a clear,
+                                transparent cost.
+                            </p>
+                        </div>
+                        <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
+                            <table className="min-w-full divide-y divide-gray-200">
+                                <thead className="bg-gray-100">
+                                <tr>
+                                    <th scope="col"
+                                        className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                                        Service / Report
+                                    </th>
+                                    <th scope="col"
+                                        className="px-6 py-3 text-right text-xs font-medium text-gray-600 uppercase tracking-wider">
+                                        Credit Cost
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody className="bg-white divide-y divide-gray-200">
+                                {creditConsumption.map((item) => (
+                                    <tr key={item.service}>
+                                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                                            {item.service}
+                                        </td>
+                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600 font-semibold text-right">
+                                            {item.credits} credits
+                                        </td>
+                                    </tr>
+                                ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
                 {/* Feature Comparison Table Section */}
                 <section className="py-20 bg-gray-50">
                     <div className="max-w-7xl mx-auto px-4">
@@ -264,97 +364,6 @@ export default function MainComponent() {
                         </div>
                     </div>
                 </section>
-
-                {/* ================================================================== */}
-                {/* [START] REDESIGNED USAGE CALCULATOR SECTION                     */}
-                {/* ================================================================== */}
-                <section className="py-20 bg-white">
-                    <div className="max-w-7xl mx-auto px-4">
-                        <div
-                            className="bg-gradient-to-br from-gray-100 to-blue-100/80 rounded-2xl shadow-lg p-8 lg:p-12">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                                {/* Left side: Inputs */}
-                                <div className="space-y-10">
-                                    <h3 className="text-3xl font-bold text-gray-900">Calculate Your Credits</h3>
-                                    <div>
-                                        <div className="flex justify-between items-center mb-2">
-                                            <label htmlFor="transactions"
-                                                   className="font-semibold text-gray-700 flex items-center gap-2">
-                                                <TrendingUp className="w-5 h-5 text-blue-600"/>
-                                                Monthly Transactions
-                                            </label>
-                                            <span
-                                                className="font-bold text-blue-800 bg-blue-200/70 px-3 py-1 rounded-md">{transactions.toLocaleString()}</span>
-                                        </div>
-                                        <input id="transactions" type="range" min="0" max="50000" step="100"
-                                               value={transactions}
-                                               onChange={(e) => setTransactions(Number(e.target.value))}
-                                               className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:bg-blue-600 [&::-webkit-slider-thumb]:rounded-full transition"/>
-                                    </div>
-                                    <div>
-                                        <div className="flex justify-between items-center mb-2">
-                                            <label htmlFor="onboards"
-                                                   className="font-semibold text-gray-700 flex items-center gap-2">
-                                                <Briefcase className="w-5 h-5 text-blue-600"/>
-                                                Monthly B2B Onboards
-                                            </label>
-                                            <span
-                                                className="font-bold text-blue-800 bg-blue-200/70 px-3 py-1 rounded-md">{onboards.toLocaleString()}</span>
-                                        </div>
-                                        <input id="onboards" type="range" min="0" max="500" step="1" value={onboards}
-                                               onChange={(e) => setOnboards(Number(e.target.value))}
-                                               className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:bg-blue-600 [&::-webkit-slider-thumb]:rounded-full transition"/>
-                                    </div>
-                                </div>
-                                {/* Right side: Results */}
-                                <div
-                                    className="flex flex-col items-center justify-center text-center bg-white/50 p-8 rounded-xl shadow-inner-lg">
-                                    <p className="text-base font-semibold text-gray-600">Estimated Monthly Credits</p>
-                                    <div
-                                        className="my-4 text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-slate-800">
-                                        {estimatedCredits.toLocaleString()}
-                                    </div>
-                                    <p className="font-semibold text-gray-800 text-lg"
-                                       dangerouslySetInnerHTML={{__html: recommendedPlan}}></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                {/* ================================================================== */}
-                {/* [END] REDESIGNED USAGE CALCULATOR SECTION                       */}
-                {/* ================================================================== */}
-
-                {/* ================================================================== */}
-                {/* [START] REDESIGNED CREDIT CONSUMPTION SECTION                    */}
-                {/* ================================================================== */}
-                <section className="py-20 bg-gray-900">
-                    <div className="max-w-7xl mx-auto px-4">
-                        <div className="text-center mb-16">
-                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Credit Consumption
-                                Breakdown</h2>
-                            <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                                Understand how your actions translate into credits. Each service has a clear,
-                                transparent cost.
-                            </p>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {creditConsumption.map((item, index) => (
-                                <div key={index}
-                                     className="bg-gray-800/80 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center transform hover:scale-105 hover:bg-gray-800 transition-all duration-300">
-                                    <p className="font-semibold text-white mb-4 h-12 flex items-center justify-center">{item.service}</p>
-                                    <div className="text-5xl font-extrabold text-blue-400">
-                                        {item.credits}
-                                    </div>
-                                    <p className="text-gray-400 font-medium">credits</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-                {/* ================================================================== */}
-                {/* [END] REDESIGNED CREDIT CONSUMPTION SECTION                      */}
-                {/* ================================================================== */}
 
                 {/* FAQ Section */}
                 <section className="py-20 px-4 bg-white">
