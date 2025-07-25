@@ -28,7 +28,7 @@ export function Hero() {
                         className={`
               font-display 
               text-5xl font-medium tracking-tight 
-              sm:text-7xl 
+              sm:text-6xl 
               ${isHighlighted ? "text-[#2C2F8F]" : "text-slate-900"}
             `}
                     >
