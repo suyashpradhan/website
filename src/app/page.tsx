@@ -61,7 +61,7 @@ export default function Home() {
                 {/* how it works */}
                 <section data-aos="fade-up" className="px-6 py-12">
                     <div className=" max-w-7xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-bold text-left text-[#2C2F8F] mb-10">
+                        <h2 className="text-3xl md:text-4xl font-bold text-left text-[#2C2F8F] mb-8">
                             Integrate In Minutes, Protect Forever
                         </h2>
                         <Customers/>
@@ -149,10 +149,12 @@ export default function Home() {
                                     </button>
                                 </Link>
 
-                                <button
-                                    className="cursor-pointer border border-white text-white px-6 py-3 rounded-lg hover:bg-[#2C2F8F] hover:text-white hover:scale-105 transition shadow">
-                                    Talk to an expert
-                                </button>
+                                <Link href="/contact-us">
+                                    <button
+                                        className="cursor-pointer border border-white text-white px-6 py-3 rounded-lg hover:bg-[#2C2F8F] hover:text-white hover:scale-105 transition shadow">
+                                        Talk to an expert
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     </div>

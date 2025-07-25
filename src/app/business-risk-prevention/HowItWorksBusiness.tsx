@@ -14,7 +14,7 @@ export default function HowItWorksBusiness() {
                     </div>
                 </div>
                 <div className="mx-auto max-w-7xl">
-                    <div className="grid gap-8 mt-16 mb-6 md:grid-cols-3">
+                    <div className="grid gap-8 mt-12 mb-6 md:grid-cols-3">
                         <div
                             className="flex flex-col space-y-4">
                             <div

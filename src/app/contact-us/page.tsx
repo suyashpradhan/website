@@ -62,11 +62,11 @@ export default function ContactUs() {
             <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-7xl">
                     {/* Header */}
-                    <div className="mb-16 text-center">
+                    <div className="mb-16 text-left">
                         <h1 className="mb-4 text-4xl font-bold text-gray-900">
                             Contact Us
                         </h1>
-                        <p className="mx-auto max-w-2xl text-xl text-gray-600">
+                        <p className="mx-auto max-w-7xl text-left text-xl text-gray-600">
                             We&apos;d love to hear from you. Send us a message and we&apos;ll
                             respond as soon as possible.
                         </p>

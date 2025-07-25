@@ -191,45 +191,6 @@ export default function Navbar() {
                 {/* Right side */}
                 <div className="hidden lg:flex items-center space-x-4">
                     {/* Language dropdown */}
-                    <div
-                        onMouseEnter={() => setLangOpen(true)}
-                        onMouseLeave={() => setLangOpen(false)}
-                        className="relative"
-                    >
-                        <button
-                            className="flex items-center text-sm font-medium text-gray-800 hover:text-[#2C2F8F] transition"
-                        >
-                            EN
-                            {langOpen ? (
-                                <ChevronUpIcon className="w-4 h-4 ml-1 transition-transform duration-300"/>
-                            ) : (
-                                <ChevronDownIcon className="w-4 h-4 ml-1 transition-transform duration-300"/>
-                            )}
-                        </button>
-
-                        <div
-                            className={`absolute top-full mt-4 bg-white border border-gray-100 shadow-xl rounded-xl w-60 p-4 z-50 transition-all duration-300 ease-in-out origin-top transform ${
-                                langOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
-                            }`}
-                        >
-                            <ul className="space-y-4">
-                                {languages.map((lang) => (
-                                    <li
-                                        key={lang.code}
-                                        className="flex items-start space-x-3 group cursor-pointer p-3 rounded-md transition-all duration-200 hover:bg-gray-100"
-                                    >
-                                        <span className="text-lg">{lang.flag}</span>
-                                        <div>
-                                            <p className="text-sm font-semibold text-gray-500 group-hover:text-[#2C2F8F]">
-                                                {lang.label}
-                                            </p>
-                                            <p className="text-sm text-gray-400">{lang.code}</p>
-                                        </div>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </div>
 
 
                     <Link href="/coming-soon">
@@ -255,18 +216,17 @@ export default function Navbar() {
                         <button
                             type="button"
                             className="
-                            cursor-pointer
               group inline-flex items-center justify-center gap-2
-              rounded-lg bg-[#2C2F8F] px-6 py-3
-              text-center font-semibold text-white
+              rounded-lg bg-white border-1 border-[#2C2F8F] text-[#2C2F8F] px-6 py-3
+              text-center font-semibold
               shadow-md transition-all duration-300 ease-in-out
-              hover:bg-[#3A50D9] hover:-translate-y-1 hover:shadow-xl
+              hover:bg-[#3A50D9] hover:-translate-y-1 hover:shadow-xl hover:text-white cursor-pointer
               active:translate-y-0 active:shadow-md
               focus:outline-none focus:ring-2 focus:ring-[#3A50D9] focus:ring-offset-2
             "
                         >
                             <span>Pricing</span>
-                            
+
                         </button>
                     </Link>
 

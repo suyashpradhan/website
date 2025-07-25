@@ -48,7 +48,7 @@ export default function IndustrySolution() {
                                     <div className="flex items-start space-x-3">
                                         <CheckCircle className="h-5 w-5 text-green-600 mt-1 flex-shrink-0"/>
                                         <span className="text-green-800">
-                      <strong>Quark Secure:</strong> Our Ai scores buyer intent using 53 behavioural and risk signals
+                      <strong>Quark Secure:</strong> Our AI scores buyer intent using 53 behavioural and risk signals
                     </span>
                                     </div>
                                     <div className="flex items-start space-x-3">
@@ -429,7 +429,7 @@ export default function IndustrySolution() {
                                     </div>
                                 </div>
                             </div>
-                            
+
 
                             <Link href="/pricing">
                                 <button
