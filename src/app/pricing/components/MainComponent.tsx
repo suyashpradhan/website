@@ -131,10 +131,6 @@ export default function MainComponent() {
                     <div className="text-left mb-2">
                         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Pricing that scales
                             with you</h2>
-                        <p className="mt-2 text-lg text-gray-600">
-                            Every plan includes all features. The only difference is usage, support, and SLAs. Start for
-                            free and upgrade as you grow.
-                        </p>
                         <div className="mt-12 flex items-center justify-start gap-4">
                             <span
                                 className={`text-sm font-medium ${!isYearly ? "text-gray-900" : "text-gray-500"}`}>Monthly</span>
@@ -168,9 +164,9 @@ export default function MainComponent() {
                                     </div>
                                 )}
                                 <div className="flex-grow">
-                                    <h3 className="text-xl font-bold text-gray-900 mb-2 text-center">{plan.name}</h3>
-                                    <p className="text-sm text-gray-600 mb-4 text-center">{plan.description}</p>
-                                    <div className="mb-4 text-center">
+                                    <h3 className="text-xl font-bold text-gray-900 mb-2 text-left">{plan.name}</h3>
+                                    <p className="text-sm text-gray-600 mb-4 h-16 text-left">{plan.description}</p>
+                                    <div className="mb-4 text-left">
                                         <span className="text-4xl font-bold text-gray-900">
                                             {typeof (isYearly ? plan.yearlyPrice : plan.monthlyPrice) === 'number' ? `$${isYearly ? plan.yearlyPrice : plan.monthlyPrice}` : 'Custom'}
                                         </span>
@@ -196,7 +192,7 @@ export default function MainComponent() {
 
                     {/* Pay-As-You-Go Section */}
                     <div
-                        className="mt-4 p-8 rounded-2xl border border-gray-200 bg-gray-50 md:flex md:justify-between md:items-center">
+                        className="mt-8 p-8 rounded-2xl border border-gray-200 bg-gray-50 md:flex md:justify-between md:items-center">
                         <div className="text-center md:text-left mb-6 md:mb-0">
                             <h4 className="text-xl font-bold text-gray-900 mb-1">Pay-As-You-Go Credits</h4>
                             <p className="text-gray-600">Need to top up? Buy credits on demand without a monthly
@@ -276,7 +272,7 @@ export default function MainComponent() {
                                 transparent cost.
                             </p>
                         </div>
-                        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+                        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-4 items-start">
 
                             {/* Left Column: Credit Consumption Table */}
                             <div className="lg:col-span-2">
@@ -315,37 +311,46 @@ export default function MainComponent() {
                             {/* Right Column: Credit Calculator */}
                             <div className="lg:col-span-3">
                                 <div
-                                    className="bg-gradient-to-br from-gray-100 to-blue-100/80 rounded-2xl shadow-lg p-4 lg:p-12 h-full">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                                    className="bg-gradient-to-br from-gray-100 to-blue-100/80 rounded-2xl shadow-lg p-8 h-full">
+                                    <h3 className="text-2xl font-bold text-gray-900">Calculate Your
+                                        Credits</h3>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                                         {/* Left side: Inputs */}
                                         <div className="space-y-10">
-                                            <h3 className="text-2xl font-bold text-gray-900">Calculate Your Credits</h3>
+
                                             <div>
                                                 <div className="flex justify-between items-center mb-2">
-                                                    <label htmlFor="transactions"
+                                                    <label htmlFor="transactions-text"
                                                            className="font-semibold text-gray-700 flex items-center gap-2">
                                                         <TrendingUp className="w-5 h-5 text-blue-600"/>
                                                         Monthly Transactions
                                                     </label>
-                                                    <span
-                                                        className="font-bold text-blue-800 bg-blue-200/70 px-3 py-1 rounded-md">{transactions.toLocaleString()}</span>
+                                                    <input id="transactions-text" type="number"
+                                                           value={transactions}
+                                                           onChange={(e) => setTransactions(parseInt(e.target.value) || 0)}
+                                                           className="w-24 text-right font-bold text-blue-800 bg-blue-100/50 p-1 rounded-md border-blue-200 border focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                                                    />
                                                 </div>
-                                                <input id="transactions" type="range" min="0" max="50000" step="100"
+                                                <input id="transactions-range" type="range" min="0" max="50000"
+                                                       step="100"
                                                        value={transactions}
                                                        onChange={(e) => setTransactions(Number(e.target.value))}
                                                        className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:bg-blue-600 [&::-webkit-slider-thumb]:rounded-full transition"/>
                                             </div>
                                             <div>
                                                 <div className="flex justify-between items-center mb-2">
-                                                    <label htmlFor="onboards"
+                                                    <label htmlFor="onboards-text"
                                                            className="font-semibold text-gray-700 flex items-center gap-2">
                                                         <Briefcase className="w-5 h-5 text-blue-600"/>
                                                         Monthly B2B Onboards
                                                     </label>
-                                                    <span
-                                                        className="font-bold text-blue-800 bg-blue-200/70 px-3 py-1 rounded-md">{onboards.toLocaleString()}</span>
+                                                    <input id="onboards-text" type="number"
+                                                           value={onboards}
+                                                           onChange={(e) => setOnboards(parseInt(e.target.value) || 0)}
+                                                           className="w-24 text-right font-bold text-blue-800 bg-blue-100/50 p-1 rounded-md border-blue-200 border focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                                                    />
                                                 </div>
-                                                <input id="onboards" type="range" min="0" max="500" step="1"
+                                                <input id="onboards-range" type="range" min="0" max="500" step="1"
                                                        value={onboards}
                                                        onChange={(e) => setOnboards(Number(e.target.value))}
                                                        className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:bg-blue-600 [&::-webkit-slider-thumb]:rounded-full transition"/>
@@ -353,7 +358,7 @@ export default function MainComponent() {
                                         </div>
                                         {/* Right side: Results */}
                                         <div
-                                            className="flex flex-col items-center justify-center text-center bg-white/50 p-8 rounded-xl shadow-inner-lg">
+                                            className="flex flex-col items-center justify-center text-center bg-white/60 p-8 rounded-xl shadow-inner-lg h-full">
                                             <p className="text-base font-semibold text-gray-600">Estimated Monthly
                                                 Credits</p>
                                             <div
