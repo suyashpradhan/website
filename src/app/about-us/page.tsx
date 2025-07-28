@@ -17,7 +17,7 @@ const teamMembers = [
         role: "Co-Founder",
         image: "/logos/profile-1.png",
         linkedin: "https://www.linkedin.com/in/sachinnm/",
-        twitter: "#",
+        twitter: "https://x.com/sachinn_m",
     },
     {
         name: "Mehul Dhikonia",

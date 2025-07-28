@@ -1,5 +1,5 @@
 import React from "react";
-import {FaDiscord, FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube} from 'react-icons/fa';
+import {FaDiscord, FaInstagram, FaLinkedin, FaTwitter, FaYoutube} from 'react-icons/fa';
 import logoWhite from '@/images/logos/logoWhite.png'
 import Image from "next/image";
 import Link from "next/link";
@@ -29,14 +29,14 @@ const navigation = {
         },
         {
             name: 'Discord',
-            href: '#',
+            href: 'https://discord.gg/tSXuC6ce',
             icon: FaDiscord,
         },
-        {
-            name: 'Facebook',
-            href: 'https://www.facebook.com/quarkfinai',
-            icon: FaFacebook,
-        },
+        // {
+        //     name: 'Facebook',
+        //     href: 'https://www.facebook.com/quarkfinai',
+        //     icon: FaFacebook,
+        // },
         {
             name: 'Instagram',
             href: 'https://www.instagram.com/quarkfinai',
