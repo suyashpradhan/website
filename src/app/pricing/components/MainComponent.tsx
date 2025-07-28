@@ -1,44 +1,46 @@
 "use client"
 
 import {useState} from "react"
-import {Briefcase, Check, ChevronDown, ChevronUp, Star, TrendingUp, X} from "lucide-react" // Added new icons
+import {Briefcase, Check, ChevronDown, ChevronUp, Star, TrendingUp, X} from "lucide-react"
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/components/Footer";
 
-// Data remains the same as before...
+
 const plans = [
     {
-        name: "Freemium",
+        name: "Free",
         description: "For developers and individuals to test and explore the full platform.",
         monthlyPrice: 0,
         yearlyPrice: 0,
-        features: ["500 Credits/month", "Top up at $0.01 / credit"],
+        features: ["500 Credits/month"],
         popular: false,
         buttonText: "Start For Free",
     },
     {
         name: "Startup",
         description: "For early-stage startups with growing usage and a need for basic support.",
-        monthlyPrice: 20,
-        yearlyPrice: 200,
+        monthlyPrice: 49,
+        yearlyPrice: 539,
         features: [
-            "2,250 Credits/month",
+            "5000 Credits/month",
             "Community & Email Support",
+            "Top up at $0.009 / credit"
         ],
         popular: false,
         buttonText: "Choose Startup",
     },
     {
-        name: "Pro",
+        name: "Growth",
         description: "Best value for scaling businesses that need faster support and more credits.",
-        monthlyPrice: 40,
-        yearlyPrice: 400,
+        monthlyPrice: 149,
+        yearlyPrice: 1639,
         features: [
-            "5,000 Credits/month (Best Value)",
+            "15,000 Credits/month (Best Value)",
+            "Top up at $0.007 / credit",
             "Priority Email & Chat Support",
         ],
         popular: true,
-        buttonText: "Choose Pro",
+        buttonText: "Choose Growth",
     },
     {
         name: "Enterprise",
@@ -64,7 +66,7 @@ const featureComparison = [
     {
         category: "Usage & Support Differentiation",
         features: [
-            {name: "Monthly Credits", freemium: "500", startup: "2,250", pro: "5,000", enterprise: "Custom"},
+            {name: "Monthly Credits", freemium: "500", startup: "5000", pro: "15,000", enterprise: "Custom"},
             {
                 name: "Support",
                 freemium: "Community",
@@ -90,7 +92,7 @@ const creditConsumption = [
 const faqs = [
     {
         question: "What happens if I go over my monthly credits?",
-        answer: "If you're on the Freemium plan, you can purchase Pay-As-You-Go credits to top up. If you're on a paid plan, you can upgrade to the next tier for a better value or discuss custom overage rates with our team.",
+        answer: "If you're on the Free plan, you can purchase Pay-As-You-Go credits to top up. If you're on a paid plan, you can upgrade to the next tier for a better value or discuss custom overage rates with our team.",
     },
     {
         question: "Are all features really included in every plan?",
@@ -112,12 +114,13 @@ export default function MainComponent() {
     const estimatedCredits = (transactions * 10) + (onboards * 50);
     let recommendedPlan = 'The <strong>Enterprise Plan</strong> is recommended for this volume.';
     if (estimatedCredits <= 500) {
-        recommendedPlan = 'The <strong>Freemium Plan</strong> is a great place to start.';
+        recommendedPlan = 'The <strong>Free Plan</strong> is a great place to start.';
     } else if (estimatedCredits <= 2250) {
         recommendedPlan = 'The <strong>Startup Plan</strong> would be a perfect fit.';
     } else if (estimatedCredits <= 5000) {
-        recommendedPlan = 'The <strong>Pro Plan</strong> offers the best value for this usage.';
+        recommendedPlan = 'The <strong>Growth Plan</strong> offers the best value for this usage.';
     }
+
 
     return (
         <>
@@ -125,14 +128,14 @@ export default function MainComponent() {
             <div className="bg-white">
                 {/* Header Section */}
                 <div className="py-12 px-4 max-w-7xl mx-auto">
-                    <div className="text-center mb-12">
+                    <div className="text-left mb-2">
                         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Pricing that scales
                             with you</h2>
-                        <p className="mt-4 text-lg text-gray-600">
+                        <p className="mt-2 text-lg text-gray-600">
                             Every plan includes all features. The only difference is usage, support, and SLAs. Start for
                             free and upgrade as you grow.
                         </p>
-                        <div className="mt-8 flex items-center justify-center gap-4">
+                        <div className="mt-12 flex items-center justify-start gap-4">
                             <span
                                 className={`text-sm font-medium ${!isYearly ? "text-gray-900" : "text-gray-500"}`}>Monthly</span>
                             <button
@@ -145,7 +148,7 @@ export default function MainComponent() {
                             <span
                                 className={`text-sm font-medium ${isYearly ? "text-gray-900" : "text-gray-500"}`}>Yearly</span>
                             {isYearly && (<span
-                                className="text-sm font-medium text-green-600 bg-green-100 px-2 py-1 rounded-full">Save ~17%</span>)}
+                                className="text-sm font-medium text-green-600 bg-green-100 px-2 py-1 rounded-full">Save ~10%</span>)}
                         </div>
                     </div>
 
@@ -190,133 +193,15 @@ export default function MainComponent() {
                             </div>
                         ))}
                     </div>
-
-                    {/* Pay-As-You-Go Section */}
-                    <div
-                        className="mt-16 p-8 rounded-2xl border border-gray-200 bg-gray-50 md:flex md:justify-between md:items-center">
-                        <div className="text-center md:text-left mb-6 md:mb-0">
-                            <h4 className="text-xl font-bold text-gray-900 mb-1">Pay-As-You-Go Credits</h4>
-                            <p className="text-gray-600">Need to top up? Buy credits on demand without a monthly
-                                commitment.</p>
-                        </div>
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <span className="text-2xl font-bold text-gray-900">$1 USD <span
-                                className="font-medium text-gray-600">/ 100 credits</span></span>
-                            <a href="#"
-                               className="bg-[#2C2F8F] text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-800 transition shadow">
-                                Buy Credits
-                            </a>
-                        </div>
-                    </div>
                 </div>
 
-                {/* ================================================================== */}
-                {/* [MOVED] USAGE CALCULATOR SECTION                                   */}
-                {/* ================================================================== */}
-                <section className="py-6 pb-24 bg-white">
-                    <div className="max-w-7xl mx-auto px-4">
-                        <div
-                            className="bg-gradient-to-br from-gray-100 to-blue-100/80 rounded-2xl shadow-lg p-8 lg:p-12">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                                {/* Left side: Inputs */}
-                                <div className="space-y-10">
-                                    <h3 className="text-3xl font-bold text-gray-900">Calculate Your Credits</h3>
-                                    <div>
-                                        <div className="flex justify-between items-center mb-2">
-                                            <label htmlFor="transactions"
-                                                   className="font-semibold text-gray-700 flex items-center gap-2">
-                                                <TrendingUp className="w-5 h-5 text-blue-600"/>
-                                                Monthly Transactions
-                                            </label>
-                                            <span
-                                                className="font-bold text-blue-800 bg-blue-200/70 px-3 py-1 rounded-md">{transactions.toLocaleString()}</span>
-                                        </div>
-                                        <input id="transactions" type="range" min="0" max="50000" step="100"
-                                               value={transactions}
-                                               onChange={(e) => setTransactions(Number(e.target.value))}
-                                               className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:bg-blue-600 [&::-webkit-slider-thumb]:rounded-full transition"/>
-                                    </div>
-                                    <div>
-                                        <div className="flex justify-between items-center mb-2">
-                                            <label htmlFor="onboards"
-                                                   className="font-semibold text-gray-700 flex items-center gap-2">
-                                                <Briefcase className="w-5 h-5 text-blue-600"/>
-                                                Monthly B2B Onboards
-                                            </label>
-                                            <span
-                                                className="font-bold text-blue-800 bg-blue-200/70 px-3 py-1 rounded-md">{onboards.toLocaleString()}</span>
-                                        </div>
-                                        <input id="onboards" type="range" min="0" max="500" step="1" value={onboards}
-                                               onChange={(e) => setOnboards(Number(e.target.value))}
-                                               className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:bg-blue-600 [&::-webkit-slider-thumb]:rounded-full transition"/>
-                                    </div>
-                                </div>
-                                {/* Right side: Results */}
-                                <div
-                                    className="flex flex-col items-center justify-center text-center bg-white/50 p-8 rounded-xl shadow-inner-lg">
-                                    <p className="text-base font-semibold text-gray-600">Estimated Monthly Credits</p>
-                                    <div
-                                        className="my-4 text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-slate-800">
-                                        {estimatedCredits.toLocaleString()}
-                                    </div>
-                                    <p className="font-semibold text-gray-800 text-lg"
-                                       dangerouslySetInnerHTML={{__html: recommendedPlan}}></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* ================================================================== */}
-                {/* [CHANGED] CREDIT CONSUMPTION TABLE                               */}
-                {/* ================================================================== */}
-                <section className="py-20 bg-gray-50">
-                    <div className="max-w-4xl mx-auto px-4">
-                        <div className="text-center mb-12">
-                            <h2 className="text-3xl font-bold text-gray-900 mb-4">Credit Consumption Breakdown</h2>
-                            <p className="text-lg text-gray-600">
-                                Understand how your actions translate into credits. Each service has a clear,
-                                transparent cost.
-                            </p>
-                        </div>
-                        <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
-                            <table className="min-w-full divide-y divide-gray-200">
-                                <thead className="bg-gray-100">
-                                <tr>
-                                    <th scope="col"
-                                        className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
-                                        Service / Report
-                                    </th>
-                                    <th scope="col"
-                                        className="px-6 py-3 text-right text-xs font-medium text-gray-600 uppercase tracking-wider">
-                                        Credit Cost
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody className="bg-white divide-y divide-gray-200">
-                                {creditConsumption.map((item) => (
-                                    <tr key={item.service}>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
-                                            {item.service}
-                                        </td>
-                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600 font-semibold text-right">
-                                            {item.credits} credits
-                                        </td>
-                                    </tr>
-                                ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </section>
-
                 {/* Feature Comparison Table Section */}
-                <section className="py-20 bg-gray-50">
+                <section className="bg-gray-50 py-12">
                     <div className="max-w-7xl mx-auto px-4">
-                        <div className="text-center mb-16">
+                        <div className="text-left mb-4">
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Full Feature
                                 Comparison</h2>
-                            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                            <p className="text-lg text-left text-gray-600">
                                 Every plan includes all features. Our plans are designed to scale with your usage, not
                                 to lock features away. You get everything from day one.
                             </p>
@@ -326,9 +211,9 @@ export default function MainComponent() {
                                 <thead>
                                 <tr className="bg-gray-100">
                                     <th className="text-left py-4 px-6 font-semibold text-gray-900">Features</th>
-                                    <th className="text-center py-4 px-6 font-semibold text-gray-900">Freemium</th>
+                                    <th className="text-center py-4 px-6 font-semibold text-gray-900">Free</th>
                                     <th className="text-center py-4 px-6 font-semibold text-gray-900">Startup</th>
-                                    <th className="text-center py-4 px-6 font-semibold text-blue-700 bg-blue-100/50">Pro</th>
+                                    <th className="text-center py-4 px-6 font-semibold text-blue-700 bg-blue-100/50">Growth</th>
                                     <th className="text-center py-4 px-6 font-semibold text-gray-900">Enterprise</th>
                                 </tr>
                                 </thead>
@@ -364,9 +249,132 @@ export default function MainComponent() {
                         </div>
                     </div>
                 </section>
+                <section className="py-12 bg-white">
+                    <div className="max-w-7xl mx-auto px-4">
+                        <div className="mb-8">
+                            <h2 className="text-3xl font-bold text-gray-900 mb-3">Credit Consumption</h2>
+                            <p className="text-gray-600">
+                                Understand how your actions translate into credits. Each service has a clear,
+                                transparent cost.
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+
+                            {/* Left Column: Credit Consumption Table */}
+                            <div className="lg:col-span-2">
+
+                                <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm bg-white">
+                                    <table className="min-w-full divide-y divide-gray-200">
+                                        <thead className="bg-gray-100">
+                                        <tr>
+                                            <th scope="col"
+                                                className="px-6 py-3 text-left text-xs font-medium text-gray-600 uppercase tracking-wider">
+                                                Service / Report
+                                            </th>
+                                            <th scope="col"
+                                                className="px-6 py-3 text-right text-xs font-medium text-gray-600 uppercase tracking-wider">
+                                                Credit Cost
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody className="bg-white divide-y divide-gray-200">
+                                        {creditConsumption.map((item) => (
+                                            <tr key={item.service}>
+                                                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">
+                                                    {item.service}
+                                                </td>
+                                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600 font-semibold text-right">
+                                                    {item.credits}
+                                                </td>
+                                            </tr>
+                                        ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+                            {/* Right Column: Credit Calculator */}
+                            <div className="lg:col-span-3">
+                                <div
+                                    className="bg-gradient-to-br from-gray-100 to-blue-100/80 rounded-2xl shadow-lg p-4 lg:p-12 h-full">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                                        {/* Left side: Inputs */}
+                                        <div className="space-y-10">
+                                            <h3 className="text-2xl font-bold text-gray-900">Calculate Your Credits</h3>
+                                            <div>
+                                                <div className="flex justify-between items-center mb-2">
+                                                    <label htmlFor="transactions"
+                                                           className="font-semibold text-gray-700 flex items-center gap-2">
+                                                        <TrendingUp className="w-5 h-5 text-blue-600"/>
+                                                        Monthly Transactions
+                                                    </label>
+                                                    <span
+                                                        className="font-bold text-blue-800 bg-blue-200/70 px-3 py-1 rounded-md">{transactions.toLocaleString()}</span>
+                                                </div>
+                                                <input id="transactions" type="range" min="0" max="50000" step="100"
+                                                       value={transactions}
+                                                       onChange={(e) => setTransactions(Number(e.target.value))}
+                                                       className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:bg-blue-600 [&::-webkit-slider-thumb]:rounded-full transition"/>
+                                            </div>
+                                            <div>
+                                                <div className="flex justify-between items-center mb-2">
+                                                    <label htmlFor="onboards"
+                                                           className="font-semibold text-gray-700 flex items-center gap-2">
+                                                        <Briefcase className="w-5 h-5 text-blue-600"/>
+                                                        Monthly B2B Onboards
+                                                    </label>
+                                                    <span
+                                                        className="font-bold text-blue-800 bg-blue-200/70 px-3 py-1 rounded-md">{onboards.toLocaleString()}</span>
+                                                </div>
+                                                <input id="onboards" type="range" min="0" max="500" step="1"
+                                                       value={onboards}
+                                                       onChange={(e) => setOnboards(Number(e.target.value))}
+                                                       className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:bg-blue-600 [&::-webkit-slider-thumb]:rounded-full transition"/>
+                                            </div>
+                                        </div>
+                                        {/* Right side: Results */}
+                                        <div
+                                            className="flex flex-col items-center justify-center text-center bg-white/50 p-8 rounded-xl shadow-inner-lg">
+                                            <p className="text-base font-semibold text-gray-600">Estimated Monthly
+                                                Credits</p>
+                                            <div
+                                                className="my-4 text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-slate-800">
+                                                {estimatedCredits.toLocaleString()}
+                                            </div>
+                                            <p className="font-semibold text-gray-800 text-lg"
+                                               dangerouslySetInnerHTML={{__html: recommendedPlan}}></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Pay-As-You-Go Section */}
+                        <div
+                            className="mt-4 p-8 rounded-2xl border border-gray-200 bg-gray-50 md:flex md:justify-between md:items-center">
+                            <div className="text-center md:text-left mb-6 md:mb-0">
+                                <h4 className="text-xl font-bold text-gray-900 mb-1">Pay-As-You-Go Credits</h4>
+                                <p className="text-gray-600">Need to top up? Buy credits on demand without a monthly
+                                    commitment.</p>
+                            </div>
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <span className="text-2xl font-bold text-gray-900">$1 USD <span
+                                className="font-medium text-gray-600">/ 100 credits</span></span>
+                                <a href="#"
+                                   className="bg-[#2C2F8F] text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-800 transition shadow">
+                                    Buy Credits
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </section>
+
 
                 {/* FAQ Section */}
-                <section className="py-20 px-4 bg-white">
+                <section className="py-20 px-4 bg-gray-50">
                     <div className="max-w-4xl mx-auto">
                         <div className="text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked
