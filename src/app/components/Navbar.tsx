@@ -20,7 +20,6 @@ import Link from 'next/link'
 
 export default function Navbar() {
     const [navOpen, setNavOpen] = useState<string | null>(null);
-    const [langOpen, setLangOpen] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const navItems = [

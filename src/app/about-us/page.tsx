@@ -6,32 +6,32 @@ import Image from "next/image"
 
 const teamMembers = [
     {
-        name: "Bidya",
+        name: "Bidya Bhushan Bibhu",
         role: "Co-Founder",
-        image: "/placeholder.svg?height=400&width=400",
-        linkedin: "#",
-        twitter: "#",
+        image: "/logos/profile-2.jpeg",
+        linkedin: "https://www.linkedin.com/in/bidya-bhushan-bibhu/",
+        twitter: "https://x.com/bidyabibhu",
     },
     {
         name: "Sachinn",
         role: "Co-Founder",
         image: "/logos/profile-1.png",
-        linkedin: "#",
+        linkedin: "https://www.linkedin.com/in/sachinnm/",
         twitter: "#",
     },
     {
         name: "Mehul Dhikonia",
         role: "Co-Founder",
         image: "/placeholder.svg?height=400&width=400",
-        linkedin: "#",
-        twitter: "#",
+        linkedin: "https://www.linkedin.com/in/mehuldhikonia/",
+        twitter: "https://x.com/nmblebee",
     },
     {
         name: "Suyash Pradhan",
         role: "Tech",
-        image: "/placeholder.svg?height=400&width=400",
-        linkedin: "#",
-        twitter: "#",
+        image: "/logos/4.jpg",
+        linkedin: "https://www.linkedin.com/in/suyashpradhan9/",
+        twitter: "https://x.com/SuyashPradhan9",
     },
 ]
 
@@ -194,7 +194,7 @@ export default function AboutUs() {
             <Footer/>
 
             <style jsx>{`
-               
+
                 @keyframes scroll {
                     0% {
                         transform: translateX(0);

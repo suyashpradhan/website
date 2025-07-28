@@ -31,23 +31,23 @@ type Section = {
 
 export default function SolutionsPageLayout() {
     return (
-        <div className="px-4 sm:px-6 lg:px-12 py-12">
+        <div className="space-y-16 lg:space-y-24">
             {featureContent.map((sec: Section, idx) => {
                 const isReversed = idx % 2 === 1;
 
                 return (
                     <section
                         key={idx}
-                        className={`flex flex-col-reverse lg:flex-row ${
-                            isReversed ? "lg:flex-row-reverse" : ""
-                        } items-center gap-1`}
+                        className="grid grid-cols-1 lg:grid-cols-2 sm:gap-16"
                     >
-                        {/* Text */}
-                        <div className="w-full lg:w-1/2">
-                            <h1 className="text-sm font-bold uppercase tracking-normal text-[#2C2F8F]">
-                                {sec.subHeading}
-                            </h1>
-                            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                        {/* Text Block */}
+                        <div className={`w-full ${isReversed ? 'lg:order-last' : ''}`}>
+                            {sec.subHeading && (
+                                <h3 className="text-sm font-bold uppercase tracking-wider text-[#2C2F8F]">
+                                    {sec.subHeading}
+                                </h3>
+                            )}
+                            <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">
                                 {sec.title}
                             </h2>
                             <ul className="space-y-4">
@@ -60,15 +60,18 @@ export default function SolutionsPageLayout() {
                             </ul>
                         </div>
 
-                        {/* Video */}
-                        <div className="w-full lg:w-1/2 flex justify-center">
-                            <video
-                                src={sec?.video}
-                                className="rounded-lg w-full max-w-md sm:max-w-lg"
-                                autoPlay
-                                muted
-                                loop
-                            />
+                        {/* Video Block */}
+                        <div className="w-full flex justify-center">
+                            <div className="w-full max-w-md">
+                                <video
+                                    src={sec.video}
+                                    className="rounded-xl w-full shadow-2xl"
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                />
+                            </div>
                         </div>
                     </section>
                 );

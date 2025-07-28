@@ -1,7 +1,9 @@
 import React from "react";
 import {FaDiscord, FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube} from 'react-icons/fa';
+import logoWhite from '@/images/logos/logoWhite.png'
+import Image from "next/image";
+import Link from "next/link";
 
-const logoUrl = "https://placehold.co/200x80/111827/FFFFFF?text=QuarkfinAI&font=raleway";
 
 const navigation = {
     products: [
@@ -22,17 +24,17 @@ const navigation = {
     social: [
         {
             name: 'LinkedIn',
-            href: 'www.linkedin.com/company/quarkfinai',
+            href: 'https://www.linkedin.com/company/quarkfin/',
             icon: FaLinkedin,
         },
         {
             name: 'Discord',
-            href: '#', // Add your discord link here
+            href: '#',
             icon: FaDiscord,
         },
         {
             name: 'Facebook',
-            href: 'www.facebook.com/quarkfinai', // Corrected to placeholder
+            href: 'https://www.facebook.com/quarkfinai',
             icon: FaFacebook,
         },
         {
@@ -59,15 +61,20 @@ export default function Footer() {
             <h2 id="footer-heading" className="sr-only">
                 Footer
             </h2>
-            <div className="mx-auto max-w-7xl px-6 lg:px-8 lg:py-32">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8 lg:py-12">
                 <div className="xl:grid xl:grid-cols-3 xl:gap-8">
                     <div className="space-y-8">
                         {/* Replaced Next.js Image with standard img tag */}
-                        <img
-                            src={logoUrl}
-                            alt="QuarkfinAI logo"
-                            className="h-10 w-auto" // Adjusted sizing for better consistency
-                        />
+                        <Link href="/">
+                            <Image
+                                src={logoWhite}
+                                alt="QuarkfinAI logo"
+                                width={120}
+                                height={100}
+                                priority
+                                className="h-34 w-auto mt-[-48]"
+                            />
+                        </Link>
                         <p className="text-sm leading-6 text-gray-300">
                             Advanced AI solutions for comprehensive risk prevention and business growth.
                         </p>

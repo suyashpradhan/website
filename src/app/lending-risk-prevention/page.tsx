@@ -87,19 +87,19 @@ export default function LendingRiskPrevention() {
 
 
             {/* 2 Column Layout with text on left and image on right */}
-            <section data-aos="fade-up" className="px-6 py-12">
+            <section data-aos="fade-up" className="px-6 py-12 bg-gray-100">
                 <div className=" max-w-7xl mx-auto">
                     <TwoColumnSectionsRisk/>
                 </div>
             </section>
 
-            <section data-aos="fade-up" className="px-6 py-12 bg-gray-100">
+            <section data-aos="fade-up" className="px-6 py-12 ">
                 <div className=" max-w-7xl mx-auto">
                     <HowItWorksRisk/>
                 </div>
             </section>
 
-            <section data-aos="fade-up" className="px-6 py-12">
+            <section data-aos="fade-up" className="px-6 py-12 bg-gray-100">
                 <div className=" max-w-7xl mx-auto">
                     <ComparsionTableRisk/>
                 </div>

@@ -44,52 +44,57 @@ type Section = {
 
 export default function TwoColumnSectionsRisk() {
     return (
-        <div className="space-y-24 px-4 sm:px-6 lg:px-12 py-10">
-            <h2 className="text-[#2C2F8F] text-left text-3xl md:text-4xl lg:text-5xl font-bold">
-                The End-to-End Defence Against Lending Fraud
-            </h2>
+        <div>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+                <h2 className="text-[#2C2F8F] text-left text-3xl md:text-4xl lg:text-5xl font-bold mb-12">
+                    The End-to-End Defence Against Lending Fraud
+                </h2>
 
-            {featureContent.map((sec: Section, idx) => {
-                const isReversed = idx % 2 === 1;
+                <div className="space-y-16">
+                    {featureContent.map((sec: Section, idx) => {
+                        const isReversed = idx % 2 === 1;
 
-                return (
-                    <section
-                        key={idx}
-                        className={`flex flex-col-reverse items-center lg:flex-row ${
-                            isReversed ? "lg:flex-row-reverse" : ""
-                        } gap-1`}
-                    >
-                        {/* Text Block */}
-                        <div className="w-full lg:w-1/2">
-                            <h1 className="text-sm font-bold uppercase tracking-normal text-[#2C2F8F]">
-                                {sec.subHeading}
-                            </h1>
-                            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                                {sec.title.trim()}
-                            </h2>
-                            <ul className="space-y-4">
-                                {sec.features.map((feat, i) => (
-                                    <li key={i} className="flex items-start">
-                                        <CheckCircleIcon className="h-6 w-6 flex-shrink-0 text-green-500 mt-1"/>
-                                        <span className="ml-3 text-gray-700">{feat.trim()}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                        return (
+                            <section
+                                key={idx}
+                                className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-16"
+                            >
+                                {/* Text Block */}
+                                <div className={`w-full ${isReversed ? 'lg:order-last' : ''}`}>
+                                    <h3 className="text-sm font-bold uppercase tracking-wider text-[#2C2F8F]">
+                                        {sec.subHeading}
+                                    </h3>
+                                    <h2 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 mb-6">
+                                        {sec.title.trim()}
+                                    </h2>
+                                    <ul className="space-y-4">
+                                        {sec.features.map((feat, i) => (
+                                            <li key={i} className="flex items-start">
+                                                <CheckCircleIcon className="h-6 w-6 flex-shrink-0 text-green-500 mt-1"/>
+                                                <span className="ml-3 text-gray-700">{feat.trim()}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
 
-                        {/* Video Block */}
-                        <div className="w-full lg:w-1/2 flex justify-center">
-                            <video
-                                src={sec.video}
-                                className="rounded-lg w-full max-w-md sm:max-w-lg"
-                                autoPlay
-                                muted
-                                loop
-                            />
-                        </div>
-                    </section>
-                );
-            })}
+                                {/* Video Block */}
+                                <div className="w-full flex justify-center">
+                                    <div className="w-full max-w-md">
+                                        <video
+                                            src={sec.video}
+                                            className="rounded-xl w-full shadow-2xl"
+                                            autoPlay
+                                            muted
+                                            loop
+                                            playsInline
+                                        />
+                                    </div>
+                                </div>
+                            </section>
+                        );
+                    })}
+                </div>
+            </div>
         </div>
     );
 }
