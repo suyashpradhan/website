@@ -20,7 +20,7 @@ const plans = [
         name: "Startup",
         description: "For early-stage startups with growing usage and a need for basic support.",
         monthlyPrice: 49,
-        yearlyPrice: 539,
+        yearlyPrice: 535,
         features: [
             "5000 Credits/month",
             "Community & Email Support",
@@ -33,7 +33,7 @@ const plans = [
         name: "Growth",
         description: "Best value for scaling businesses that need faster support and more credits.",
         monthlyPrice: 149,
-        yearlyPrice: 1639,
+        yearlyPrice: 1627,
         features: [
             "15,000 Credits/month (Best Value)",
             "Top up at $0.007 / credit",
@@ -148,7 +148,7 @@ export default function MainComponent() {
                             <span
                                 className={`text-sm font-medium ${isYearly ? "text-gray-900" : "text-gray-500"}`}>Yearly</span>
                             {isYearly && (<span
-                                className="text-sm font-medium text-green-600 bg-green-100 px-2 py-1 rounded-full">Save ~10%</span>)}
+                                className="text-sm font-medium text-green-600 bg-green-100 px-2 py-1 rounded-full">Save ~9%</span>)}
                         </div>
                     </div>
 
@@ -192,6 +192,24 @@ export default function MainComponent() {
                                 </button>
                             </div>
                         ))}
+                    </div>
+
+                    {/* Pay-As-You-Go Section */}
+                    <div
+                        className="mt-4 p-8 rounded-2xl border border-gray-200 bg-gray-50 md:flex md:justify-between md:items-center">
+                        <div className="text-center md:text-left mb-6 md:mb-0">
+                            <h4 className="text-xl font-bold text-gray-900 mb-1">Pay-As-You-Go Credits</h4>
+                            <p className="text-gray-600">Need to top up? Buy credits on demand without a monthly
+                                commitment.</p>
+                        </div>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <span className="text-2xl font-bold text-gray-900">$1 USD <span
+                                className="font-medium text-gray-600">/ 100 credits</span></span>
+                            <a href="#"
+                               className="bg-[#2C2F8F] text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-800 transition shadow">
+                                Buy Credits
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -350,23 +368,7 @@ export default function MainComponent() {
                             </div>
                         </div>
 
-                        {/* Pay-As-You-Go Section */}
-                        <div
-                            className="mt-4 p-8 rounded-2xl border border-gray-200 bg-gray-50 md:flex md:justify-between md:items-center">
-                            <div className="text-center md:text-left mb-6 md:mb-0">
-                                <h4 className="text-xl font-bold text-gray-900 mb-1">Pay-As-You-Go Credits</h4>
-                                <p className="text-gray-600">Need to top up? Buy credits on demand without a monthly
-                                    commitment.</p>
-                            </div>
-                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <span className="text-2xl font-bold text-gray-900">$1 USD <span
-                                className="font-medium text-gray-600">/ 100 credits</span></span>
-                                <a href="#"
-                                   className="bg-[#2C2F8F] text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-800 transition shadow">
-                                    Buy Credits
-                                </a>
-                            </div>
-                        </div>
+
                     </div>
 
 
