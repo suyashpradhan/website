@@ -4,6 +4,7 @@ import {useState} from "react"
 import {Briefcase, Check, ChevronDown, ChevronUp, Star, TrendingUp, X} from "lucide-react"
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 
 const plans = [
@@ -15,6 +16,7 @@ const plans = [
         features: ["500 Credits/month"],
         popular: false,
         buttonText: "Start For Free",
+        url: ''
     },
     {
         name: "Startup",
@@ -23,11 +25,12 @@ const plans = [
         yearlyPrice: 535,
         features: [
             "5000 Credits/month",
+            "Top up at $0.009 / credit",
             "Community & Email Support",
-            "Top up at $0.009 / credit"
         ],
         popular: false,
         buttonText: "Choose Startup",
+        url: ''
     },
     {
         name: "Growth",
@@ -41,6 +44,7 @@ const plans = [
         ],
         popular: true,
         buttonText: "Choose Growth",
+        url: ''
     },
     {
         name: "Enterprise",
@@ -53,6 +57,7 @@ const plans = [
         ],
         popular: false,
         buttonText: "Contact Sales",
+        url: '/contact-us'
     },
 ]
 
@@ -182,10 +187,12 @@ export default function MainComponent() {
                                         ))}
                                     </ul>
                                 </div>
-                                <button
-                                    className={`w-full mt-auto cursor-pointer px-6 py-3 rounded-md transition shadow-sm font-semibold ${plan.popular ? 'bg-[#2C2F8F] text-white hover:bg-blue-800' : 'border border-[#2C2F8F] text-[#2C2F8F] hover:bg-[#2C2F8F] hover:text-white'}`}>
-                                    {plan.buttonText}
-                                </button>
+                                <Link href={plan.url}>
+                                    <button
+                                        className={`w-full mt-auto cursor-pointer px-6 py-3 rounded-md transition shadow-sm font-semibold ${plan.popular ? 'bg-[#2C2F8F] text-white hover:bg-blue-800' : 'border border-[#2C2F8F] text-[#2C2F8F] hover:bg-[#2C2F8F] hover:text-white'}`}>
+                                        {plan.buttonText}
+                                    </button>
+                                </Link>
                             </div>
                         ))}
                     </div>
@@ -382,11 +389,11 @@ export default function MainComponent() {
 
                 {/* FAQ Section */}
                 <section className="py-20 px-4 bg-gray-50">
-                    <div className="max-w-4xl mx-auto">
-                        <div className="text-center mb-16">
+                    <div className="max-w-7xl mx-auto">
+                        <div className="text-left mb-4">
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked
                                 Questions</h2>
-                            <p className="text-lg text-gray-600">
+                            <p className="text-lg text-left text-gray-600">
                                 Got questions? We've got answers. If you can't find what you're looking for, contact our
                                 support team.
                             </p>
