@@ -36,7 +36,7 @@ export default function PaymentGatewaysAndAggregatorsPage() {
                                     <h1 className="text-5xl font-semibold tracking-tighter text-gray-800">
                                         Stop Risky Merchants! <br/>Before They Cost You Millions.
                                     </h1>
-                                    <p className="pt-4 text-md text-muted-foreground ">
+                                    <p className="pt-4 text-md text-black ">
                                         QuarkfinAI automates KYB, screens for AML risks, and monitors merchant behavior
                                         so that you can scale payments without fraud headaches.
                                     </p>

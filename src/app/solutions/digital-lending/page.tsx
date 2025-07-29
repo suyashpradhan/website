@@ -33,10 +33,10 @@ export default function DigitalLendingPage() {
                                     <h1 className="text-md font-bold uppercase tracking-normal text-[#2C2F8F]">
                                         Digital Lending Solution
                                     </h1>
-                                    <h1 className="text-6xl font-semibold tracking-tighter text-gray-800">
+                                    <h1 className="text-5xl font-semibold tracking-tighter text-gray-800">
                                         Approving NTC Borrowers? 1 in 3 Could Be Fraud. We Spot Them.
                                     </h1>
-                                    <p className="pt-4 text-md text-muted-foreground ">
+                                    <p className="pt-4 text-md text-black ">
                                         QuarkfinAI’s lending risk platform catches synthetic identities, prevents loan
                                         stacking, and slashes defaults, so you can grow your book confidently
                                     </p>

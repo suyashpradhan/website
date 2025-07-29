@@ -7,8 +7,8 @@ import Link from "next/link";
 
 const navigation = {
     products: [
-        {name: 'Consumer Risk Prevention', href: '/consumer-risk-prevention'},
         {name: 'Business Risk Prevention', href: '/business-risk-prevention'},
+        {name: 'Consumer Risk Prevention', href: '/consumer-risk-prevention'},
         {name: 'Lending Risk Prevention', href: '/lending-risk-prevention'},
     ],
     solutions: [
@@ -32,11 +32,6 @@ const navigation = {
             href: 'https://discord.gg/tSXuC6ce',
             icon: FaDiscord,
         },
-        // {
-        //     name: 'Facebook',
-        //     href: 'https://www.facebook.com/quarkfinai',
-        //     icon: FaFacebook,
-        // },
         {
             name: 'Instagram',
             href: 'https://www.instagram.com/quarkfinai',

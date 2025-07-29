@@ -72,10 +72,10 @@ export default function ConsumerRiskPrevention() {
                                     <h1 className="text-md font-bold uppercase tracking-normal text-[#2C2F8F]">
                                         Consumer Risk Prevention
                                     </h1>
-                                    <h1 className="text-3xl font-semibold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-gray-800">AI-Powered
+                                    <h1 className="text-5xl font-semibold tracking-tighter text-gray-800">
                                         Fraud Defense for Every Commerce Threat
                                     </h1>
-                                    <p className="pt-4 text-md text-black ">
+                                    <p className="pt-4 text-md text-black">
                                         Plug-and-play AI-powered risk prevention to stop fraud, abuse, and chargebacks,
                                         all without adding friction. From checkout to onboarding, QuarkfinAI ensures
                                         every user and transaction is verified, trusted, and secure.

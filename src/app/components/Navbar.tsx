@@ -29,20 +29,20 @@ export default function Navbar() {
             icon: PuzzlePieceIcon,
             links: [
                 {
-                    title: 'Consumer Risk Prevention',
-                    desc: 'AI-Powered Fraud Defense',
-                    icon: CalendarIcon,
-                    url: '/consumer-risk-prevention'
-                },
-                {
                     title: 'Business Risk Prevention',
                     desc: 'No Risky Merchants',
                     icon: ChartPieIcon,
                     url: '/business-risk-prevention'
                 },
                 {
+                    title: 'Consumer Risk Prevention',
+                    desc: 'AI-Powered Fraud Defense',
+                    icon: CalendarIcon,
+                    url: '/consumer-risk-prevention'
+                },
+                {
                     title: 'Lending Risk Prevention',
-                    desc: 'AI-based fraud detection',
+                    desc: 'AI-Powered Fraud Defense Against Lending Fraud',
                     icon: CalendarDaysIcon,
                     url: '/lending-risk-prevention'
                 },
@@ -87,11 +87,11 @@ export default function Navbar() {
             label: 'Integrations',
             icon: ServerStackIcon,
             links: [
-                {title: 'Shopify', desc: 'Ecom integration', icon: CalendarIcon, url: '/coming-soon'},
-                {title: 'WooCommerce', desc: 'Plug & play store', icon: ChartPieIcon, url: '/coming-soon'},
-                {title: 'Direct APIs', desc: 'Flexible developer stack', icon: CalendarDaysIcon, url: '/coming-soon'},
-                {title: 'SDK', desc: 'Flexible mobile developer stack', icon: CalendarDaysIcon, url: '/coming-soon'},
-                {title: 'Web SDK', desc: 'Flexible web developer stack', icon: CalendarDaysIcon, url: '/coming-soon'},
+                {title: 'Shopify', desc: '', icon: CalendarIcon, url: '/coming-soon'},
+                {title: 'WooCommerce', desc: '', icon: ChartPieIcon, url: '/coming-soon'},
+                {title: 'Direct APIs', desc: '', icon: CalendarDaysIcon, url: '/coming-soon'},
+                {title: 'SDK', desc: '', icon: CalendarDaysIcon, url: '/coming-soon'},
+                {title: 'Web SDK', desc: '', icon: CalendarDaysIcon, url: '/coming-soon'},
             ],
         },
         {

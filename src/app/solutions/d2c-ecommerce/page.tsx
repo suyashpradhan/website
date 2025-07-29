@@ -36,7 +36,7 @@ export default function D2CPage() {
                                     <h1 className="text-5xl font-semibold tracking-tighter text-gray-800">
                                         Fraudsters Stealing Your Margins? <br/>We Blocked Them.
                                     </h1>
-                                    <p className="pt-4 text-md text-muted-foreground ">
+                                    <p className="pt-4 text-md text-black ">
                                         QuarkfinAI blocks fake accounts, slashes RTO, and prevents promo abuse so you
                                         can focus on growing real revenue.
                                     </p>

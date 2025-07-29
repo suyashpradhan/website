@@ -34,10 +34,10 @@ export default function BusinessRiskPrevention() {
                                     <h1 className="text-md font-bold uppercase tracking-normal text-[#2C2F8F]">
                                         Business Risk Prevention
                                     </h1>
-                                    <h1 className="text-6xl font-semibold tracking-tighter text-gray-800">
+                                    <h1 className="text-5xl font-semibold tracking-tighter text-gray-800">
                                         No Risky Merchants. <br/>No Surprise Losses.
                                     </h1>
-                                    <p className="text-md text-muted-foreground ">
+                                    <p className="text-md text-black ">
                                         Automate KYB, AML checks, and ongoing merchant monitoring with AI – so you can
                                         onboard businesses 10x faster without the risk.
                                     </p>

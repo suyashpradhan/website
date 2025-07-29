@@ -18,7 +18,7 @@ export default function IndustrySolution() {
                             </div>
 
                             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Watching 28% of your
-                                hard-won revenue vanish to</h2>
+                                <br/>hard-won revenue vanish to</h2>
 
                             <div className="space-y-4 mb-8">
                                 <div className="flex items-start space-x-3">

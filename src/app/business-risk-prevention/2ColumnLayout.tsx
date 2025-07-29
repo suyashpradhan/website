@@ -55,9 +55,8 @@ export default function TwoColumnSections() {
                         const isReversed = idx % 2 === 1;
 
                         return (
-                            <div className="bg-white rounded-2xl shadow-xl px-8 mb-4">
+                            <div className="bg-white rounded-2xl shadow-xl px-8 mb-4" key={idx}>
                                 <section
-                                    key={idx}
                                     className="grid grid-cols-1 lg:grid-cols-2 items-center sm:gap-8"
                                 >
                                     {/* Text content */}
