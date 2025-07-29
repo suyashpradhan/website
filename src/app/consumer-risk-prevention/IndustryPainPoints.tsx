@@ -12,7 +12,7 @@ export default function IndustryPainPoints() {
                     Outsmart Fraud. Accelerate Growth
                 </h2>
 
-                <div className="mt-12 grid gap-8 md:grid-cols-2">
+                <div className="mt-4 grid gap-8 md:grid-cols-2">
                     {/* D2C / eCommerce Card */}
                     <div className="flex flex-col bg-white rounded-lg shadow-lg p-8">
                         <div className="flex items-center mb-6">
