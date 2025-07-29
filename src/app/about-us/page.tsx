@@ -7,7 +7,7 @@ import Image from "next/image"
 const teamMembers = [
     {
         name: "Bidya Bhushan Bibhu",
-        role: "Co-Founder",
+        role: "Co-Founder/CEO",
         image: "/logos/profile-2.jpeg",
         linkedin: "https://www.linkedin.com/in/bidya-bhushan-bibhu/",
         twitter: "https://x.com/bidyabibhu",
@@ -56,7 +56,7 @@ export default function AboutUs() {
                 <section className="relative bg-gray-50 overflow-hidden">
                     <div
                         className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-indigo-100 opacity-60"></div>
-                    <div className="relative max-w-7xl mx-auto py-12 px-6 lg:px-8">
+                    <div className="relative max-w-7xl mx-auto py-12 sm:px-6 xs:px-6">
                         <h1 className="text-2xl md:text-3xl mb-12 text-left lg:text-5xl font-extrabold text-[#2C2F8F] tracking-tight">
                             We're Building the Future of Trust...
                         </h1>
