@@ -36,7 +36,7 @@ export default function TravelCommercePage() {
                                     <h1 className="text-5xl font-semibold tracking-tighter text-gray-800">
                                         Stop Fraudsters From Hijacking, Your High-Velocity Transactions </h1>
                                     <p className="pt-4 text-md text-black ">
-                                        QuarkfinAI blocks card testing, fake accounts, and promo abuse—so you can focus
+                                        QuarkfinAI blocks card testing, fake accounts, and promo abuse so you can focus
                                         on delivering experiences, not fighting fraud
                                     </p>
                                 </div>

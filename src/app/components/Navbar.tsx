@@ -36,13 +36,13 @@ export default function Navbar() {
                 },
                 {
                     title: 'Consumer Risk Prevention',
-                    desc: 'Stop Fraud Before It Start',
+                    desc: 'Stop Fraud Before It Starts',
                     icon: CalendarIcon,
                     url: '/consumer-risk-prevention'
                 },
                 {
                     title: 'Lending Risk Prevention',
-                    desc: 'Fraud Defense Against Lending Fraud',
+                    desc: 'Defense Against Lending Fraud',
                     icon: CalendarDaysIcon,
                     url: '/lending-risk-prevention'
                 },
