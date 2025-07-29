@@ -6,7 +6,7 @@ export default function IndustrySolution() {
     return (
         <div className="min-h-screen">
             {/* Industry Sections */}
-            <div className="max-w-7xl mx-auto space-y-24 pb-24">
+            <div className="max-w-7xl mx-auto space-y-4 pb-12">
                 {/* D2C & eCommerce Section */}
                 <section className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">

@@ -55,7 +55,7 @@ export default function TwoColumnSections() {
                         const isReversed = idx % 2 === 1;
 
                         return (
-                            <div className="bg-white rounded-2xl shadow-xl p-8 mb-12">
+                            <div className="bg-white rounded-2xl shadow-xl px-8 mb-4">
                                 <section
                                     key={idx}
                                     className="grid grid-cols-1 lg:grid-cols-2 items-center sm:gap-8"
@@ -78,7 +78,7 @@ export default function TwoColumnSections() {
 
                                     {/* Video content with a more compact size */}
                                     <div className="w-full flex justify-center">
-                                        <div className="w-full max-w-[384px]">
+                                        <div className="w-full max-w-[330px]">
                                             <video
                                                 src={sec.video}
                                                 className="rounded-xl w-full"
