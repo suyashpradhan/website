@@ -110,8 +110,6 @@ export default function Navbar() {
         {code: 'JP', label: '日本語', flag: '🇯🇵'},
     ];
 
-    const [selectedLang, setSelectedLang] = useState(languages[0]);
-
     return (
         <nav className="px-6 py-4 shadow-md bg-white sticky top-0 z-50">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -189,9 +187,6 @@ export default function Navbar() {
 
                 {/* Right side */}
                 <div className="hidden lg:flex items-center space-x-4">
-                    {/* Language dropdown */}
-
-
                     <Link href="/coming-soon">
                         <button
                             className="
@@ -273,28 +268,43 @@ export default function Navbar() {
                             )}
                         </details>
                     ))}
-                    <div className="px-4 pt-4">
-                        <h4 className="block text-sm font-medium mb-2 text-[#2C2F8F]">Language</h4>
-                        <ul className="space-y-3">
-                            {languages.map((lang) => (
-                                <li
-                                    key={lang.code}
-                                    className={`flex items-center space-x-3 p-2 rounded-md cursor-pointer transition-all hover:bg-gray-100 ${
-                                        selectedLang.code === lang.code ? 'bg-gray-100' : ''
-                                    }`}
-                                    onClick={() => setSelectedLang(lang)}
-                                >
-                                    <span className="text-lg">{lang.flag}</span>
-                                    <span className="text-sm text-gray-800 font-medium">{lang.label}</span>
-                                    <span className="text-xs text-gray-400 ml-auto">{lang.code}</span>
-                                </li>
-                            ))}
-                        </ul>
+                    <div className="flex gap-4">
+                        <Link href="/coming-soon">
+                            <button
+                                className="
+              relative inline-block rounded-lg p-[2px]
+              cursor-pointer
+              font-semibold text-white
+              bg-gradient-to-r from-indigo-500 via-purple-500 to-orange-400
+              transition-all duration-300 ease-in-out
+              hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/40
+              active:translate-y-0 active:shadow-md
+              focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2
+            "
+                            >
+            <span className="block rounded-[6px] bg-gray-900 px-6 py-3">
+              Login
+            </span>
+                            </button>
+                        </Link>
 
-                        <button
-                            className="w-full mt-6 bg-[#2C2F8F] text-white py-2 rounded hover:bg-[#3A50D9] transition">
-                            Book a Demo
-                        </button>
+                        <Link href="/pricing">
+                            <button
+                                type="button"
+                                className="
+              group inline-flex items-center justify-center gap-2
+              rounded-lg bg-white border-1 border-[#2C2F8F] text-[#2C2F8F] px-6 py-3
+              text-center font-semibold
+              shadow-md transition-all duration-300 ease-in-out
+              hover:bg-[#3A50D9] hover:-translate-y-1 hover:shadow-xl hover:text-white cursor-pointer
+              active:translate-y-0 active:shadow-md
+              focus:outline-none focus:ring-2 focus:ring-[#3A50D9] focus:ring-offset-2
+            "
+                            >
+                                <span>Pricing</span>
+
+                            </button>
+                        </Link>
                     </div>
                 </div>
             )}
