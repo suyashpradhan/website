@@ -17,6 +17,7 @@ import {useState} from 'react';
 import Image from "next/image";
 import logo from '@/images/logos/logo.jpg'
 import Link from 'next/link'
+import {ContactIcon} from "lucide-react";
 
 export default function Navbar() {
     const [navOpen, setNavOpen] = useState<string | null>(null);
@@ -97,18 +98,12 @@ export default function Navbar() {
             label: 'About QuarkfinAI',
             icon: HomeIcon,
             links: [
-                {title: 'Contact Us', desc: 'Driving intelligent commerce', icon: CalendarIcon, url: '/contact-us'},
-                {title: 'About us', desc: 'Driving intelligent commerce', icon: CalendarIcon, url: '/about-us'},
+                {title: 'Contact Us', desc: '', icon: ContactIcon, url: '/contact-us'},
+                {title: 'About us', desc: '', icon: CalendarIcon, url: '/about-us'},
             ],
         },
     ];
 
-    const languages = [
-        {code: 'EN', label: 'English', flag: '🇺🇸'},
-        {code: 'DE', label: 'Deutsch', flag: '🇩🇪'},
-        {code: 'MX', label: 'Español', flag: '🇲🇽'},
-        {code: 'JP', label: '日本語', flag: '🇯🇵'},
-    ];
 
     return (
         <nav className="px-6 py-4 shadow-md bg-white sticky top-0 z-50">
@@ -165,10 +160,10 @@ export default function Navbar() {
                                                 <Link
                                                     key={link.title}
                                                     href={link.url ?? ''}
-                                                    className="flex items-start space-x-3 group cursor-pointer p-3 rounded-md transition-all duration-200 hover:bg-gray-100"
+                                                    className="flex space-x-3 items-center group cursor-pointer p-3 rounded-md transition-all duration-200 hover:bg-gray-100"
                                                 >
                                                     <link.icon
-                                                        className="w-5 h-5 mt-1 text-gray-400 group-hover:text-[#2C2F8F]"/>
+                                                        className="w-5 h-5 text-gray-400 group-hover:text-[#2C2F8F]"/>
                                                     <div>
                                                         <p className="text-sm font-semibold text-gray-500 group-hover:text-[#2C2F8F]">
                                                             {link.title}

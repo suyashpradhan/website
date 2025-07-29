@@ -75,9 +75,6 @@ export default function Footer() {
                                 className="h-34 w-auto mt-[-48]"
                             />
                         </Link>
-                        <p className="text-sm leading-6 text-gray-300">
-                            Advanced AI solutions for comprehensive risk prevention and business growth.
-                        </p>
                     </div>
                     <div className="mt-16 grid grid-cols-2 gap-8 md:grid-cols-3 xl:col-span-2 xl:mt-0">
                         <div>
