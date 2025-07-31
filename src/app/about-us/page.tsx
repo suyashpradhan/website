@@ -14,7 +14,7 @@ const teamMembers = [
     },
     {
         name: "Sachinn",
-        role: "Co-Founder",
+        role: "GTM",
         image: "/logos/profile-1.png",
         linkedin: "https://www.linkedin.com/in/sachinnm/",
         twitter: "https://x.com/sachinn_m",
