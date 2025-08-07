@@ -171,7 +171,7 @@ export default function MainComponent() {
 
                             {/* Currency single-select buttons ⭐ */}
                             <div className="flex items-center gap-2 ml-6">
-                                {(["USD", "INR", "GBP", "EUR"] as const).map(c => (
+                                {(["USD", "EUR", "GBP", "INR"] as const).map(c => (
                                     <button key={c}
                                             onClick={() => setCurrency(c)}
                                             className={`px-3 py-1 rounded-full border text-sm font-medium transition
