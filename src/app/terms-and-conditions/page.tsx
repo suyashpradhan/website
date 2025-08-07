@@ -265,7 +265,8 @@ export default function TermsConditions() {
 
                                         </h3>
                                         <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
-                                            <li>Disputes governed by laws of India, courts in [City].
+                                            <li>Disputes governed by laws of India courts in Bangalore, Karnataka,
+                                                India.
                                             </li>
                                         </ul>
                                         <h3 className="text-xl font-medium text-gray-800 mb-3">Arbitration:

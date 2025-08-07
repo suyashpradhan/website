@@ -6,6 +6,8 @@ import Navbar from "@/app/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 
+const currencyRates = {USD: 1, INR: 83, GBP: 0.79}               // static demo rates
+const currencySymbols = {USD: "$", INR: "₹", GBP: "£"}
 
 const plans = [
     {
@@ -112,9 +114,25 @@ const faqs = [
 
 export default function MainComponent() {
     const [isYearly, setIsYearly] = useState(false)
+    const [currency, setCurrency] = useState<'USD' | 'INR' | 'GBP'>('USD')  // ⭐ new
+
     const [openIndex, setOpenIndex] = useState<number | null>(null)
     const [transactions, setTransactions] = useState(5000);
     const [onboards, setOnboards] = useState(50);
+
+    const convert = (usd: number) => usd * currencyRates[currency]
+    const money = (usd: number | string) =>
+        typeof usd === 'string'
+            ? 'Custom'
+            : `${currencySymbols[currency]}${convert(usd).toLocaleString()}`
+
+    const convertTopUp = (txt: string) => {
+        // matches “Top up at $0.009 / credit”
+        const m = txt.match(/Top up at \$([\d.]+) \/ credit/);
+        if (!m) return txt;
+        const converted = parseFloat(m[1]) * currencyRates[currency];
+        return `Top up at ${currencySymbols[currency]}${converted.toFixed(3)} / credit`;
+    }
 
     const estimatedCredits = (transactions * 10) + (onboards * 50);
     let recommendedPlan = 'The <strong>Enterprise Plan</strong> is recommended for this volume.';
@@ -150,7 +168,23 @@ export default function MainComponent() {
                                 className={`text-sm font-medium ${isYearly ? "text-gray-900" : "text-gray-500"}`}>Yearly</span>
                             {isYearly && (<span
                                 className="text-sm font-medium text-green-600 bg-green-100 px-2 py-1 rounded-full">Save ~9%</span>)}
+
+                            {/* Currency single-select buttons ⭐ */}
+                            <div className="flex items-center gap-2 ml-6">
+                                {(["USD", "INR", "GBP"] as const).map(c => (
+                                    <button key={c}
+                                            onClick={() => setCurrency(c)}
+                                            className={`px-3 py-1 rounded-full border text-sm font-medium transition
+                                        ${currency === c
+                                                ? "bg-blue-600 text-white border-blue-600"
+                                                : "bg-white text-gray-700 border-gray-300"}`}>
+                                        {c}
+                                    </button>
+                                ))}
+                            </div>
                         </div>
+
+
                     </div>
 
                     {/* Pricing Cards Section */}
@@ -173,7 +207,7 @@ export default function MainComponent() {
                                     <p className="text-sm text-gray-600 mb-4 h-16 text-left">{plan.description}</p>
                                     <div className="mb-4 text-left">
                                         <span className="text-4xl font-bold text-gray-900">
-                                            {typeof (isYearly ? plan.yearlyPrice : plan.monthlyPrice) === 'number' ? `$${isYearly ? plan.yearlyPrice : plan.monthlyPrice}` : 'Custom'}
+                                            {money(isYearly ? plan.yearlyPrice : plan.monthlyPrice)}
                                         </span>
                                         {typeof (isYearly ? plan.yearlyPrice : plan.monthlyPrice) === 'number' &&
                                             <span className="text-gray-600 ml-1">/{isYearly ? "year" : "month"}</span>}
@@ -182,14 +216,15 @@ export default function MainComponent() {
                                         {plan.features.map((feature, featureIndex) => (
                                             <li key={featureIndex} className="flex items-start gap-3">
                                                 <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5"/>
-                                                <span className="text-sm text-gray-700">{feature}</span>
+                                                <span
+                                                    className="text-sm text-gray-700">{convertTopUp(feature)}</span>
                                             </li>
                                         ))}
                                     </ul>
                                 </div>
                                 <Link href={plan.url}>
                                     <button
-                                        className={`w-full mt-auto cursor-pointer px-6 py-3 rounded-md transition shadow-sm font-semibold ${plan.popular ? 'bg-[#2C2F8F] text-white hover:bg-blue-800' : 'border border-[#2C2F8F] text-[#2C2F8F] hover:bg-[#2C2F8F] hover:text-white'}`}>
+                                        className="w-full mt-auto px-6 py-3 rounded-md font-semibold transition border border-[#2C2F8F] text-[#2C2F8F] hover:bg-[#2C2F8F] hover:text-white">
                                         {plan.buttonText}
                                     </button>
                                 </Link>
@@ -202,12 +237,15 @@ export default function MainComponent() {
                         className="mt-8 p-8 rounded-2xl border border-gray-200 bg-gray-50 md:flex md:justify-between md:items-center">
                         <div className="text-center md:text-left mb-6 md:mb-0">
                             <h4 className="text-xl font-bold text-gray-900 mb-1">Pay-As-You-Go Credits</h4>
-                            <p className="text-gray-600">Need to top up? Buy credits on demand without a monthly
-                                commitment.</p>
+                            <p className="text-gray-600">
+                                Need to top up? Buy credits on demand without a monthly commitment.
+                            </p>
                         </div>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <span className="text-2xl font-bold text-gray-900">$1 USD <span
-                                className="font-medium text-gray-600">/ 100 credits</span></span>
+                            <span className="text-2xl font-bold text-gray-900">
+                                {currencySymbols[currency]}{convert(1).toLocaleString()} <span
+                                className="font-medium text-gray-600">/ 100 credits</span>
+                            </span>
                             <a href="#"
                                className="bg-[#2C2F8F] text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-800 transition shadow">
                                 Buy Credits
