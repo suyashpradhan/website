@@ -21,14 +21,14 @@ const teamMembers = [
     },
     {
         name: "Mehul Dhikonia",
-        role: "Co-Founder",
+        role: "CTPO",
         image: "/placeholder.svg?height=400&width=400",
         linkedin: "https://www.linkedin.com/in/mehuldhikonia/",
         twitter: "https://x.com/nmblebee",
     },
     {
         name: "Suyash Pradhan",
-        role: "Tech",
+        role: "Founding Engineer",
         image: "/logos/4.jpg",
         linkedin: "https://www.linkedin.com/in/suyashpradhan9/",
         twitter: "https://x.com/SuyashPradhan9",

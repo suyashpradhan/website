@@ -114,7 +114,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="mt-16 border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
+                <div className="mt-16 border-t border-white/10 pt-8 md:flex  md:justify-between">
                     <div className="flex space-x-6 md:order-2">
                         {navigation.social.map((item) => {
                             const IconComponent = item.icon;
@@ -128,7 +128,7 @@ export default function Footer() {
                         })}
                     </div>
                     <div className="mt-8 md:order-1 md:mt-0">
-                        <p className="text-center text-xs leading-5 text-gray-400">
+                        <p className=" text-xs leading-5 text-gray-400">
                             &copy; {new Date().getFullYear()} QuarkfinAI, Inc. All rights reserved.
                         </p>
                         <div className="mt-4 flex justify-center space-x-4 text-xs leading-5">
@@ -138,6 +138,9 @@ export default function Footer() {
                             </a>
                             <a href="/terms-and-conditions" className="text-gray-400 hover:text-gray-300">
                                 Terms and Conditions
+                            </a>
+                            <a href="/refund-and-cancellation-policy" className="text-gray-400 hover:text-gray-300">
+                                Refund and Cancellation Policy
                             </a>
                         </div>
                     </div>
