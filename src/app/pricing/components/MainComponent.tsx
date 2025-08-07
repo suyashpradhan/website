@@ -224,7 +224,7 @@ export default function MainComponent() {
                                 </div>
                                 <Link href={plan.url}>
                                     <button
-                                        className="w-full mt-auto px-6 py-3 rounded-md font-semibold transition border border-[#2C2F8F] text-[#2C2F8F] hover:bg-[#2C2F8F] hover:text-white">
+                                        className="cursor-pointer w-full mt-auto px-6 py-3 rounded-md font-semibold transition border border-[#2C2F8F] text-[#2C2F8F] hover:bg-[#2C2F8F] hover:text-white">
                                         {plan.buttonText}
                                     </button>
                                 </Link>

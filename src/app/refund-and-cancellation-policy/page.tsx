@@ -214,7 +214,7 @@ export default function RefundAndCancellationPolicy() {
                                         <div className="bg-gray-50 p-4 rounded-lg">
                                             <ul className="text-gray-700 space-y-2">
                                                 <li>
-                                                    <strong>Address:</strong> Email: hello@quarkfin.ai
+                                                    <strong>Email:</strong> hello@quarkfin.ai
                                                 </li>
                                             </ul>
                                         </div>
