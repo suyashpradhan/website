@@ -6,8 +6,8 @@ import Navbar from "@/app/components/Navbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 
-const currencyRates = {USD: 1, INR: 83, GBP: 0.79}               // static demo rates
-const currencySymbols = {USD: "$", INR: "₹", GBP: "£"}
+const currencyRates = {USD: 1, INR: 83, GBP: 0.79, EUR: 0.859}
+const currencySymbols = {USD: "$", INR: "₹", GBP: "£", EUR: "€"}
 
 const plans = [
     {
@@ -114,7 +114,7 @@ const faqs = [
 
 export default function MainComponent() {
     const [isYearly, setIsYearly] = useState(false)
-    const [currency, setCurrency] = useState<'USD' | 'INR' | 'GBP'>('USD')  // ⭐ new
+    const [currency, setCurrency] = useState<'USD' | 'INR' | 'GBP' | 'EUR'>('USD')
 
     const [openIndex, setOpenIndex] = useState<number | null>(null)
     const [transactions, setTransactions] = useState(5000);
@@ -171,7 +171,7 @@ export default function MainComponent() {
 
                             {/* Currency single-select buttons ⭐ */}
                             <div className="flex items-center gap-2 ml-6">
-                                {(["USD", "INR", "GBP"] as const).map(c => (
+                                {(["USD", "INR", "GBP", "EUR"] as const).map(c => (
                                     <button key={c}
                                             onClick={() => setCurrency(c)}
                                             className={`px-3 py-1 rounded-full border text-sm font-medium transition

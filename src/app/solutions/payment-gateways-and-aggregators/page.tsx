@@ -61,20 +61,20 @@ export default function PaymentGatewaysAndAggregatorsPage() {
                                         </button>
                                     </Link>
 
-                                    <button
-                                        type="button"
-                                        className="
-              group inline-flex items-center justify-center gap-2
-              rounded-lg bg-white border-1 border-[#2C2F8F] text-[#2C2F8F] px-6 py-3
-              text-center font-semibold
-              shadow-md transition-all duration-300 ease-in-out
-              hover:bg-[#3A50D9] hover:-translate-y-1 hover:shadow-xl hover:text-white cursor-pointer
-              active:translate-y-0 active:shadow-md
-              focus:outline-none focus:ring-2 focus:ring-[#3A50D9] focus:ring-offset-2
-            "
-                                    >
-                                        <span>See How It Works</span>
-                                    </button>
+                                    {/*                        <button*/}
+                                    {/*                            type="button"*/}
+                                    {/*                            className="*/}
+                                    {/*  group inline-flex items-center justify-center gap-2*/}
+                                    {/*  rounded-lg bg-white border-1 border-[#2C2F8F] text-[#2C2F8F] px-6 py-3*/}
+                                    {/*  text-center font-semibold*/}
+                                    {/*  shadow-md transition-all duration-300 ease-in-out*/}
+                                    {/*  hover:bg-[#3A50D9] hover:-translate-y-1 hover:shadow-xl hover:text-white cursor-pointer*/}
+                                    {/*  active:translate-y-0 active:shadow-md*/}
+                                    {/*  focus:outline-none focus:ring-2 focus:ring-[#3A50D9] focus:ring-offset-2*/}
+                                    {/*"*/}
+                                    {/*                        >*/}
+                                    {/*                            <span>See How It Works</span>*/}
+                                    {/*                        </button>*/}
 
                                 </div>
                             </div>
