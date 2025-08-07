@@ -24,7 +24,7 @@ const navigation = {
     social: [
         {
             name: 'LinkedIn',
-            href: 'https://www.linkedin.com/company/quarkfin/',
+            href: 'https://www.linkedin.com/company/quarkfinai',
             icon: FaLinkedin,
         },
         {
