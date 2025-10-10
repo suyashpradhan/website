@@ -18,7 +18,8 @@ const plans = [
         features: ["500 Credits/month"],
         popular: false,
         buttonText: "Start For Free",
-        url: 'https://app.quarkfin.ai/login'
+        url: '/contact-us'
+        // url: 'https://app.quarkfin.ai/login'
     },
     {
         name: "Startup",
@@ -32,7 +33,8 @@ const plans = [
         ],
         popular: false,
         buttonText: "Choose Startup",
-        url: 'https://app.quarkfin.ai/login'
+        url: '/contact-us'
+        // url: 'https://app.quarkfin.ai/login'
     },
     {
         name: "Growth",
@@ -46,7 +48,8 @@ const plans = [
         ],
         popular: true,
         buttonText: "Choose Growth",
-        url: 'https://app.quarkfin.ai/login'
+        // url: 'https://app.quarkfin.ai/login'
+        url: '/contact-us'
     },
     {
         name: "Enterprise",
@@ -246,7 +249,7 @@ export default function MainComponent() {
                                 {currencySymbols[currency]}{convert(1).toLocaleString()} <span
                                 className="font-medium text-gray-600">/ 100 credits</span>
                             </span>
-                            <a href="https://app.quarkfin.ai/login"
+                            <a href="contact-us"
                                className="bg-[#2C2F8F] text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-800 transition shadow">
                                 Buy Credits
                             </a>
